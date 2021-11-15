@@ -4,10 +4,29 @@ body {
   box-sizing: border-box;
 }
 
-.header-first-page{
-  background-image: url(".pasta.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+
+.contact-header{
+  background-color:brown;
+  height: 90vh;
+  text-align: center;
+}
+
+.contact-header h1{
+  margin:0;
+  padding: 0;
+}
+
+
+.footer-container{
+  background-color:brown;
+  height: 10vh;
+
+}
+
+.footer-icons{
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+  margin: auto;
+  padding-top: 2%;
 }

@@ -1,10 +1,13 @@
 import React from "react";
-import Header from "./components/Header.js";
+import Header from "./components/Header";
+import ContactUs from "./components/ContactUs";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div>
-      <Header></Header>
+      <ContactUs></ContactUs>
+      <Footer></Footer>
     </div>
   );
 }
