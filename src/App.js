@@ -1,8 +1,12 @@
+import React from "react";
+import Header from "./components/Header.js";
 
 function App() {
   return (
-    <h1>Starting project</h1>
-      );
+    <div>
+      <Header></Header>
+    </div>
+  );
 }
 
 export default App;
