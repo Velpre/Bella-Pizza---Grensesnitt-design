@@ -4,23 +4,35 @@ body {
   box-sizing: border-box;
 }
 
+/* Contact */
 
-.contact-header{
+.contact-section{
   background-color:brown;
   height: 90vh;
+}
+
+.contact-section h1{
+  margin:0;
+  padding-top:5%;
   text-align: center;
 }
 
-.contact-header h1{
-  margin:0;
-  padding: 0;
+
+.contact-content{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin:auto
 }
+
+
+
+/* Footer */
 
 
 .footer-container{
   background-color:brown;
   height: 10vh;
-
 }
 
 .footer-icons{
