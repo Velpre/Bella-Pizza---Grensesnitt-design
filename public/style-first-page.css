@@ -4,10 +4,41 @@ body {
   box-sizing: border-box;
 }
 
-.header-first-page{
-  background-image: url(".pasta.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+/* Contact */
+
+.contact-section{
+  background-color:brown;
+  height: 90vh;
+}
+
+.contact-section h1{
+  margin:0;
+  padding-top:5%;
+  text-align: center;
+}
+
+
+.contact-content{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin:auto
+}
+
+
+
+/* Footer */
+
+
+.footer-container{
+  background-color:brown;
+  height: 10vh;
+}
+
+.footer-icons{
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+  margin: auto;
+  padding-top: 2%;
 }
