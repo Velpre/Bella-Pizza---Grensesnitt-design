@@ -1,11 +1,14 @@
 import React from "react";
-import Header from "./components/Header.js";
+import CssBaseline from '@mui/material/CssBaseline';
+import Navbar from "./components/NavBar";
 
 function App() {
   return (
-    <div>
-      <Header></Header>
-    </div>
+    <React.Fragment>
+      <CssBaseline>
+        <Navbar />
+      </CssBaseline>
+    </React.Fragment>
   );
 }
 
