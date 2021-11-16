@@ -2,18 +2,17 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ContactUs from "./components/ContactUs";
-import Footer from "./components/Footer";
-
+import BookTable from "./components/BookTable";
 
 function App() {
   return (
     <>
-        <Navbar />
-        <Hero />
-        <ContactUs />
-        <Footer />
+      <Navbar />
+      <Hero />
+      <ContactUs />
+      <BookTable />
     </>
-  )
+  );
 }
 
 export default App;

@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Contact */
+
+.contact-section{
+  background-color:brown;
+  height: 100vh;
+  position: relative;
+}
+
+.contact-section h1{
+  margin:0;
+  padding-top:5%;
+  text-align: center;
+}
+
+.contact-content{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin:  10% auto 0;
+}
+
+.idem-header-contact{
+  margin-top: 30px;
+}
+
+.frame{
+  border: 0;
+  border-radius:10px;
+  margin-top: 10%;
+}
+
+/* Footer */
+
+.footer-icons{
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translate(-50%);
+  width: 25%;
+}
+
+.test{
+  width:70%;
+  background-color: white;
+  border: "2px solid #000",
+}
