@@ -1,17 +1,24 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import ContactUs from "./components/ContactUs";
-import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import Meny from "./pages/Meny";
+
+import {
+  BrowserRouter,
+  Routes, // instead of "Switch"
+  Route,
+} from "react-router-dom";
+
 
 
 function App() {
+
   return (
     <>
-        <Navbar />
-        <Hero />
-        <ContactUs />
-        <Footer />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/meny" element={<Meny />} />
+        </Routes>
     </>
   )
 }
