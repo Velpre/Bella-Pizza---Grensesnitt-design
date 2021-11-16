@@ -1,10 +1,5 @@
 
 import React from "react";
-import {
-    Typography,
-    Container,
-    Button
-} from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import headerImage from "../images/header-image.jpg";
 
@@ -33,7 +28,6 @@ export default function Hero() {
     return (
         <div maxWidth="1">
             <div className={classes.root}>
-                
             </div>
         </div>
     );

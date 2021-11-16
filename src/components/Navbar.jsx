@@ -13,12 +13,13 @@ import {
 } from "@material-ui/core";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { NavHashLink } from "react-router-hash-link";
+
 
 // IMPORTING ICONS
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import Meny from "../pages/Meny";
 
 
 
@@ -40,7 +41,8 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Navbar = (props) => {
-    console.log(props);
+
+    const navigate = useNavigate();
     const classes = useStyles();
     const [anchor, setAnchor] = React.useState(null);
     const open = Boolean(anchor);
@@ -49,6 +51,20 @@ const Navbar = (props) => {
     const handleMenu = (event) => {
         setAnchor(event.currentTarget);
     };
+
+    const scrollToSection = () => {
+        let titleElement = document.getElementsByClassName('contact-section');
+
+        if (typeof (titleElement[0]) !== 'undefined') {
+            titleElement[0].scrollIntoView({ behavior: 'smooth' })
+        } else {
+            navigate("/", "#kontakt-oss");
+
+        }
+    }
+
+
+
     return (
         <div className={classes.root} >
             <AppBar style={{
@@ -69,11 +85,23 @@ const Navbar = (props) => {
                     {isMobile ? (
                         <>
                             <IconButton
-                                color="textPrimary"
+                                onClick={() => setAnchor(null)}
+                                component={Link}
+                                to="/#handlekurv"
+
+                            >
+                                <ListItemIcon>
+                                    <ShoppingCartIcon style={{ color: "white" }}
+                                    />
+                                </ListItemIcon>
+                            </IconButton>
+                            <IconButton
                                 className={classes.menuButton}
                                 edge="start"
                                 aria-label="menu"
                                 onClick={handleMenu}
+                                style={{ color: "white" }}
+
                             >
                                 <MenuIcon />
                             </IconButton>
@@ -93,7 +121,6 @@ const Navbar = (props) => {
                             >
 
                                 <MenuItem
-                                    onClick={() => setAnchor(null)}
                                     component={Link}
                                     to="/"
                                 >
@@ -102,9 +129,8 @@ const Navbar = (props) => {
                                     <Typography variant="h6"> Hjem</Typography>
                                 </MenuItem>
                                 <MenuItem
-                                    onClick={() => setAnchor(null)}
                                     component={Link}
-                                    to="/"
+                                    to="/bestill-bord"
                                 >
                                     <ListItemIcon>
 
@@ -113,22 +139,12 @@ const Navbar = (props) => {
                                     <Typography variant="h6"> Bestill bord </Typography>
                                 </MenuItem>
                                 <MenuItem
-                                    onClick={() => setAnchor(null)}
                                     component={Link}
-                                    to="/About"
+                                    to="/meny"
                                 >
                                     <ListItemIcon>
                                     </ListItemIcon>
                                     <Typography variant="h6"> Meny</Typography>
-                                </MenuItem>
-                                <MenuItem
-                                    onClick={() => setAnchor(null)}
-                                    component={Link}
-                                    to="/Personal"
-                                >
-                                    <ListItemIcon>
-                                    </ListItemIcon>
-                                    <Typography variant="h6"> Cart </Typography>
                                 </MenuItem>
                             </Menu>
                         </>
@@ -139,7 +155,6 @@ const Navbar = (props) => {
                                 variant="text"
                                 component={Link}
                                 to="/"
-                                color="white"
                                 style={{ color: "white" }}
                             >
                                 <div />
@@ -149,7 +164,6 @@ const Navbar = (props) => {
                                 variant="text"
                                 component={Link}
                                 to="/bestill-bord"
-                                color="white"
                                 style={{ color: "white" }}
 
                             >
@@ -160,7 +174,6 @@ const Navbar = (props) => {
                                 variant="text"
                                 component={Link}
                                 to="/meny"
-                                color="white"
                                 style={{ color: "white" }}
 
                             >
@@ -171,35 +184,29 @@ const Navbar = (props) => {
                                 variant="text"
                                 component={Link}
                                 to="/om-oss"
-                                color="default"
                                 style={{ color: "white" }}
-
                             >
                                 <div />
                                 Om oss
                             </Button>
-                            <Button
-                                variant="text"
-                                component={Link}
-                                onClick={e => {
-                                    console.log("Clicked");
-                                }}
-                                to="/kontakt-oss"
+                            <Button>
+                                <NavHashLink
 
-                                color="default"
-                                style={{ color: "white" }}
+                                    to="/#kontakt-oss"
+                                    variant="text"
+                                    component={Link}
+                                    style={{ color: "white", textDecoration: "none" }}
+                                >Kontakt oss
+                                    <div />
 
-                            >
-                                <div />
-                                Kontakt oss
+                                </NavHashLink>
                             </Button>
+
                             <Button
                                 variant="text"
                                 component={Link}
                                 to="/handlekurv"
-                                color="default"
                                 style={{ color: "white" }}
-
                             >
                                 <div />
                                 <ShoppingCartIcon />
@@ -209,6 +216,7 @@ const Navbar = (props) => {
                 </Toolbar>
             </AppBar>
         </div >
+
     );
 };
 

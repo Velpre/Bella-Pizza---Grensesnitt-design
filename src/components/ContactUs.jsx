@@ -1,10 +1,12 @@
-import React from "react";
+import React,  {useRef, useEffect} from "react";
 import { Email, Facebook, Instagram } from "@mui/icons-material";
 import { display } from "@mui/system";
 
-export default function ContactUs() {
+const ContactUs = (props) => {
+
+   
   return (
-    <div className="contact-section">
+    <div className="contact-section" id='kontakt-oss'>
       <h1>Kontakt oss</h1>
 
       <div className="contact-content">
@@ -41,3 +43,5 @@ export default function ContactUs() {
     </div>
   );
 }
+
+export default ContactUs;

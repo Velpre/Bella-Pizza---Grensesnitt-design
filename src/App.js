@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import Meny from "./pages/Meny";
 
 import {
-  BrowserRouter,
   Routes, // instead of "Switch"
   Route,
 } from "react-router-dom";

@@ -5,7 +5,8 @@ import Hero from "../components/Hero";
 import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
 
-function Home() {
+const Home = (props) => {
+    
     return (
         <>
             <Navbar />
