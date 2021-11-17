@@ -1,16 +1,16 @@
-import * as React from "react";
+import React from "react";
 import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
 
-export default function DateTime() {
+export default function Date() {
   const [value, setValue] = React.useState(null);
   return (
     <div>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
-          label="Basic example"
+          label="Velg dato"
           value={value}
           onChange={(newValue) => {
             setValue(newValue);

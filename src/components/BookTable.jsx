@@ -1,8 +1,18 @@
 import React from "react";
-import { styled, Box } from "@mui/system";
+import {
+  TextField,
+  Box,
+  styled,
+  InputLabel,
+  MenuItem,
+  FormControl,
+  Select,
+  Button,
+} from "@mui/material";
+
 import ModalUnstyled from "@mui/base/ModalUnstyled";
-import TextField from "@mui/material/TextField";
-import DateTime from "./DateTime";
+import Date from "./Date";
+import Time from "./Time";
 
 /* CSS import */
 import "../style-first-page.css";
@@ -39,11 +49,17 @@ const style = {
 };
 
 export default function BookTable() {
+  /* Modal */
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [value, setValue] = React.useState(null);
+  /* Number of persons */
+  const [number, setNumber] = React.useState("");
+
+  const handleChange = (event) => {
+    setNumber(event.target.value);
+  };
 
   return (
     <div>
@@ -58,9 +74,30 @@ export default function BookTable() {
       >
         <Box className="book-table-box" sx={style}>
           <h2>Reserver bord</h2>
-          <TextField id="outlined-basic" label="Navn" variant="outlined" />
-          <TextField id="outlined-basic" label="E-post" variant="outlined" />
-          <DateTime></DateTime>
+          <FormControl>
+            <InputLabel>Antall personer</InputLabel>
+            <Select
+              value={number}
+              label="Antall personer"
+              onChange={handleChange}
+            >
+              <MenuItem value={1}>1</MenuItem>
+              <MenuItem value={2}>2</MenuItem>
+              <MenuItem value={3}>3</MenuItem>
+              <MenuItem value={4}>4</MenuItem>
+              <MenuItem value={5}>5</MenuItem>
+              <MenuItem value={6}>6</MenuItem>
+              <MenuItem value={7}>7</MenuItem>
+              <MenuItem value={8}>8</MenuItem>
+            </Select>
+
+            <TextField id="outlined-basic" label="Navn" variant="outlined" />
+            <TextField id="outlined-basic" label="E-post" variant="outlined" />
+            <Date></Date>
+            <Time></Time>
+
+            <Button>Reserver</Button>
+          </FormControl>
         </Box>
       </StyledModal>
     </div>
