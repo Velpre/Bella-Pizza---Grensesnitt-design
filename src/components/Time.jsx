@@ -17,7 +17,7 @@ export default function Time() {
           label="Velg tidspunkt"
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField {...params} />}
+          renderInput={(params) => <TextField margin="dense" {...params} />}
         />
       </LocalizationProvider>
     </div>

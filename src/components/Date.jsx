@@ -15,7 +15,7 @@ export default function Date() {
           onChange={(newValue) => {
             setValue(newValue);
           }}
-          renderInput={(params) => <TextField {...params} />}
+          renderInput={(params) => <TextField margin="dense" {...params} />}
         />
       </LocalizationProvider>
     </div>

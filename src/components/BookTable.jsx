@@ -17,6 +17,7 @@ import Time from "./Time";
 /* CSS import */
 import "../style-first-page.css";
 
+/* Style modal */
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
   z-index: 1300;
@@ -28,8 +29,7 @@ const StyledModal = styled(ModalUnstyled)`
   align-items: center;
   justify-content: center;
 `;
-
-/* Style i bakgrunnen */
+/* Style behind modal */
 const Backdrop = styled("div")`
   z-index: -1;
   position: fixed;
@@ -40,16 +40,17 @@ const Backdrop = styled("div")`
   background-color: rgba(0, 0, 0, 0.5);
   -webkit-tap-highlight-color: transparent;
 `;
-
-/* Style inn i modalen */
-const style = {
+/* Style inside modal */
+const styleModalInside = {
   p: 2,
   px: 4,
   pb: 3,
+  textAlign: "center",
+  bgcolor: "white",
 };
 
 export default function BookTable() {
-  /* Modal */
+  /* Modal open and close */
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -57,7 +58,7 @@ export default function BookTable() {
   /* Number of persons */
   const [number, setNumber] = React.useState("");
 
-  const handleChange = (event) => {
+  const handleChangeNumberPersons = (event) => {
     setNumber(event.target.value);
   };
 
@@ -72,14 +73,15 @@ export default function BookTable() {
         onClose={handleClose}
         BackdropComponent={Backdrop}
       >
-        <Box className="book-table-box" sx={style}>
+        <Box style={{ width: "20%", height: "65%" }} sx={styleModalInside}>
           <h2>Reserver bord</h2>
           <FormControl>
             <InputLabel>Antall personer</InputLabel>
             <Select
+              margin="dense"
               value={number}
               label="Antall personer"
-              onChange={handleChange}
+              onChange={handleChangeNumberPersons}
             >
               <MenuItem value={1}>1</MenuItem>
               <MenuItem value={2}>2</MenuItem>
@@ -91,11 +93,28 @@ export default function BookTable() {
               <MenuItem value={8}>8</MenuItem>
             </Select>
 
-            <TextField id="outlined-basic" label="Navn" variant="outlined" />
-            <TextField id="outlined-basic" label="E-post" variant="outlined" />
+            <TextField
+              margin="dense"
+              required
+              label="Navn"
+              variant="outlined"
+            />
+            <TextField
+              margin="dense"
+              required
+              label="E-post"
+              variant="outlined"
+            />
             <Date></Date>
             <Time></Time>
 
+            <TextField
+              label="Komentar"
+              multiline
+              rows={3}
+              defaultValue=""
+              margin="dense"
+            />
             <Button>Reserver</Button>
           </FormControl>
         </Box>
