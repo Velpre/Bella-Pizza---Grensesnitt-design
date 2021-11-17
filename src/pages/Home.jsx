@@ -6,7 +6,7 @@ import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
 
 const Home = (props) => {
-    
+
     return (
         <>
             <Navbar />

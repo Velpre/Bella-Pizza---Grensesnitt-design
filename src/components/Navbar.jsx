@@ -13,13 +13,17 @@ import {
 } from "@material-ui/core";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { NavHashLink } from "react-router-hash-link";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
+
+import CartModal from "./CartModal";
+
 
 
 // IMPORTING ICONS
 import MenuIcon from '@mui/icons-material/Menu';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
 
@@ -35,14 +39,19 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         flexGrow: 1,
+    },
+    mobile: {
+        left: "90%",
     }
 }));
 
 
 
-const Navbar = (props) => {
 
-    const navigate = useNavigate();
+const Navbar = (props) => {
+    const { value, setValue } = useContext(UserContext);
+
+
     const classes = useStyles();
     const [anchor, setAnchor] = React.useState(null);
     const open = Boolean(anchor);
@@ -51,18 +60,6 @@ const Navbar = (props) => {
     const handleMenu = (event) => {
         setAnchor(event.currentTarget);
     };
-
-    const scrollToSection = () => {
-        let titleElement = document.getElementsByClassName('contact-section');
-
-        if (typeof (titleElement[0]) !== 'undefined') {
-            titleElement[0].scrollIntoView({ behavior: 'smooth' })
-        } else {
-            navigate("/", "#kontakt-oss");
-
-        }
-    }
-
 
 
     return (
@@ -84,17 +81,13 @@ const Navbar = (props) => {
                     </Typography>
                     {isMobile ? (
                         <>
-                            <IconButton
-                                onClick={() => setAnchor(null)}
-                                component={Link}
-                                to="/#handlekurv"
-
+                            <Button
+                                style={{ color: "white" }}
                             >
-                                <ListItemIcon>
-                                    <ShoppingCartIcon style={{ color: "white" }}
-                                    />
-                                </ListItemIcon>
-                            </IconButton>
+                                <div />
+                                <CartModal  />
+
+                            </Button>
                             <IconButton
                                 className={classes.menuButton}
                                 edge="start"
@@ -152,6 +145,7 @@ const Navbar = (props) => {
                     ) : (
                         <div style={{ marginRight: "2rem" }}>
                             <Button
+                                onClick={() => setValue(value + 1)} // set the value       here
                                 variant="text"
                                 component={Link}
                                 to="/"
@@ -203,14 +197,14 @@ const Navbar = (props) => {
                             </Button>
 
                             <Button
-                                variant="text"
-                                component={Link}
-                                to="/handlekurv"
                                 style={{ color: "white" }}
                             >
                                 <div />
-                                <ShoppingCartIcon />
+                                <CartModal left={80} />
+
                             </Button>
+
+
                         </div>
                     )}
                 </Toolbar>

@@ -1,13 +1,13 @@
 
 import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import headerImage from "../images/header-image.jpg";
 
 
 
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
-    root: {
+    image: {
         backgroundImage: `url(${headerImage})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -27,7 +27,7 @@ export default function Hero() {
 
     return (
         <div maxWidth="1">
-            <div className={classes.root}>
+            <div className={classes.image}>
             </div>
         </div>
     );
