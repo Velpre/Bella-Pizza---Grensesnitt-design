@@ -2,12 +2,9 @@ import React from "react";
 import { styled, Box } from "@mui/system";
 import ModalUnstyled from "@mui/base/ModalUnstyled";
 import TextField from "@mui/material/TextField";
-/* Date-picker */
-/* import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import DatePicker from "@mui/lab/DatePicker"; */
+import DateTime from "./DateTime";
 
-/* CSS */
+/* CSS import */
 import "../style-first-page.css";
 
 const StyledModal = styled(ModalUnstyled)`
@@ -59,10 +56,11 @@ export default function BookTable() {
         onClose={handleClose}
         BackdropComponent={Backdrop}
       >
-        <Box className="test" sx={style}>
+        <Box className="book-table-box" sx={style}>
           <h2>Reserver bord</h2>
           <TextField id="outlined-basic" label="Navn" variant="outlined" />
           <TextField id="outlined-basic" label="E-post" variant="outlined" />
+          <DateTime></DateTime>
         </Box>
       </StyledModal>
     </div>

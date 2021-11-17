@@ -1,8 +1,9 @@
 import React from "react";
 import Footer from "./Footer";
+import BookTable from "./BookTable";
 import "../style-first-page.css";
 
-export default function ContactUs() {
+export default function ContactUs(props) {
   return (
     <div className="contact-section">
       <h1>Kontakt oss</h1>
@@ -15,7 +16,7 @@ export default function ContactUs() {
           <h3 className="idem-header-contact">Adresse</h3>
           <p>Romaveien 12</p>
           <p>0368 Oslo</p>
-          <button>Modal</button>
+          <BookTable></BookTable>
         </div>
 
         <div>
@@ -37,6 +38,7 @@ export default function ContactUs() {
           ></iframe>
         </div>
       </div>
+
       <Footer></Footer>
     </div>
   );
