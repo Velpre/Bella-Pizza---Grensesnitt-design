@@ -73,7 +73,7 @@ export default function BookTable() {
         onClose={handleClose}
         BackdropComponent={Backdrop}
       >
-        <Box style={{ width: "20%", height: "65%" }} sx={styleModalInside}>
+        <Box sx={styleModalInside}>
           <h2>Reserver bord</h2>
           <FormControl>
             <InputLabel>Antall personer</InputLabel>
