@@ -1,0 +1,29 @@
+.information-container{
+    height: 100vh;
+    background-color: lightgrey;
+    align-items: center;
+}
+
+.food-container{
+    background-color: white;
+    align-items: baseline;
+}
+
+.info-section{
+    align-self: center;
+    text-align: center;
+}
+
+#food-image{
+    max-height: 30vh;
+}
+
+#btn-show-pizza {
+    background-color: grey;
+    margin: 2%;
+}
+
+#btn-show-pasta {
+    background-color: grey;
+    margin: 2%;
+}

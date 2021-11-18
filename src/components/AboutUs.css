@@ -1,0 +1,23 @@
+.about-us-container {
+    height: 100vh;
+    align-items: center;
+}
+
+.about-us-info{
+    text-align: center;
+}
+
+.about-us-image{
+    text-align: center;
+    padding-bottom: 10vh;
+}
+
+#restaurant-img {
+    max-width: 90%;
+    border-radius: 8%;
+}
+
+#btn-reservation {
+    background-color: grey;
+    margin-top: 2vh;
+}
