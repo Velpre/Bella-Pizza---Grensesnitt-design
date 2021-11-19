@@ -13,8 +13,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         height: "100vh",
-        witdh: "100%",
-        color: "red"
     },
     size: {
         postion: "relative",
