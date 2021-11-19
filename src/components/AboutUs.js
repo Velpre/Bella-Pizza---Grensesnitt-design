@@ -7,7 +7,7 @@ import ArrowIcon from '@mui/icons-material/ArrowForwardIos';
 export default function AboutUs(){
     return (
             <Grid className="about-us-container" container spacing={1}>
-                <Grid item xs={0} md={1} />
+                <Grid item xs={0} md={1}/>
                 <Grid item xs={12} md={4} className="about-us-info">
                     <h1>ITALIENSK I ÅNDEN</h1>
                     <Typography>

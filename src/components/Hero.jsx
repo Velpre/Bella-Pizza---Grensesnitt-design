@@ -6,7 +6,7 @@ import {
     Button
 } from "@material-ui/core";
 import { makeStyles} from "@material-ui/core/styles";
-import headerImage from "../images/header-image.jpg";
+import headerImage from "../images/forside.jpeg";
 
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({

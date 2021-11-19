@@ -9,7 +9,6 @@
 
 .about-us-image{
     text-align: center;
-    padding-bottom: 10vh;
 }
 
 #restaurant-img {
@@ -18,6 +17,6 @@
 }
 
 #btn-reservation {
-    background-color: grey;
+    background-color: green;
     margin-top: 2vh;
 }
