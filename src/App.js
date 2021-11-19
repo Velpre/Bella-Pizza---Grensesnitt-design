@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import Home from "./pages/Home";
 import Meny from "./pages/Meny";
 
@@ -6,19 +6,30 @@ import {
   Routes, // instead of "Switch"
   Route,
 } from "react-router-dom";
-import { UserContext } from "./context/UserContext";
+import { createContext } from "react";
 
-
+export const UserContext = createContext();
 
 function App() {
 
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(UserContext)
 
-  const providerValue = useMemo(() => ({ value, setValue }), [value, setValue]);
+  const defaultValue = {
+
+    products: [
+      { id: "1", title: "Italian Pizza", price: 229 },
+    ],
+    cart: [],
+
+    addProductToCart: product => { }, // for later
+  }
+
+
+
 
   return (
     <>
-      <UserContext.Provider value={providerValue}>
+      <UserContext.Provider value={defaultValue}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/meny" element={<Meny />} />

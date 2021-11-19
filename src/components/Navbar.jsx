@@ -16,9 +16,9 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Link } from 'react-router-dom';
 import { NavHashLink } from "react-router-hash-link";
 import { useContext } from "react";
-import { UserContext } from "../context/UserContext";
+import { UserContext } from "../App";
 
-import CartModal from "./CartModal";
+import Cart from "./Cart";
 
 
 
@@ -52,6 +52,7 @@ const Navbar = (props) => {
     const { value, setValue } = useContext(UserContext);
 
 
+
     const classes = useStyles();
     const [anchor, setAnchor] = React.useState(null);
     const open = Boolean(anchor);
@@ -61,13 +62,15 @@ const Navbar = (props) => {
         setAnchor(event.currentTarget);
     };
 
+    // set product     onClick={() => setValue(value + 1)} 
+
 
     return (
         <div className={classes.root} >
-            <AppBar style={{
-                backgroundColor: 'transparent'
+            <AppBar elevation={0} style={{
+                backgroundColor: 'transparent',
             }}>
-                <Toolbar >
+                <Toolbar style={{boxShadow: "none"}} >
                     <Typography
                         variant="h5"
                         component="p"
@@ -85,7 +88,7 @@ const Navbar = (props) => {
                                 style={{ color: "white" }}
                             >
                                 <div />
-                                <CartModal  />
+                                <Cart />
 
                             </Button>
                             <IconButton
@@ -145,7 +148,6 @@ const Navbar = (props) => {
                     ) : (
                         <div style={{ marginRight: "2rem" }}>
                             <Button
-                                onClick={() => setValue(value + 1)} // set the value       here
                                 variant="text"
                                 component={Link}
                                 to="/"
@@ -200,11 +202,9 @@ const Navbar = (props) => {
                                 style={{ color: "white" }}
                             >
                                 <div />
-                                <CartModal left={80} />
+                                <Cart />
 
                             </Button>
-
-
                         </div>
                     )}
                 </Toolbar>
