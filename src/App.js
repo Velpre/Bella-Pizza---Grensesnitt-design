@@ -29,11 +29,14 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Hero />
-      <ContactUs />
+      <UserContext.Provider value={defaultValue}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/meny" element={<Meny />} />
+        </Routes>
+      </UserContext.Provider>
     </>
-  );
+  )
 }
 
 export default App;

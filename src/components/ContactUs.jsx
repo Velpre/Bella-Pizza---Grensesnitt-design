@@ -79,4 +79,3 @@ export default function ContactUs(props) {
   );
 }
 
-export default ContactUs;
