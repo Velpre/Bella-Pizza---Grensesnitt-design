@@ -1,9 +1,10 @@
-import ProductCard from "./Cards/productCard";
-import Card from "./Cards/productCard";
+
+import PastaList from "./components/PastaList";
+import PizzaList from "./components/PizzaList";
 function App() {
   return (
     <>
-    <ProductCard/>
+    <PizzaList/>
     </>
       );
 }
