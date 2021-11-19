@@ -9,28 +9,8 @@ body {
 .contact-section{
   background-color:brown;
   height: 100vh;
-  position: relative;
-}
-
-.contact-section h1{
-  margin: 0;
-  text-align: center;
-}
-
-/* Footer */
-
-.footer-icons{
-  display: flex;
-  justify-content: space-around;
-  position: absolute;
-  left: 50%;
-  bottom: 5%;
-  transform: translate(-50%);
-  width: 25%;
 }
 
 
-/* Modal Book Table */
 
-.book-table-box{
-}
+
