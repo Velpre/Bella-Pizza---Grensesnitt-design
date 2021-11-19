@@ -1,15 +1,23 @@
 import React from "react";
-import { styled, Box } from "@mui/system";
-import ModalUnstyled from "@mui/base/ModalUnstyled";
-import TextField from "@mui/material/TextField";
-/* Date-picker */
-/* import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import DatePicker from "@mui/lab/DatePicker"; */
+import {
+  TextField,
+  Box,
+  styled,
+  InputLabel,
+  MenuItem,
+  FormControl,
+  Select,
+  Button,
+} from "@mui/material";
 
-/* CSS */
+import ModalUnstyled from "@mui/base/ModalUnstyled";
+import Date from "./Date";
+import Time from "./Time";
+
+/* CSS import */
 import "../style-first-page.css";
 
+/* Style modal */
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
   z-index: 1300;
@@ -21,8 +29,7 @@ const StyledModal = styled(ModalUnstyled)`
   align-items: center;
   justify-content: center;
 `;
-
-/* Style i bakgrunnen */
+/* Style behind modal */
 const Backdrop = styled("div")`
   z-index: -1;
   position: fixed;
@@ -33,20 +40,27 @@ const Backdrop = styled("div")`
   background-color: rgba(0, 0, 0, 0.5);
   -webkit-tap-highlight-color: transparent;
 `;
-
-/* Style inn i modalen */
-const style = {
+/* Style inside modal */
+const styleModalInside = {
   p: 2,
   px: 4,
   pb: 3,
+  textAlign: "center",
+  bgcolor: "white",
 };
 
 export default function BookTable() {
+  /* Modal open and close */
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [value, setValue] = React.useState(null);
+  /* Number of persons */
+  const [number, setNumber] = React.useState("");
+
+  const handleChangeNumberPersons = (event) => {
+    setNumber(event.target.value);
+  };
 
   return (
     <div>
@@ -59,10 +73,50 @@ export default function BookTable() {
         onClose={handleClose}
         BackdropComponent={Backdrop}
       >
-        <Box className="test" sx={style}>
+        <Box sx={styleModalInside}>
           <h2>Reserver bord</h2>
-          <TextField id="outlined-basic" label="Navn" variant="outlined" />
-          <TextField id="outlined-basic" label="E-post" variant="outlined" />
+          <FormControl>
+            <InputLabel>Antall personer</InputLabel>
+            <Select
+              margin="dense"
+              value={number}
+              label="Antall personer"
+              onChange={handleChangeNumberPersons}
+            >
+              <MenuItem value={1}>1</MenuItem>
+              <MenuItem value={2}>2</MenuItem>
+              <MenuItem value={3}>3</MenuItem>
+              <MenuItem value={4}>4</MenuItem>
+              <MenuItem value={5}>5</MenuItem>
+              <MenuItem value={6}>6</MenuItem>
+              <MenuItem value={7}>7</MenuItem>
+              <MenuItem value={8}>8</MenuItem>
+            </Select>
+
+            <TextField
+              margin="dense"
+              required
+              label="Navn"
+              variant="outlined"
+            />
+            <TextField
+              margin="dense"
+              required
+              label="E-post"
+              variant="outlined"
+            />
+            <Date></Date>
+            <Time></Time>
+
+            <TextField
+              label="Komentar"
+              multiline
+              rows={3}
+              defaultValue=""
+              margin="dense"
+            />
+            <Button>Reserver</Button>
+          </FormControl>
         </Box>
       </StyledModal>
     </div>

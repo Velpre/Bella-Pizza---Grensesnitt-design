@@ -29,12 +29,9 @@ function App() {
 
   return (
     <>
-      <UserContext.Provider value={defaultValue}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/meny" element={<Meny />} />
-        </Routes>
-      </UserContext.Provider>
+      <Navbar />
+      <Hero />
+      <ContactUs />
     </>
   );
 }
