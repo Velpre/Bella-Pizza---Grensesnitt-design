@@ -1,19 +1,11 @@
-import React from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import ContactUs from "./components/ContactUs";
-import Footer from "./components/Footer";
-
-
+import ProductCard from "./Cards/productCard";
+import Card from "./Cards/productCard";
 function App() {
   return (
     <>
-        <Navbar />
-        <Hero />
-        <ContactUs />
-        <Footer />
+    <ProductCard/>
     </>
-  )
+      );
 }
 
 export default App;
