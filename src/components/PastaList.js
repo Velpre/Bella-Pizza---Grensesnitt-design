@@ -1,7 +1,7 @@
-
+//Ida henter hvert pastaobjekt i sin parantes under her i function
 function PastaList(){
 
-    const pasta = [
+    const pastaList = [
         {
             id: 1, 
             name: "Carbonara", 
@@ -87,12 +87,9 @@ function PastaList(){
     
     return (
         <>
-        <article>
-            <img key ={pasta.id} src ={pasta.image} />
-            <h3>{pasta.name}</h3>
-            <p>{pasta.productDescription}</p>
-            <p>{pasta.price}</p>
-        </article>
+        {pastaList.map((p) => {
+            return <Card pasta={p}/> 
+        })}
         </>
         );
 }
