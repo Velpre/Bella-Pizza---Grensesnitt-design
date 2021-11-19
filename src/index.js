@@ -1,11 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom";
+
+import * as ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById("root")
 );
+
+
