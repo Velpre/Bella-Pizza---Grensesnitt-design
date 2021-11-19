@@ -1,25 +1,18 @@
 
 import React from "react";
-import {
-    Typography,
-    Container,
-    Button
-} from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import headerImage from "../images/header-image.jpg";
+import { makeStyles } from "@material-ui/core/styles";
+import headerImage from "../images/hero-image.jpeg";
 
 
 
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
-    root: {
+    image: {
         backgroundImage: `url(${headerImage})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         height: "100vh",
-        witdh: "100%",
-        color: "red"
     },
     size: {
         postion: "relative",
@@ -32,8 +25,7 @@ export default function Hero() {
 
     return (
         <div maxWidth="1">
-            <div className={classes.root}>
-                
+            <div className={classes.image}>
             </div>
         </div>
     );
