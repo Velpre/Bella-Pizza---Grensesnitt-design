@@ -1,6 +1,7 @@
 import React,  {useRef, useEffect} from "react";
 import { Email, Facebook, Instagram } from "@mui/icons-material";
 import { display } from "@mui/system";
+import "../css/ContactUs.css"
 
 const ContactUs = (props) => {
 

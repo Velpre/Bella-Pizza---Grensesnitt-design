@@ -1,5 +1,5 @@
 import React from "react";
-import './Information.css'
+import '../css/Information.css'
 import {Grid, Typography, Button} from '@mui/material'
 import PizzaImage from '../images/pizzaoptions.jpg'
 import PastaImage from '../images/pastaoptions.jpg'

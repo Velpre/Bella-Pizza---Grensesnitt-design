@@ -1,5 +1,5 @@
 import React from 'react'
-import './AboutUs.css';
+import '../css/AboutUs.css';
 import {Button, Grid, Container, CssBaseline, Typography} from '@mui/material'
 import RestaurantPhoto from '../images/restaurant.jpg'
 import ArrowIcon from '@mui/icons-material/ArrowForwardIos';

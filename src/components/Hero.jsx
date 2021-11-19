@@ -1,7 +1,7 @@
 
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import headerImage from "../images/header-image.jpg";
+import headerImage from "../images/hero-image.jpeg";
 
 
 
