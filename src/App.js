@@ -11,21 +11,14 @@ import { createContext } from "react";
 export const UserContext = createContext();
 
 function App() {
-
-  const [value, setValue] = useState(UserContext)
+  const [value, setValue] = useState(UserContext);
 
   const defaultValue = {
-
-    products: [
-      { id: "1", title: "Italian Pizza", price: 229 },
-    ],
+    products: [{ id: "1", title: "Italian Pizza", price: 229 }],
     cart: [],
 
-    addProductToCart: product => { }, // for later
-  }
-
-
-
+    addProductToCart: (product) => {}, // for later
+  };
 
   return (
     <>
@@ -36,7 +29,7 @@ function App() {
         </Routes>
       </UserContext.Provider>
     </>
-  )
+  );
 }
 
 export default App;

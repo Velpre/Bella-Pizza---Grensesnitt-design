@@ -4,9 +4,6 @@ import { Grid, Link } from "@mui/material";
 import "../css/ContactUs.css";
 
 export default function Footer() {
-  function test() {
-    alert();
-  }
   return (
     <Grid
       container
