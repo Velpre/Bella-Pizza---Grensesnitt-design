@@ -2,13 +2,16 @@ import React from "react";
 import {
     Typography,
     Container,
-    Button, 
+    Button,
     ButtonGroup,
-    Box
+    Box,
+    useMediaQuery,
+    Grid,
 } from "@material-ui/core";
-import { makeStyles} from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import headerImage from "../images/hero-image.jpeg";
 import '../css/Hero.css'
+
 
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
@@ -18,32 +21,39 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         height: "100vh",
+        position: "relative",
     },
-    size: {
-        postion: "relative",
-        top: "100px" //change
-    }
 }));
 
 export default function Hero() {
     const classes = useStyles();
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
 
     return (
-        <div>
-            <div className={classes.root}>
-                <ButtonGroup style={{height: "100vh", display: "flex", justifyContent: "center"}}>
-                <Box m={2} pt={3} style={{alignItems: "center"}}>
-                    <Button variant="contained" color="default">
-                        Reserver bord
-                    </Button>
-                </Box>
-                <Box m={2} pt={3} style={{justifyContent: "center"}}>
-                    <Button variant="contained" color="default">
+        <div id="hero-div" className={classes.root}>
+            <Grid container id="hero-container"
+                spacing={5}
+                direction={`${isMobile ? "column" : "row"}`}
+                alignItems="center"
+                justifyContent="center"
+                style={{ height: '100vh', width: '100%', position: 'relative', top: "10%" }}>
+                <Grid item >
+                    <Button className="hero-btn" variant="contained" color="primary" size="large" >
                         Bestill takeaway
                     </Button>
-                </Box>
-                </ButtonGroup>
-            </div>
-        </div>
+                </Grid>
+                <Grid item>
+                    <Button className="hero-btn" variant="contained"
+                        size="large"
+                        color="primary"
+                        href="/meny" >
+
+                        Reserver bord
+                    </Button>
+                </Grid>
+            </Grid>
+        </div >
     );
 }
