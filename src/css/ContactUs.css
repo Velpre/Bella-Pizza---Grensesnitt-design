@@ -28,6 +28,8 @@ body{
   padding-bottom: 2%;
 }
 
+/* Media query */
+
  @media screen and (max-width: 600px) {
   .contact-section{
     height: 100%;
