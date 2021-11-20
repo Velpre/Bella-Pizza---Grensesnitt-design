@@ -10,7 +10,6 @@ import UserContext from "../App"
 
 export default function ProductCartCard() {
 
-  const { products } = useContext(UserContext);
 
 
 

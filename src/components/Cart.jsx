@@ -111,15 +111,6 @@ export default function Cart() {
 
     const { products } = useContext(UserContext);
 
-    console.log(products);
-
-    if (products !== 0) {
-        let product = products.map(products => ({
-            
-        }))
-    }
-
-
     return (
         <div>
             {isMobile ? (
@@ -138,6 +129,7 @@ export default function Cart() {
                             Modal title
                         </BootstrapDialogTitle>
                         <DialogContent dividers>
+
                             <ProductCartCard />
 
                         </DialogContent>
@@ -165,7 +157,7 @@ export default function Cart() {
                         </BootstrapDialogTitle>
                         <DialogContent dividers>
 
-
+                            <ProductCartCard />
 
                         </DialogContent>
                         <DialogActions>
