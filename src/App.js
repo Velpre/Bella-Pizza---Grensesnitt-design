@@ -1,10 +1,13 @@
 
-import PastaList from "./components/PastaList";
-import PizzaList from "./components/PizzaList";
+import DisplayMenu from "./components/DisplayMenu";
+
+
 function App() {
+
+
   return (
     <>
-    <PizzaList/>
+    <DisplayMenu/>
     </>
       );
 }

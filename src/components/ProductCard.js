@@ -8,32 +8,31 @@ import Typography from '@mui/material/Typography';
 
 
 
+
 export default function ProductCard(props) {
   return (
-    //<Grid container spacing={1}  justifyContent='center' alignItems='center'   direction='row'>
-      //<Grid item sm={12} md={5} lg={2}>
-        <Card style={{position: 'relative', width: 250, height: 300}} >
+        <Card style={{position: 'relative', width: 300, height: 390}} >
         <CardMedia
             component="img"
             alt="product-image"
-            height="120"
+            height="180"
             image={props.product.image}
           />
           <CardContent align ='left'>
             <Typography gutterBottom variant="h5" component="div" >
               {props.product.name}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="subtitle1" color="text.secondary">
               {props.product.productDescription}
+            </Typography>
+            <Typography variant="subtitle2" color="text.secondary">
+              Allergener: {props.product.allergies}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button style={{ position: 'absolute', left: 60, bottom: 10, transform: 'TranslateX(-50)'}} variant='contained' size='large'>Legg til</Button>
+            <Button style={{ position: 'absolute', left: 90, bottom: 10, transform: 'TranslateX(-50)'}} variant='contained' size='large'>Legg til</Button>
           </CardActions>
-        </Card>
-      //</Grid>
-
-    //</Grid>      
+        </Card>    
     );
 }
 
