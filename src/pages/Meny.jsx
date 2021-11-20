@@ -5,8 +5,7 @@ import Hero from "../components/Hero";
 import { UserContext } from '../App'
 import { useContext } from "react";
 
-import ProductCard from "./Cards/productCard";
-import Card from "./Cards/productCard";
+import PizzaList from "../components/PizzaList";
 
 
 
@@ -15,14 +14,11 @@ function Meny() {
 
     return (
         <>
-            <Navbar />
-            <Hero />
-
-            <h1 style={{
-                textAlign: "center"
-            }}>Deres kode går hit</h1>
-
-
+            <div style={{ backgroundColor: "#6b5b95" }}>
+                <Navbar />
+                <Hero />
+                <PizzaList />
+            </div>
         </>
     );
 }

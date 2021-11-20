@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
@@ -11,8 +11,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import MultiActionAreaCard from "./ProductCartCard"
+import ProductCartCard from "./ProductCartCard"
 import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { UserContext } from "../App";
+
 
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -107,14 +109,23 @@ export default function Cart() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    const placeholder = 1;
+    const { products } = useContext(UserContext);
+
+    console.log(products);
+
+    if (products !== 0) {
+        let product = products.map(products => ({
+            
+        }))
+    }
+
 
     return (
         <div>
             {isMobile ? (
 
                 <>
-                    <Badge badgeContent={placeholder} color="primary" onClick={handleClickOpen}>
+                    <Badge badgeContent={products.length} color="primary" onClick={handleClickOpen}>
                         <ShoppingCartIcon color="action" style={{ color: "white" }}
                         />
                     </Badge>
@@ -127,7 +138,7 @@ export default function Cart() {
                             Modal title
                         </BootstrapDialogTitle>
                         <DialogContent dividers>
-                            <MultiActionAreaCard />
+                            <ProductCartCard />
 
                         </DialogContent>
                         <DialogActions>
@@ -140,7 +151,7 @@ export default function Cart() {
             ) : (
                 <>
 
-                    <Badge badgeContent={placeholder} color="primary" onClick={handleClickOpen}>
+                    <Badge badgeContent={products.length} color="primary" onClick={handleClickOpen}>
                         <ShoppingCartIcon color="action" style={{ color: "white" }}
                         />
                     </Badge>
@@ -153,7 +164,8 @@ export default function Cart() {
                             Modal title
                         </BootstrapDialogTitle>
                         <DialogContent dividers>
-                            <MultiActionAreaCard />
+
+
 
                         </DialogContent>
                         <DialogActions>

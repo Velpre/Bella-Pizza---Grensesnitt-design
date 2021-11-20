@@ -1,4 +1,4 @@
-//Ida henter hvert pastaobjekt i sin parantes under her i function
+import ProductCard from "./ProductCard";
 function PastaList(){
 
     const pastaList = [
@@ -88,7 +88,7 @@ function PastaList(){
     return (
         <>
         {pastaList.map((p) => {
-            return <Card pasta={p}/> 
+            return <ProductCard product={p}/> 
         })}
         </>
         );
