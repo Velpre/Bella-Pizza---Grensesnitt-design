@@ -36,7 +36,7 @@ function App() {
         </Routes>
       </UserContext.Provider>
     </>
-  )
+      );
 }
 
 export default App;
