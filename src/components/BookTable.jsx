@@ -9,13 +9,11 @@ import {
   Select,
   Button,
 } from "@mui/material";
+import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 
 import ModalUnstyled from "@mui/base/ModalUnstyled";
 import Date from "./Date";
 import Time from "./Time";
-
-/* CSS import */
-import "../style-first-page.css";
 
 /* Style modal */
 const StyledModal = styled(ModalUnstyled)`
@@ -64,8 +62,14 @@ export default function BookTable() {
 
   return (
     <div>
-      <Button type="button" onClick={handleOpen}>
-        Reserver bord
+      <Button
+        type="button"
+        onClick={handleOpen}
+        endIcon={<ArrowIcon />}
+        variant="contained"
+        size="medium"
+      >
+        Bestill bord
       </Button>
 
       <StyledModal

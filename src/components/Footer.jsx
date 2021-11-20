@@ -1,7 +1,6 @@
 import React from "react";
 import { Email, Facebook, Instagram } from "@mui/icons-material";
 import { Grid, Link } from "@mui/material";
-import "../css/ContactUs.css";
 
 export default function Footer() {
   return (
