@@ -1,6 +1,6 @@
 import React from "react";
 import { Email, Facebook, Instagram } from "@mui/icons-material";
-import { Grid } from "@mui/material";
+import { Grid, Link } from "@mui/material";
 import "../css/ContactUs.css";
 
 export default function Footer() {
@@ -14,16 +14,28 @@ export default function Footer() {
       className="footer-container"
       justifyContent="center"
       alignItems="flex-end"
-      spacing={15}
+      spacing={10}
     >
       <Grid item>
-        <Email fontSize="large"></Email>
+        <Link className="icon-footer" href="mailto:post@bellapizza.com">
+          <Email fontSize="large"></Email>
+        </Link>
       </Grid>
       <Grid item>
-        <Facebook fontSize="large"></Facebook>
+        <Link
+          className="icon-footer"
+          href="https://www.facebook.com/BellaBambinaRistorante/"
+        >
+          <Facebook fontSize="large"></Facebook>
+        </Link>
       </Grid>
       <Grid item>
-        <Instagram fontSize="large"></Instagram>
+        <Link
+          className="icon-footer"
+          href="https://www.instagram.com/bellabambina_oslo/"
+        >
+          <Instagram fontSize="large"></Instagram>
+        </Link>
       </Grid>
     </Grid>
   );

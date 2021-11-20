@@ -64,9 +64,9 @@ export default function BookTable() {
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        Bestill bord
-      </button>
+      <Button type="button" onClick={handleOpen}>
+        Reserver bord
+      </Button>
 
       <StyledModal
         open={open}

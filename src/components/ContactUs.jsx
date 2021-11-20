@@ -68,18 +68,6 @@ export default function ContactUs(props) {
         </Grid>
 
         <Footer></Footer>
-
-        {/*         <Grid
-          container
-          item
-          xs={12}
-          justifyContent="center"
-          
-        >
-          <Grid item>
-            <Footer></Footer>
-          </Grid>
-        </Grid> */}
       </Grid>
     </div>
   );
