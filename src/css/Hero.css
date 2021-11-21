@@ -6,13 +6,25 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
-    width: 50%;
+    width: 60%;
+}
+
+#btn-hero{
+    background-color: green;
+    color:white;
 }
 
 
 @media screen and (max-width: 600px) {
     .btn-div{
        width: 100%;
+       flex-direction: column;
+       align-items: center;     
     }
 
+    #btn-hero{
+       width: 200px;
+       margin-top: 30px;
+    }
+ 
   } 

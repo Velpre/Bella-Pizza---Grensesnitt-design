@@ -13,7 +13,7 @@ import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 export default function AboutUs() {
   return (
     <Grid className="about-us-container" container spacing={5}>
-      <Grid item xs={9} md={4}>
+      <Grid item xs={10} md={5}>
         <h1>ITALIENSK I ÅNDEN</h1>
         <Typography className="about-us-txt">
           Vår kjærlighetsaffære med italiensk mat er langsiktig. I 1965 visste
@@ -32,7 +32,7 @@ export default function AboutUs() {
         </Button>
       </Grid>
 
-      <Grid item xs={12} md={6} className="about-us-image">
+      <Grid item xs={10} md={5} className="about-us-image">
         <img id="restaurant-img" src={RestaurantPhoto} />
       </Grid>
     </Grid>

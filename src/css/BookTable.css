@@ -1,0 +1,13 @@
+#bookTable-btn{
+    background-color: green;
+    margin-top: 5%;
+}
+
+
+@media screen and (max-width: 600px) {
+    
+    #bookTable-btn{
+        background-color: green;
+        margin-bottom: 15%;
+    }
+  } 

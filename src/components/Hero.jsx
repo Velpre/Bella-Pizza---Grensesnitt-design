@@ -1,17 +1,9 @@
 import React from "react";
-import {
-  Typography,
-  Container,
-  Button,
-  ButtonGroup,
-  Box,
-  useMediaQuery,
-  Grid,
-  FormHelperText,
-} from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import headerImage from "../images/hero-image.jpeg";
 import "../css/Hero.css";
+import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
@@ -26,19 +18,27 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Hero() {
   const classes = useStyles();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <div className={classes.root}>
       <div className="btn-div">
         <div>
-          <Button variant="contained" color="primary" size="large">
+          <Button
+            id="btn-hero"
+            variant="contained"
+            endIcon={<ArrowIcon />}
+            size="large"
+          >
             TAKEAWAY
           </Button>
         </div>
         <div>
-          <Button variant="contained" size="large" color="primary" href="/meny">
+          <Button
+            id="btn-hero"
+            variant="contained"
+            endIcon={<ArrowIcon />}
+            size="large"
+          >
             BESTILL BORD
           </Button>
         </div>

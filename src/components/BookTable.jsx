@@ -14,6 +14,7 @@ import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 import ModalUnstyled from "@mui/base/ModalUnstyled";
 import Date from "./Date";
 import Time from "./Time";
+import "../css/BookTable.css";
 
 /* Style modal */
 const StyledModal = styled(ModalUnstyled)`
@@ -64,6 +65,7 @@ export default function BookTable() {
   return (
     <div>
       <Button
+        id="bookTable-btn"
         type="button"
         onClick={handleOpen}
         endIcon={<ArrowIcon />}

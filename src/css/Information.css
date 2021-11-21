@@ -1,42 +1,40 @@
 .information-container{
-    height: 100vh;
-    align-items: center;
-    padding: 5%;
-    overflow: hidden;
+    height: 80vh;
+    text-align: center;
 }
 
 .food-container{
-    background-color: white;
-    align-items: baseline;
-    background-size: contain;
+ 
+    align-items: center;
+    justify-content: center;
 }
 
-.info-section{
-    align-self: center;
-    text-align: center;
-    padding: 2%;
-}
 
 #food-image{
     max-width: 100%;
     border-radius: 20px;
 }
 
-#btn-show-pizza {
+#information-btn {
     background-color: green;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
-#btn-show-pasta {
-    background-color: green;
-    margin-top: 10%;
-}
+
 
 
 @media screen and (max-width: 900px) {
     .information-container{
         height: 100%;
-  
+    }
+
+     #information-btn {
+        margin-bottom: 10%;
+    }
+
+
+    .information-text{
+        padding-top: 3%;
     }
 
   } 
