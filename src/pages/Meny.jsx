@@ -8,11 +8,15 @@ import { useContext } from "react";
 import PizzaList from "../components/PizzaList";
 import DisplayMenu from "../components/DisplayMenu"
 import TemporaryDrawer from "../components/DrawerMobile"
+import Footer from '../components/Footer';
 
 
 
 function Meny() {
     const { value, setValue } = useContext(UserContext);
+    
+    
+
 
     return (
         <>

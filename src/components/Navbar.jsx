@@ -1,5 +1,5 @@
 // IMPORTING APIS
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -21,8 +21,9 @@ import TemporaryDrawer from "./DrawerMobile";
 
 import Cart from "./Cart";
 
+
+
 // IMPORTING ICONS
-import MenuIcon from "@mui/icons-material/Menu";
 
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
@@ -41,10 +42,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Navbar = (props) => {
-
+  const { value, setValue } = useContext(UserContext);
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+
+
 
 
 
@@ -53,7 +57,7 @@ const Navbar = (props) => {
       <AppBar
         elevation={0}
         style={{
-          backgroundColor: "transparent",
+          backgroundColor: "#242424",
         }}
       >
         <Toolbar style={{ boxShadow: "none" }}>
@@ -62,21 +66,23 @@ const Navbar = (props) => {
             color="textSecondary"
             className={classes.title}
             style={{
-              color: "white",
+              color: "#FFFFFF",
             }}
           >
-            Pizza
+            <Link to="/">
+              <img src={"https://i.imgur.com/lxPZjiO.png"} alt={"Logo"} style={{ height: "1em", width: "auto", marginTop: "0.2em", marginLeft: "1.8em" }} />
+            </Link>
           </Typography>
           {isMobile ? (
             <>
-              <Button style={{ color: "white" }}>
+              <Button style={{ color: "#000000" }}>
                 <div />
                 <Cart />
               </Button>
               <IconButton
                 edge="start"
                 aria-label="menu"
-                style={{ color: "white" }}
+                style={{ color: "#FFFFFF" }}
               >
                 <div />
 
@@ -88,7 +94,7 @@ const Navbar = (props) => {
               <Button
                 component={Link}
                 to="/"
-                style={{ color: "white" }}
+                style={{ color: "#FFFFFF" }}
               >
                 <div />
                 Hjem
@@ -96,7 +102,7 @@ const Navbar = (props) => {
               <Button
                 component={Link}
                 to="/bestill-bord"
-                style={{ color: "white" }}
+                style={{ color: "#FFFFFF" }}
               >
                 <div />
                 Bestill bord
@@ -104,7 +110,7 @@ const Navbar = (props) => {
               <Button
                 component={Link}
                 to="/meny"
-                style={{ color: "white" }}
+                style={{ color: "#FFFFFF" }}
               >
                 <div />
                 Meny
@@ -123,14 +129,14 @@ const Navbar = (props) => {
                 <NavHashLink
                   to="/#kontakt-oss"
                   component={Link}
-                  style={{ color: "white", textDecoration: "none" }}
+                  style={{ textDecoration: "none", color: "#FFFFFF" }}
                 >
                   Kontakt oss
                   <div />
                 </NavHashLink>
               </Button>
 
-              <Button style={{ color: "white" }}>
+              <Button>
                 <div />
                 <Cart />
               </Button>
