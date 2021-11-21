@@ -1,0 +1,36 @@
+.information-container{
+    height: 110vh;
+    background-color: lightgrey;
+    align-items: center;
+    padding: 5%;
+    overflow: hidden;
+}
+
+.food-container{
+    background-color: white;
+    align-items: baseline;
+    background-size: contain;
+    padding: 1%;
+    margin: 1%;
+}
+
+.info-section{
+    align-self: center;
+    text-align: center;
+    padding: 2%;
+}
+
+#food-image{
+    resize: both;
+    max-width: 100%;
+}
+
+#btn-show-pizza {
+    background-color: darkred;
+    margin: 2%;
+}
+
+#btn-show-pasta {
+    background-color: green;
+    margin: 2%;
+}
