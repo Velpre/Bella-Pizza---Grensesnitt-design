@@ -17,8 +17,11 @@ import { Link } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 import { useContext } from "react";
 import { UserContext } from "../App";
+import Home from "../pages/Home";
 
 import Cart from "./Cart";
+
+
 
 // IMPORTING ICONS
 import MenuIcon from "@mui/icons-material/Menu";
@@ -73,7 +76,9 @@ const Navbar = (props) => {
               color: "#FFFFFF",
             }}
           >
-            Pizza
+            <Link to="/">
+              <img src={"https://i.imgur.com/lxPZjiO.png"} style={{height:"1em", width: "auto", marginTop: "0.2em", marginLeft: "1.8em"}}/>
+            </Link>
           </Typography>
           {isMobile ? (
             <>
