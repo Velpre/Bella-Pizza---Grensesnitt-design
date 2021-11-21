@@ -4,6 +4,7 @@ import { Grid, Typography, Button } from "@mui/material";
 import PizzaImage from "../images/pizzaoptions.jpg";
 import PastaImage from "../images/pastaoptions.jpg";
 import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
+import { Link } from "react-router-dom";
 
 export default function Information() {
   return (
@@ -22,6 +23,8 @@ export default function Information() {
             variant="contained"
             endIcon={<ArrowIcon />}
             size="large"
+            component={Link}
+            to="/meny"
           >
             Pizza
           </Button>
@@ -43,6 +46,8 @@ export default function Information() {
             variant="contained"
             endIcon={<ArrowIcon />}
             size="large"
+            component={Link}
+            to="/meny"
           >
             Pasta
           </Button>
