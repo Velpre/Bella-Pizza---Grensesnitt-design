@@ -6,6 +6,7 @@ import { UserContext } from '../App'
 import { useContext } from "react";
 
 import PizzaList from "../components/PizzaList";
+import DisplayMenu from "../components/DisplayMenu"
 
 
 
@@ -14,10 +15,10 @@ function Meny() {
 
     return (
         <>
-            <div style={{ backgroundColor: "#6b5b95" }}>
+            <div style={{ backgroundColor: "#c0c0c01a" }}>
                 <Navbar />
                 <Hero />
-                <PizzaList />
+                <DisplayMenu />
             </div>
         </>
     );

@@ -1,5 +1,7 @@
 import ProductCard from "./ProductCard";
-import Grid from '@mui/material/Grid'
+import Grid from '@mui/material/Grid';
+import { Typography } from '@mui/material';
+
 
 
 function PizzaList() {
@@ -10,16 +12,16 @@ function PizzaList() {
             name: "Margarita",
             productDescription: "Tomatsaus og mozarella",
             allergies: "Ingen",
-            image: "src\images\products\margarita.jpeg",
+            image: "https://i.imgur.com/sYbaGoA.jpg",
             productType: "Pizza",
             price: 249
         },
         {
-            id: 1,
+            id: 2,
             name: "Burratona",
             productDescription: "Tomatsaus, mozarella, parmaskinke, ruccola og cherrytomater",
             allergies: "G",
-            image: "./burratona.jpeg",
+            image: "https://i.imgur.com/At9Zo6e.jpg",
             productType: "Pizza",
             price: 279
         },
@@ -28,7 +30,7 @@ function PizzaList() {
             name: "Albese",
             productDescription: "Tomatsaus, mozarella, og indrefilet",
             allergies: "Ingen",
-            image: "./albese.jpeg",
+            image: "https://i.imgur.com/dKG5Vfc.jpg",
             productType: "Pizza",
             price: 289
         },
@@ -37,7 +39,7 @@ function PizzaList() {
             name: "Vegano",
             productDescription: "Tomatsaus, mozarella, oliven, diverse grønnsaker",
             allergies: "V",
-            image: "./vegano.jpeg",
+            image: "https://i.imgur.com/2OX70Sa.jpg",
             productType: "Pizza",
             price: 259
         },
@@ -46,7 +48,7 @@ function PizzaList() {
             name: "Milano",
             productDescription: "Tomatsaus, mozarella, løk, ruccola, og pastrami",
             allergies: "Ingen",
-            image: "./milano.jpeg",
+            image: "https://i.imgur.com/oWhdfIC.jpg",
             productType: "Pizza",
             price: 279
         },
@@ -55,7 +57,7 @@ function PizzaList() {
             name: "Firenze",
             productDescription: "Tomatsaus, mozarella, oliven, parmaskinke",
             allergies: "Ingen",
-            image: "./firenze.jpeg",
+            image: "https://i.imgur.com/w51kl3O.jpg",
             productType: "Pizza",
             price: 279
         },
@@ -64,7 +66,7 @@ function PizzaList() {
             name: "Napoli",
             productDescription: "Tomatsaus, mozarella, bacon, basilikum",
             allergies: "Ingen",
-            image: "./napoli.jpeg",
+            image: "https://i.imgur.com/A2MqM4P.jpg",
             productType: "Pizza",
             price: 279
         },
@@ -73,7 +75,7 @@ function PizzaList() {
             name: "Torino",
             productDescription: "Tomatsaus, mozarella, parmesan, og basilikum",
             allergies: "Ingen",
-            image: "torino.jpeg",
+            image: "https://i.imgur.com/8FYzTAx.jpg",
             productType: "Pizza",
             price: 249
         },
@@ -82,7 +84,7 @@ function PizzaList() {
             name: "Genova",
             productDescription: "Tomatsaus, mozarella, ruccola og ytrefilet",
             allergies: "Ingen",
-            image: "./genova.jpeg",
+            image: "https://i.imgur.com/HFlEmRl.jpg",
             productType: "Pizza",
             price: 289
         },
@@ -91,26 +93,27 @@ function PizzaList() {
             name: "Venezia",
             productDescription: "Tomatsaus, mozarella, pepperoni og champignon",
             allergies: "Ingen",
-            image: "./venezia.jpeg",
+            image: "https://i.imgur.com/zkoDhWT.jpg",
             productType: "Pizza",
             price: 279
         },
 
+
     ]
 
     return (
-        <>
-            <Grid container spacing={3} align='center' direction='row'>
+        <div style={{ marginBottom: "5em" }}>
+            <Typography variant="h2" align='center' marginBottom="5vh">Pizza</Typography>
+            <Grid container spacing={3} align='center' direction='row' justifyContent='center'>
 
                 {pizzaList.map((p) => {
                     return <Grid item sm={12} md={5} lg={3}>
                         <ProductCard product={p} />
                     </Grid>
                 })}
-                
 
             </Grid>
-        </>
+        </div>
     );
 }
 

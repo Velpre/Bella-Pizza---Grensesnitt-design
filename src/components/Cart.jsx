@@ -118,9 +118,9 @@ export default function Cart() {
     function deleteFromCart(prop) {
         const filteredProducts = products.filter((product) => product.id !== prop.id)
         setProducts(filteredProducts);
-        
+
         //Deletes both if same ID ----- need bug fix
-        
+
     }
 
     let product;
@@ -175,16 +175,17 @@ export default function Cart() {
                         open={open}
                     >
                         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-                            Handlekurv
+                            Modal title
                         </BootstrapDialogTitle>
                         <DialogContent dividers>
 
                             {product}
 
+
                         </DialogContent>
                         <DialogActions>
                             <Button autoFocus onClick={handleClose}>
-                                Til betaling
+                                Save changes
                             </Button>
                         </DialogActions>
                     </BootstrapDialog>
