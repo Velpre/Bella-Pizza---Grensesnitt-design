@@ -5,6 +5,7 @@ import headerImage from "../images/hero-image.jpeg";
 import "../css/Hero.css";
 import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 import BookTable from "./BookTable";
+import { Link } from "react-router-dom";
 
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
@@ -26,15 +27,25 @@ export default function Hero() {
         <div>
           <Button
             id="btn-hero"
+            className="first-btn-hero"
             variant="contained"
             endIcon={<ArrowIcon />}
             size="large"
+            component={Link}
+            to="/meny"
           >
             TAKEAWAY
           </Button>
         </div>
         <div>
-          <BookTable id="btn-hero"></BookTable>
+          <Button
+            id="btn-hero"
+            endIcon={<ArrowIcon />}
+            variant="contained"
+            size="small"
+          >
+            <BookTable></BookTable>
+          </Button>
         </div>
       </div>
     </div>

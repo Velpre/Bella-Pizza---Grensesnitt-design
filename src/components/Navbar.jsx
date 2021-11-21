@@ -17,7 +17,7 @@ import { UserContext } from "../App";
 import TemporaryDrawer from "./DrawerMobile";
 
 import Cart from "./Cart";
-
+import BookTable from "./BookTable";
 // IMPORTING ICONS
 
 // LOCAL-STYLING
@@ -94,13 +94,9 @@ const Navbar = (props) => {
                 <div />
                 Hjem
               </Button>
-              <Button
-                component={Link}
-                to="/bestill-bord"
-                style={{ color: "#FFFFFF" }}
-              >
+              <Button style={{ color: "#FFFFFF" }}>
                 <div />
-                Bestill bord
+                <BookTable></BookTable>
               </Button>
               <Button component={Link} to="/meny" style={{ color: "#FFFFFF" }}>
                 <div />

@@ -64,14 +64,7 @@ export default function BookTable() {
 
   return (
     <div>
-      <Button
-        id="bookTable-btn"
-        type="button"
-        onClick={handleOpen}
-        endIcon={<ArrowIcon />}
-        variant="contained"
-        size="large"
-      >
+      <Button id="bookTable-btn" type="button" onClick={handleOpen}>
         Bestill bord
       </Button>
 

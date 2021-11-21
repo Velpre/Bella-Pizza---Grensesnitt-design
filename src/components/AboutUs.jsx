@@ -1,21 +1,16 @@
 import React from "react";
 import "../css/AboutUs.css";
-import {
-  Button,
-  Grid,
-  Container,
-  CssBaseline,
-  Typography,
-} from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import RestaurantPhoto from "../images/restaurant.jpg";
 import BookTable from "./BookTable";
+import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 
 export default function AboutUs() {
   return (
     <Grid className="about-us-container" container spacing={5} id="om-oss">
       <Grid item xs={9} md={4}>
         <h1>ITALIENSK I ÅNDEN</h1>
-        <Typography className="about-us-txt" >
+        <Typography className="about-us-txt">
           Vår kjærlighetsaffære med italiensk mat er langsiktig. I 1965 visste
           en klok mann kalt Marco Rossi at pizza i Oslo kunne være bedre, og
           åpnet Pizzeria Bella i hjertet av byen. Du finner mange
@@ -23,7 +18,14 @@ export default function AboutUs() {
           signaturretter.
         </Typography>
 
-        <BookTable id="btn-reservation"></BookTable>
+        <Button
+          id="btn-reservation"
+          endIcon={<ArrowIcon />}
+          variant="contained"
+          size="large"
+        >
+          <BookTable></BookTable>
+        </Button>
       </Grid>
 
       <Grid item xs={10} md={5} className="about-us-image">

@@ -1,13 +1,14 @@
 import React from "react";
 import Footer from "./Footer";
 import BookTable from "./BookTable";
-import { Grid } from "@mui/material";
+import { Grid, Button } from "@mui/material";
 import "../css/ContactUs.css";
 /* Import icones */
 import HomeIcon from "@mui/icons-material/Home";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
+import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 
 export default function ContactUs(props) {
   return (
@@ -46,7 +47,14 @@ export default function ContactUs(props) {
           <a href="mailto:post@bellapizza.com">post@bellapizza.no</a>
         </Grid>
         <Grid item order={{ xs: 1 }}>
-          <BookTable></BookTable>
+          <Button
+            id="contact-bookTable-btn"
+            endIcon={<ArrowIcon />}
+            variant="contained"
+            size="large"
+          >
+            <BookTable></BookTable>
+          </Button>
         </Grid>
       </Grid>
 
