@@ -6,15 +6,17 @@ function PastaList(){
             id: 1, 
             name: "Carbonara", 
             productDescription: "Pasta, carbonarasaus, bacon, og parmesan",
-            image: "./carbonara.jpeg", 
+            allergies: "Ingen",
+            image: "https://i.imgur.com/TD7TfOE.jpg", 
             productType: "Pasta",
             price: 189
         }, 
         {
-            id: 1, 
+            id: 2, 
             name: "Scampi", 
             productDescription: "Pasta, scampi, ostesaus med hvitvin",
-            image: "./scampi.jpeg", 
+            allergies: "S",
+            image: "https://i.imgur.com/Grh4x4s.jpg", 
             productType: "Pasta",
             price: 189
         }, 
@@ -22,7 +24,8 @@ function PastaList(){
             id: 3, 
             name: "Bolognese", 
             productDescription: "Pasta, tomatsaus, kjøtt",
-            image: "./bolognese.jpeg", 
+            allergies: "Ingen",
+            image: "https://i.imgur.com/ZQKKVWu.jpg", 
             productType: "Pasta",
             price: 179
         }, 
@@ -30,7 +33,8 @@ function PastaList(){
             id: 4, 
             name: "Pomodoro", 
             productDescription: "Pasta, basilikum og soltørket tomat",
-            image: "./pomodoro.jpeg", 
+            allergies: "V",
+            image: "https://i.imgur.com/YvVV3zE.jpg", 
             productType: "Pasta",
             price: 179
         }, 
@@ -38,7 +42,8 @@ function PastaList(){
             id: 5, 
             name: "Salsiccia", 
             productDescription: "Pasta, pølse, hvit saus",
-            image: "./Salsiccia.jpeg", 
+            allergies: "Ingen",
+            image: "https://i.imgur.com/GiN1P93.jpg", 
             productType: "Pasta",
             price: 179
         }, 
@@ -46,7 +51,8 @@ function PastaList(){
             id: 6, 
             name: "Verdura", 
             productDescription: "Pasta, dagens grønnsaker",
-            image: "./verdura.jpeg", 
+            allergies: "V",
+            image: "https://i.imgur.com/IoSBW0w.jpg", 
             productType: "Pasta",
             price: 179
         }, 
@@ -54,7 +60,8 @@ function PastaList(){
             id: 7, 
             name: "Al Forno", 
             productDescription: "Tomat, fløte og hvitvin",
-            image: "./alforno.jpeg", 
+            allergies: "Ingen",
+            image: "https://i.imgur.com/FdmGTx5.jpg", 
             productType: "Pasta",
             price: 179
         }, 
@@ -62,7 +69,8 @@ function PastaList(){
             id: 8, 
             name: "Piselli", 
             productDescription: "Pasta, tomater, erter og basilikum",
-            image: "./piselli.jpeg", 
+            allergies: "Ingen",
+            image: "https://i.imgur.com/8fP0xon.jpg", 
             productType: "Pasta",
             price: 179
         }, 
@@ -70,7 +78,8 @@ function PastaList(){
             id: 9, 
             name: "Pollo", 
             productDescription: "Pasta, tomat, kylling, og basilikum",
-            image: "./pollo.jpeg", 
+            allergies: "Ingen",
+            image: "https://i.imgur.com/EBoF1iD.jpg", 
             productType: "Pasta",
             price: 189
         }, 
@@ -78,7 +87,8 @@ function PastaList(){
             id: 10, 
             name: "Ceci", 
             productDescription: "Pasta, tomat, og kikerter",
-            image: "./ceci.jpeg", 
+            allergies: "Ingen",
+            image: "https://i.imgur.com/Ps9KPW6.jpg", 
             productType: "pasta",
             price: 179
         }, 
