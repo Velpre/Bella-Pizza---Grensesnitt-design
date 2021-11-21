@@ -113,12 +113,20 @@ export default function Cart() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    const { products } = useContext(UserContext);
+    const { products, setProducts } = useContext(UserContext);
+
+    function deleteFromCart(prop) {
+        const filteredProducts = products.filter((product) => product.id !== prop.id)
+        setProducts(filteredProducts);
+        
+        //Deletes both if same ID ----- need bug fix
+        
+    }
 
     let product;
     if (products !== 0) {
         product = products.map((product, index) => {
-            return <ProductCartCard product={product} />
+            return <ProductCartCard product={product} deleteProduct={deleteFromCart} />
         })
     } else {
         product = "empty"
@@ -144,7 +152,8 @@ export default function Cart() {
                         </BootstrapDialogTitle>
                         <DialogContent dividers>
 
-                            <ProductCartCard />
+                            {product}
+
 
                         </DialogContent>
                         <DialogActions>
@@ -156,31 +165,33 @@ export default function Cart() {
                 </>
             ) : (
                 <>
-
                     <Badge badgeContent={products.length} color="primary" onClick={handleClickOpen}>
                         <ShoppingCartIcon color="action" style={{ color: "white" }}
                         />
                     </Badge>
-                    <BootstrapDialog className={classes.desktopScroll}
+                    <BootstrapDialog style={{ overflow: 'auto' }} className={classes.desktopScroll}
                         onClose={handleClose}
                         aria-labelledby="customized-dialog-title"
                         open={open}
                     >
                         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-                            Modal title
+                            Handlekurv
                         </BootstrapDialogTitle>
                         <DialogContent dividers>
+
                             {product}
+
                         </DialogContent>
                         <DialogActions>
                             <Button autoFocus onClick={handleClose}>
-                                Save changes
+                                Til betaling
                             </Button>
                         </DialogActions>
                     </BootstrapDialog>
                 </>
 
-            )}
-        </div>)
+            )
+            }
+        </div >)
 }
 
