@@ -3,6 +3,11 @@
     margin-top: 5%;
 }
 
+#reserver-btn{
+    background-color: green;
+    margin-top: 15%;
+}
+
 
 @media screen and (max-width: 600px) {
     

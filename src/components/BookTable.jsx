@@ -122,7 +122,15 @@ export default function BookTable() {
               defaultValue=""
               margin="dense"
             />
-            <Button>Reserver</Button>
+            <Button
+              id="reserver-btn"
+              endIcon={<ArrowIcon />}
+              variant="contained"
+              size="large"
+              type="button"
+            >
+              Reserver
+            </Button>
           </FormControl>
         </Box>
       </StyledModal>
