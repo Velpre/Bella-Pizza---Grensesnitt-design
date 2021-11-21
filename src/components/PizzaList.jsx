@@ -103,7 +103,7 @@ function PizzaList() {
 
     return (
         <div style={{ marginBottom: "5em" }}>
-            <Typography variant="h2" align='center' marginBottom="5vh">Pizza</Typography>
+            <Typography variant="h2" align='center' sx={{p: 5}}>Pizza</Typography>
             <Grid container spacing={3} align='center' direction='row' justifyContent='center'>
 
                 {pizzaList.map((p) => {

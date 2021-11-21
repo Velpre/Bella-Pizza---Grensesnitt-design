@@ -6,7 +6,7 @@ import "../css/ContactUs.css";
 
 export default function ContactUs(props) {
   return (
-    <Grid container className="contact-section">
+    <Grid container className="contact-section" id="kontakt-oss">
       <Grid container item xs={12} justifyContent="center">
         <Grid item>
           <h1>KONTAKT</h1>

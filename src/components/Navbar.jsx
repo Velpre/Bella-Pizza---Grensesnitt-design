@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 import { useContext } from "react";
 import { UserContext } from "../App";
+import TemporaryDrawer from "./DrawerMobile";
 
 import Cart from "./Cart";
 
@@ -40,21 +41,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Navbar = (props) => {
-  const { value, setValue } = useContext(UserContext);
 
   const classes = useStyles();
-  const [anchor, setAnchor] = React.useState(null);
-  const open = Boolean(anchor);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const handleMenu = (event) => {
-    setAnchor(event.currentTarget);
-  };
 
-  // set product     onClick={() => setValue(value + 1)}
+
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="top">
       <AppBar
         elevation={0}
         style={{
@@ -64,7 +59,6 @@ const Navbar = (props) => {
         <Toolbar style={{ boxShadow: "none" }}>
           <Typography
             variant="h5"
-            component="p"
             color="textSecondary"
             className={classes.title}
             style={{
@@ -80,45 +74,18 @@ const Navbar = (props) => {
                 <Cart />
               </Button>
               <IconButton
-                className={classes.menuButton}
                 edge="start"
                 aria-label="menu"
-                onClick={handleMenu}
                 style={{ color: "white" }}
               >
-                <MenuIcon />
+                <div />
+
+                <TemporaryDrawer />
               </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchor}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={open}
-              >
-                <MenuItem component={Link} to="/">
-                  <ListItemIcon></ListItemIcon>
-                  <Typography variant="h6"> Hjem</Typography>
-                </MenuItem>
-                <MenuItem component={Link} to="/bestill-bord">
-                  <ListItemIcon></ListItemIcon>
-                  <Typography variant="h6"> Bestill bord </Typography>
-                </MenuItem>
-                <MenuItem component={Link} to="/meny">
-                  <ListItemIcon></ListItemIcon>
-                  <Typography variant="h6"> Meny</Typography>
-                </MenuItem>
-              </Menu>
             </>
           ) : (
             <div style={{ marginRight: "2rem" }}>
               <Button
-                variant="text"
                 component={Link}
                 to="/"
                 style={{ color: "white" }}
@@ -127,7 +94,6 @@ const Navbar = (props) => {
                 Hjem
               </Button>
               <Button
-                variant="text"
                 component={Link}
                 to="/bestill-bord"
                 style={{ color: "white" }}
@@ -136,7 +102,6 @@ const Navbar = (props) => {
                 Bestill bord
               </Button>
               <Button
-                variant="text"
                 component={Link}
                 to="/meny"
                 style={{ color: "white" }}
@@ -144,19 +109,19 @@ const Navbar = (props) => {
                 <div />
                 Meny
               </Button>
-              <Button
-                variant="text"
-                component={Link}
-                to="/om-oss"
-                style={{ color: "white" }}
-              >
-                <div />
-                Om oss
+              <Button>
+                <NavHashLink
+                  to="/#om-oss"
+                  component={Link}
+                  style={{ color: "white", textDecoration: "none" }}
+                >
+                  Om oss
+                  <div />
+                </NavHashLink>
               </Button>
               <Button>
                 <NavHashLink
                   to="/#kontakt-oss"
-                  variant="text"
                   component={Link}
                   style={{ color: "white", textDecoration: "none" }}
                 >

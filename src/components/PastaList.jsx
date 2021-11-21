@@ -101,7 +101,7 @@ function PastaList() {
     return (
         <>
             <div style={{ marginBottom: "5em" }}>
-                <Typography variant="h2" align='center' marginBottom="5vh">Pasta</Typography>
+                <Typography variant="h2" align='center' sx={{ p: 5 }}>Pasta</Typography>
                 <Grid container spacing={3} align='center' direction='row' justifyContent='center'>
 
                     {pastaList.map((p) => {
