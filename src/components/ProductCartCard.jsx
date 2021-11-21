@@ -39,7 +39,7 @@ export default function ProductCartCard(props) {
           </Grid>
           <Grid item xs={1}>
             <Typography id="product-amount" style={{ textAlign: "center", backgroundColor: "lightgrey", borderRadius: "4px" }}>
-              1
+              {props.product.quantity}
             </Typography>
           </Grid>
           <Grid item xs={1}>
