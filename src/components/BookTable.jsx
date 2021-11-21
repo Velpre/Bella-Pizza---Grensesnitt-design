@@ -26,6 +26,7 @@ const StyledModal = styled(ModalUnstyled)`
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 /* Style behind modal */
 const Backdrop = styled("div")`
@@ -67,7 +68,7 @@ export default function BookTable() {
         onClick={handleOpen}
         endIcon={<ArrowIcon />}
         variant="contained"
-        size="medium"
+        size="large"
       >
         Bestill bord
       </Button>

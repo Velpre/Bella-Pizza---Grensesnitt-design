@@ -26,6 +26,7 @@ export default function AboutUs() {
           id="btn-reservation"
           variant="contained"
           endIcon={<ArrowIcon />}
+          size="large"
         >
           Bestill bord
         </Button>
