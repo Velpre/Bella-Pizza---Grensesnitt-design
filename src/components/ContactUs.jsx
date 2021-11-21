@@ -65,8 +65,6 @@ export default function ContactUs(props) {
           ></iframe>
         </Grid>
       </Grid>
-
-      <Footer></Footer>
     </Grid>
   );
 }
