@@ -1,91 +1,61 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
+import { IconButton, Grid, Typography } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { Divider } from '@mui/material';
+import React, { useContext } from 'react';
+import UserContext from "../App"
 
 
-export default function MultiActionAreaCard() {
+export default function ProductCartCard(props) {
+  function triggerDelete(id) {
+    props.deleteProduct(id)
+  }
+
 
   return (
-    <Card sx={{ maxWidth: 570, mt: 0.2 }}>
-      <CardActionArea sx={{ m: 1.2 }}>
-
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard Pizza
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-          <CardActions>
-            <Button size="small" color="primary">
-              Share
-            </Button>
-          </CardActions>
-          1
-        </CardContent>
-      </CardActionArea>
-
-      <Divider variant="inset" component="hr" />
-
-      <List component="nav" aria-label="mailbox folders">
-        <CardActionArea sx={{ p: 1.2 }}>
-          
-
-          <CardContent sx={{ m: 1.2 }}>
-            <Typography gutterBottom variant="h5" component="div">
-              Italian Lizard Pizza
+    <>
+      <div>
+        <Grid container sx={{ minWidth: 400, m: 1 }} style={{ alignItems: "center" }}>
+          <Grid item xs={2}>
+            <IconButton aria-label="delete" onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              triggerDelete(props.product);
+            }}>
+              <DeleteIcon />
+            </IconButton>
+          </Grid>
+          <Grid item xs={5}>
+            <Typography id="product-name">
+              {props.product.name} -
+              {props.product.productDescription}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over 6,000
-              species, ranging across all continents except Antarctica
+          </Grid>
+          <Grid item xs={1}>
+            <IconButton aria-label="remove">
+              <RemoveIcon />
+            </IconButton>
+          </Grid>
+          <Grid item xs={1}>
+            <Typography id="product-amount" style={{ textAlign: "center", backgroundColor: "lightgrey", borderRadius: "4px" }}>
+              1
             </Typography>
-          </CardContent>
-        </CardActionArea>
-      </List>
+          </Grid>
+          <Grid item xs={1}>
+            <IconButton aria-label="add">
+              <AddIcon />
+            </IconButton>
+          </Grid>
+          <Grid item xs={2}>
+            <Typography id="total-product-price" style={{ textAlign: "center" }}>
+              {props.product.price + "kr"}
+            </Typography>
+          </Grid>
+        </Grid>
+      </div>
+      <Divider component="li" />
 
-      <Divider variant="inset" component="hr" />
-
-
-      <CardActionArea >
-
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            MAMA Lizard Pizza
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-
-
-      <Divider variant="inset" component="hr" />
-
-      <List component="nav" aria-label="mailbox folders">
-        <Button size="small" style={{
-          backgroundColor: "#21b64e",
-        }}>
-          Share
-        </Button>
-
-        <CardContent >
-
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </List>
-    </Card >
+    </>
   );
 }

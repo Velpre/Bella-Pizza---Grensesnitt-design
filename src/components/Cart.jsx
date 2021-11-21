@@ -1,6 +1,10 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -11,8 +15,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import MultiActionAreaCard from "./ProductCartCard"
+import ProductCartCard from "./ProductCartCard"
 import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { UserContext } from "../App";
+
 
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -107,14 +113,32 @@ export default function Cart() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    const placeholder = 1;
+    const { products, setProducts } = useContext(UserContext);
+
+    function deleteFromCart(prop) {
+        const filteredProducts = products.filter((product) => product.id !== prop.id)
+        setProducts(filteredProducts);
+
+        //Deletes both if same ID ----- need bug fix
+
+    }
+
+    let product;
+    if (products !== 0) {
+        product = products.map((product, index) => {
+            return <ProductCartCard product={product} deleteProduct={deleteFromCart} />
+        })
+    } else {
+        product = "empty"
+    }
+
 
     return (
         <div>
             {isMobile ? (
 
                 <>
-                    <Badge badgeContent={placeholder} color="primary" onClick={handleClickOpen}>
+                    <Badge badgeContent={products.length} color="primary" onClick={handleClickOpen}>
                         <ShoppingCartIcon color="action" style={{ color: "white" }}
                         />
                     </Badge>
@@ -127,7 +151,9 @@ export default function Cart() {
                             Modal title
                         </BootstrapDialogTitle>
                         <DialogContent dividers>
-                            <MultiActionAreaCard />
+
+                            {product}
+
 
                         </DialogContent>
                         <DialogActions>
@@ -139,12 +165,11 @@ export default function Cart() {
                 </>
             ) : (
                 <>
-
-                    <Badge badgeContent={placeholder} color="primary" onClick={handleClickOpen}>
+                    <Badge badgeContent={products.length} color="primary" onClick={handleClickOpen}>
                         <ShoppingCartIcon color="action" style={{ color: "white" }}
                         />
                     </Badge>
-                    <BootstrapDialog className={classes.desktopScroll}
+                    <BootstrapDialog style={{ overflow: 'auto' }} className={classes.desktopScroll}
                         onClose={handleClose}
                         aria-labelledby="customized-dialog-title"
                         open={open}
@@ -153,7 +178,9 @@ export default function Cart() {
                             Modal title
                         </BootstrapDialogTitle>
                         <DialogContent dividers>
-                            <MultiActionAreaCard />
+
+                            {product}
+
 
                         </DialogContent>
                         <DialogActions>
@@ -164,7 +191,8 @@ export default function Cart() {
                     </BootstrapDialog>
                 </>
 
-            )}
-        </div>)
+            )
+            }
+        </div >)
 }
 

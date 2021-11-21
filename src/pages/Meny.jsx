@@ -5,6 +5,9 @@ import Hero from "../components/Hero";
 import { UserContext } from '../App'
 import { useContext } from "react";
 
+import PizzaList from "../components/PizzaList";
+import DisplayMenu from "../components/DisplayMenu"
+
 
 
 function Meny() {
@@ -12,14 +15,11 @@ function Meny() {
 
     return (
         <>
-            <Navbar />
-            <Hero />
-
-            <h1 style={{
-                textAlign: "center"
-            }}>Deres kode går hit</h1>
-            
-
+            <div style={{ backgroundColor: "#c0c0c01a" }}>
+                <Navbar />
+                <Hero />
+                <DisplayMenu />
+            </div>
         </>
     );
 }

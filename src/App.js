@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Home from "./pages/Home";
 import Meny from "./pages/Meny";
 
@@ -8,21 +8,18 @@ import {
 } from "react-router-dom";
 import { createContext } from "react";
 
-export const UserContext = createContext();
+export const UserContext = createContext(null);
 
 function App() {
-  const [value, setValue] = useState(UserContext);
 
-  const defaultValue = {
-    products: [{ id: "1", title: "Italian Pizza", price: 229 }],
-    cart: [],
+  const [products, setProducts] = useState(0)
 
-    addProductToCart: (product) => {}, // for later
-  };
+  const providerValue = useMemo(() => ({ products, setProducts }), [products, setProducts])
+
 
   return (
     <>
-      <UserContext.Provider value={defaultValue}>
+      <UserContext.Provider value={providerValue}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/meny" element={<Meny />} />
