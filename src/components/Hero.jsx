@@ -22,17 +22,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     height: "100vh",
   },
-
-  btnDiv: {
-    position: "absolute",
-    bottom: "10%",
-    left: "50%",
-    transform: "translateX(-50%)",
-    display: "flex",
-    alignItems: "flex-end",
-    justifyContent: "space-around",
-    width: "50%",
-  },
 }));
 
 export default function Hero() {
@@ -42,13 +31,13 @@ export default function Hero() {
 
   return (
     <div className={classes.root}>
-      <div className={classes.btnDiv}>
-        <div className="hero-btn">
+      <div className="btn-div">
+        <div>
           <Button variant="contained" color="primary" size="large">
             TAKEAWAY
           </Button>
         </div>
-        <div className="hero-btn">
+        <div>
           <Button variant="contained" size="large" color="primary" href="/meny">
             BESTILL BORD
           </Button>
