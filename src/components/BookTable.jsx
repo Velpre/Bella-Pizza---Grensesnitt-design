@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {
   TextField,
   Box,
@@ -8,6 +9,7 @@ import {
   FormControl,
   Select,
   Button,
+  Grid,
 } from "@mui/material";
 import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 
@@ -15,6 +17,18 @@ import ModalUnstyled from "@mui/base/ModalUnstyled";
 import Date from "./Date";
 import Time from "./Time";
 import "../css/BookTable.css";
+
+/* Style behind modal */
+const Backdrop = styled("div")`
+  z-index: -1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-tap-highlight-color: transparent;
+`;
 
 /* Style modal */
 const StyledModal = styled(ModalUnstyled)`
@@ -29,17 +43,6 @@ const StyledModal = styled(ModalUnstyled)`
   justify-content: center;
   overflow: hidden;
 `;
-/* Style behind modal */
-const Backdrop = styled("div")`
-  z-index: -1;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-tap-highlight-color: transparent;
-`;
 /* Style inside modal */
 const styleModalInside = {
   p: 2,
@@ -47,6 +50,7 @@ const styleModalInside = {
   pb: 3,
   textAlign: "center",
   bgcolor: "white",
+  borderRadius: "20px",
 };
 
 export default function BookTable() {
@@ -56,11 +60,24 @@ export default function BookTable() {
   const handleClose = () => setOpen(false);
 
   /* Number of persons */
-  const [number, setNumber] = React.useState("");
+  const [numberError, setNumberError] = useState(false);
+  const [number, setNumber] = useState("");
 
-  const handleChangeNumberPersons = (event) => {
-    setNumber(event.target.value);
+  /* Name */
+  const [name, setName] = useState("");
+  const [nameError, setNameError] = useState(false);
+
+  /* E-mail */
+  const [mail, setMail] = useState("");
+  const [mailError, setMailError] = useState(false);
+
+  //Submit
+
+  const handleSubmit = (e) => {
+    console.log(e);
   };
+
+  console.log(number);
 
   return (
     <div>
@@ -74,14 +91,16 @@ export default function BookTable() {
         BackdropComponent={Backdrop}
       >
         <Box sx={styleModalInside}>
-          <h2>Reserver bord</h2>
-          <FormControl>
+          <h2>Bestill bord</h2>
+          <FormControl onSubmit={handleSubmit}>
             <InputLabel>Antall personer</InputLabel>
             <Select
               margin="dense"
               value={number}
               label="Antall personer"
-              onChange={handleChangeNumberPersons}
+              onChange={(e) => setNumber(e.target.value)}
+              required
+              fullWidth
             >
               <MenuItem value={1}>1</MenuItem>
               <MenuItem value={2}>2</MenuItem>
@@ -98,15 +117,28 @@ export default function BookTable() {
               required
               label="Navn"
               variant="outlined"
+              error={nameError}
+              onChange={(e) => setName(e.target.value)}
+              fullWidth
             />
             <TextField
               margin="dense"
               required
               label="E-post"
               variant="outlined"
+              error={mailError}
+              onChange={(e) => setMail(e.target.value)}
+              fullWidth
             />
-            <Date></Date>
-            <Time></Time>
+
+            <Grid container justifyContent="space-between">
+              <Grid xs={12} sm={5} item>
+                <Date></Date>
+              </Grid>
+              <Grid xs={12} sm={5} item>
+                <Time></Time>
+              </Grid>
+            </Grid>
 
             <TextField
               label="Komentar"
@@ -114,6 +146,7 @@ export default function BookTable() {
               rows={3}
               defaultValue=""
               margin="dense"
+              fullWidth
             />
             <Button
               id="reserver-btn"
