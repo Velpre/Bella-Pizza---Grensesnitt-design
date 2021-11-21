@@ -1,22 +1,29 @@
 .about-us-container {
     height: 100vh;
     align-items: center;
-}
-
-.about-us-info{
-    text-align: center;
-}
-
-.about-us-image{
+    justify-content: center;
     text-align: center;
 }
 
 #restaurant-img {
-    max-width: 90%;
-    border-radius: 8%;
+    max-width: 80%;
+    border-radius: 20px;  
 }
 
 #btn-reservation {
     background-color: green;
-    margin-top: 2vh;
+    margin-top: 10%;
 }
+
+/* Media query */
+
+@media screen and (max-width: 900px) {
+    .about-us-container {
+        height: 100%;
+    }
+
+    #restaurant-img {
+        margin-bottom: 10%;
+    }
+
+  } 

@@ -1,44 +1,37 @@
-body {
-  margin: 0;
-  padding: 0;
+
+body{
+  margin:0;
+  padding:0;
   box-sizing: border-box;
 }
 
 /* Contact */
 
 .contact-section{
-  background-color:brown;
-  height: 90vh;
-}
-
-.contact-section h1{
-  margin:0;
-  padding-top:5%;
+  height: 100vh;
+  background-color:#2D2424 ;
+  color:white;
   text-align: center;
 }
 
-
-.contact-content{
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  margin:auto
+.contact-section h1{
+  padding-top: 20%;
 }
-
+.map{
+  border:none;
+  border-radius: 10px;
+}
 
 
 /* Footer */
-
-
 .footer-container{
-  background-color:brown;
-  height: 10vh;
+  padding-bottom: 2%;
 }
 
-.footer-icons{
-  display: flex;
-  justify-content: space-around;
-  width: 25%;
-  margin: auto;
-  padding-top: 2%;
-}
+/* Media query */
+
+ @media screen and (max-width: 600px) {
+  .contact-section{
+    height: 100%;
+  }
+} 
