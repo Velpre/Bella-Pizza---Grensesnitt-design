@@ -3,6 +3,11 @@ import Footer from "./Footer";
 import BookTable from "./BookTable";
 import { Grid } from "@mui/material";
 import "../css/ContactUs.css";
+/* Import icones */
+import HomeIcon from "@mui/icons-material/Home";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
+import WatchLaterIcon from "@mui/icons-material/WatchLater";
 
 export default function ContactUs(props) {
   return (
@@ -22,16 +27,22 @@ export default function ContactUs(props) {
         justifyContent="space-evenly"
       >
         <Grid item>
-          <h2>ADRESSE</h2>
+          <h2>
+            <HomeIcon className="icone-contact-us" /> ADRESSE
+          </h2>
           <p>Romaveien 12</p>
           <p>0368 Oslo</p>
         </Grid>
         <Grid item>
-          <h2>TELEFON</h2>
+          <h2>
+            <PhoneIcon className="icone-contact-us" /> TELEFON
+          </h2>
           <p>21 21 21 00</p>
         </Grid>
         <Grid item>
-          <h3>E-MAIL</h3>
+          <h3>
+            <EmailIcon className="icone-contact-us" /> E-MAIL
+          </h3>
           <a href="mailto:post@bellapizza.com">post@bellapizza.no</a>
         </Grid>
         <Grid item order={{ xs: 1 }}>
@@ -48,7 +59,9 @@ export default function ContactUs(props) {
         justifyContent="space-evenly"
       >
         <Grid item>
-          <h2>ÅPNINGSTIDER</h2>
+          <h2>
+            <WatchLaterIcon className="icone-contact-us" /> ÅPNINGSTIDER
+          </h2>
           <p>Mandag-Torsdag</p>
           <p>11:00 - 00:00</p>
           <p>Lørdag-Søndag</p>
@@ -65,6 +78,7 @@ export default function ContactUs(props) {
           ></iframe>
         </Grid>
       </Grid>
+      <Footer></Footer>
     </Grid>
   );
 }

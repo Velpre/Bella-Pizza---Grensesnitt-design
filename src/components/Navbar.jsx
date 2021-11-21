@@ -1,5 +1,5 @@
 // IMPORTING APIS
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   AppBar,
   Toolbar,
@@ -7,9 +7,6 @@ import {
   Typography,
   useMediaQuery,
   Button,
-  Menu,
-  MenuItem,
-  ListItemIcon,
 } from "@material-ui/core";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -20,8 +17,6 @@ import { UserContext } from "../App";
 import TemporaryDrawer from "./DrawerMobile";
 
 import Cart from "./Cart";
-
-
 
 // IMPORTING ICONS
 
@@ -47,11 +42,6 @@ const Navbar = (props) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-
-
-
-
-
   return (
     <div className={classes.root} id="top">
       <AppBar
@@ -70,7 +60,16 @@ const Navbar = (props) => {
             }}
           >
             <Link to="/">
-              <img src={"https://i.imgur.com/lxPZjiO.png"} alt={"Logo"} style={{ height: "1em", width: "auto", marginTop: "0.2em", marginLeft: "1.8em" }} />
+              <img
+                src={"https://i.imgur.com/lxPZjiO.png"}
+                alt={"Logo"}
+                style={{
+                  height: "1em",
+                  width: "auto",
+                  marginTop: "0.2em",
+                  marginLeft: "1.8em",
+                }}
+              />
             </Link>
           </Typography>
           {isMobile ? (
@@ -91,11 +90,7 @@ const Navbar = (props) => {
             </>
           ) : (
             <div style={{ marginRight: "2rem" }}>
-              <Button
-                component={Link}
-                to="/"
-                style={{ color: "#FFFFFF" }}
-              >
+              <Button component={Link} to="/" style={{ color: "#FFFFFF" }}>
                 <div />
                 Hjem
               </Button>
@@ -107,11 +102,7 @@ const Navbar = (props) => {
                 <div />
                 Bestill bord
               </Button>
-              <Button
-                component={Link}
-                to="/meny"
-                style={{ color: "#FFFFFF" }}
-              >
+              <Button component={Link} to="/meny" style={{ color: "#FFFFFF" }}>
                 <div />
                 Meny
               </Button>
