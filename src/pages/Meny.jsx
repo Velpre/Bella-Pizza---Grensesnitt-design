@@ -7,19 +7,19 @@ import { useContext } from "react";
 
 import PizzaList from "../components/PizzaList";
 import DisplayMenu from "../components/DisplayMenu"
+import Footer from '../components/Footer';
 
 
 
 function Meny() {
     const { value, setValue } = useContext(UserContext);
+    
+    
+
 
     return (
         <>
-            <div style={{ backgroundColor: "#c0c0c01a" }}>
-                <Navbar />
-                <Hero />
-                <DisplayMenu />
-            </div>
+            <DisplayMenu />
         </>
     );
 }

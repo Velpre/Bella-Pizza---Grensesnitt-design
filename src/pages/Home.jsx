@@ -9,7 +9,6 @@ import ContactUs from "../components/ContactUs";
 const Home = (props) => {
   return (
     <>
-      <Navbar />
       <Hero />
       <AboutUs />
       <Information />

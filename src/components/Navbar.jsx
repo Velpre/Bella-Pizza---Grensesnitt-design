@@ -1,5 +1,5 @@
 // IMPORTING APIS
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -41,7 +41,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Navbar = (props) => {
   const { value, setValue } = useContext(UserContext);
-
   const classes = useStyles();
   const [anchor, setAnchor] = React.useState(null);
   const open = Boolean(anchor);
@@ -53,12 +52,15 @@ const Navbar = (props) => {
 
   // set product     onClick={() => setValue(value + 1)}
 
+
+  
+
   return (
     <div className={classes.root}>
       <AppBar
         elevation={0}
         style={{
-          backgroundColor: "transparent",
+          backgroundColor: "#242424",
         }}
       >
         <Toolbar style={{ boxShadow: "none" }}>
@@ -68,14 +70,14 @@ const Navbar = (props) => {
             color="textSecondary"
             className={classes.title}
             style={{
-              color: "white",
+              color: "#FFFFFF",
             }}
           >
             Pizza
           </Typography>
           {isMobile ? (
             <>
-              <Button style={{ color: "white" }}>
+              <Button style={{ color: "#000000" }}>
                 <div />
                 <Cart />
               </Button>
@@ -84,7 +86,7 @@ const Navbar = (props) => {
                 edge="start"
                 aria-label="menu"
                 onClick={handleMenu}
-                style={{ color: "white" }}
+                style={{ color: "#FFFFFF" }}
               >
                 <MenuIcon />
               </IconButton>
@@ -116,12 +118,12 @@ const Navbar = (props) => {
               </Menu>
             </>
           ) : (
-            <div style={{ marginRight: "2rem" }}>
+            <div style={{ marginRight: "2rem"}}>
               <Button
                 variant="text"
                 component={Link}
                 to="/"
-                style={{ color: "white" }}
+                style={{color: "#FFFFFF"}}
               >
                 <div />
                 Hjem
@@ -130,7 +132,7 @@ const Navbar = (props) => {
                 variant="text"
                 component={Link}
                 to="/bestill-bord"
-                style={{ color: "white" }}
+                style={{color: "#FFFFFF"}}
               >
                 <div />
                 Bestill bord
@@ -139,7 +141,7 @@ const Navbar = (props) => {
                 variant="text"
                 component={Link}
                 to="/meny"
-                style={{ color: "white" }}
+                style={{color: "#FFFFFF"}}
               >
                 <div />
                 Meny
@@ -148,7 +150,7 @@ const Navbar = (props) => {
                 variant="text"
                 component={Link}
                 to="/om-oss"
-                style={{ color: "white" }}
+                style={{color: "#FFFFFF"}}
               >
                 <div />
                 Om oss
@@ -158,14 +160,14 @@ const Navbar = (props) => {
                   to="/#kontakt-oss"
                   variant="text"
                   component={Link}
-                  style={{ color: "white", textDecoration: "none" }}
+                  style={{textDecoration: "none", color: "#FFFFFF"}}
                 >
                   Kontakt oss
                   <div />
                 </NavHashLink>
               </Button>
 
-              <Button style={{ color: "white" }}>
+              <Button>
                 <div />
                 <Cart />
               </Button>

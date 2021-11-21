@@ -11,6 +11,7 @@ export default function Footer() {
       justifyContent="center"
       alignItems="flex-end"
       spacing={10}
+      backgroundColor="#242424"
     >
       <Grid item>
         <Link className="icon-footer" href="mailto:post@bellapizza.com">
