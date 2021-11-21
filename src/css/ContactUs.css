@@ -9,7 +9,7 @@ body{
 
 .contact-section{
   height: 100vh;
-  background-color:#2D2424 ;
+  background-color:#000000  ;
   color:white;
   text-align: center;
 }
@@ -17,6 +17,15 @@ body{
 .contact-section h1{
   padding-top: 20%;
 }
+
+.contact-section a{
+  color:white
+}
+
+.contact-section a:hover{
+  color:green;
+}
+
 .map{
   border:none;
   border-radius: 10px;
@@ -33,5 +42,14 @@ body{
  @media screen and (max-width: 600px) {
   .contact-section{
     height: 100%;
+  }
+
+  .footer-container{
+    padding-top: 5%;
+  }
+
+  .map{
+  width: 100%;
+  border-radius: 0px;
   }
 } 

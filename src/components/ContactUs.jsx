@@ -9,7 +9,7 @@ export default function ContactUs(props) {
     <Grid container className="contact-section" id="kontakt-oss">
       <Grid container item xs={12} justifyContent="center">
         <Grid item>
-          <h1>KONTAKT</h1>
+          <h1 id="contact-us">KONTAKT</h1>
         </Grid>
       </Grid>
 
@@ -22,19 +22,19 @@ export default function ContactUs(props) {
         justifyContent="space-evenly"
       >
         <Grid item>
-          <h3>ADRESSE</h3>
+          <h2>ADRESSE</h2>
           <p>Romaveien 12</p>
           <p>0368 Oslo</p>
         </Grid>
         <Grid item>
-          <h3>TELEFON</h3>
+          <h2>TELEFON</h2>
           <p>21 21 21 00</p>
         </Grid>
         <Grid item>
           <h3>E-MAIL</h3>
           <a href="mailto:post@bellapizza.com">post@bellapizza.no</a>
         </Grid>
-        <Grid item>
+        <Grid item order={{ xs: 1 }}>
           <BookTable></BookTable>
         </Grid>
       </Grid>
@@ -48,7 +48,7 @@ export default function ContactUs(props) {
         justifyContent="space-evenly"
       >
         <Grid item>
-          <h3>ÅPNINGSTIDER</h3>
+          <h2>ÅPNINGSTIDER</h2>
           <p>Mandag-Torsdag</p>
           <p>11:00 - 00:00</p>
           <p>Lørdag-Søndag</p>

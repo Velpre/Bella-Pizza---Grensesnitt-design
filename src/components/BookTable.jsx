@@ -14,6 +14,7 @@ import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 import ModalUnstyled from "@mui/base/ModalUnstyled";
 import Date from "./Date";
 import Time from "./Time";
+import "../css/BookTable.css";
 
 /* Style modal */
 const StyledModal = styled(ModalUnstyled)`
@@ -26,6 +27,7 @@ const StyledModal = styled(ModalUnstyled)`
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 /* Style behind modal */
 const Backdrop = styled("div")`
@@ -63,11 +65,12 @@ export default function BookTable() {
   return (
     <div>
       <Button
+        id="bookTable-btn"
         type="button"
         onClick={handleOpen}
         endIcon={<ArrowIcon />}
         variant="contained"
-        size="medium"
+        size="large"
       >
         Bestill bord
       </Button>
@@ -119,7 +122,15 @@ export default function BookTable() {
               defaultValue=""
               margin="dense"
             />
-            <Button>Reserver</Button>
+            <Button
+              id="reserver-btn"
+              endIcon={<ArrowIcon />}
+              variant="contained"
+              size="large"
+              type="button"
+            >
+              Reserver
+            </Button>
           </FormControl>
         </Box>
       </StyledModal>

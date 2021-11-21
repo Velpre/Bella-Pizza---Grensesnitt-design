@@ -1,59 +1,42 @@
 import React from "react";
-import {
-    Typography,
-    Container,
-    Button,
-    ButtonGroup,
-    Box,
-    useMediaQuery,
-    Grid,
-} from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import headerImage from "../images/hero-image.jpeg";
-import '../css/Hero.css'
-
+import "../css/Hero.css";
+import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
+import BookTable from "./BookTable";
 
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
-    root: {
-        backgroundImage: `url(${headerImage})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        height: "100vh",
-        position: "relative",
-    },
+  root: {
+    backgroundImage: `url(${headerImage})`,
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    height: "100vh",
+  },
 }));
 
 export default function Hero() {
-    const classes = useStyles();
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const classes = useStyles();
 
-
-    return (
-        <div id="hero-div" className={classes.root}>
-            <Grid container id="hero-container"
-                spacing={5}
-                direction={`${isMobile ? "column" : "row"}`}
-                alignItems="center"
-                justifyContent="center"
-                style={{ height: '100vh', width: '100%', position: 'relative', top: "10%" }}>
-                <Grid item >
-                    <Button className="hero-btn" variant="contained" color="primary" size="large" >
-                        Bestill takeaway
-                    </Button>
-                </Grid>
-                <Grid item>
-                    <Button className="hero-btn" variant="contained"
-                        size="large"
-                        color="primary"
-                        href="/meny" >
-
-                        Reserver bord
-                    </Button>
-                </Grid>
-            </Grid>
-        </div >
-    );
+  return (
+    <div className={classes.root}>
+      <div className="btn-div">
+        <div>
+          <Button
+            id="btn-hero"
+            variant="contained"
+            endIcon={<ArrowIcon />}
+            size="large"
+          >
+            TAKEAWAY
+          </Button>
+        </div>
+        <div>
+          <BookTable id="btn-hero"></BookTable>
+        </div>
+      </div>
+    </div>
+  );
 }
