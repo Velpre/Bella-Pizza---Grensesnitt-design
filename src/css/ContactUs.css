@@ -10,8 +10,9 @@ body{
 .contact-section{
   height: 100vh;
   background-color:#242424  ;
-  color:white;
+   color: #c0c0c01a;
   text-align: center;
+ 
 }
 
 .contact-section h1{
