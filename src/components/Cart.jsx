@@ -1,6 +1,10 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -111,6 +115,16 @@ export default function Cart() {
 
     const { products } = useContext(UserContext);
 
+    let product;
+    if (products !== 0) {
+        product = products.map((product, index) => {
+            return <ProductCartCard product={product} />
+        })
+    } else {
+        product = "empty"
+    }
+
+
     return (
         <div>
             {isMobile ? (
@@ -156,9 +170,7 @@ export default function Cart() {
                             Modal title
                         </BootstrapDialogTitle>
                         <DialogContent dividers>
-
-                            <ProductCartCard />
-
+                            {product}
                         </DialogContent>
                         <DialogActions>
                             <Button autoFocus onClick={handleClose}>

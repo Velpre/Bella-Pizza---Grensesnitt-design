@@ -13,8 +13,6 @@ import { UserContext } from "../App";
 export default function ProductCard(props) {
     const { products, setProducts } = useContext(UserContext);
 
-
-
     function addProductToCart(product) {
         console.log("adding product", product);
 
