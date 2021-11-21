@@ -1,5 +1,5 @@
 // IMPORTING APIS
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -17,11 +17,13 @@ import { Link } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 import { useContext } from "react";
 import { UserContext } from "../App";
+import TemporaryDrawer from "./DrawerMobile";
 
 import Cart from "./Cart";
 
+
+
 // IMPORTING ICONS
-import MenuIcon from "@mui/icons-material/Menu";
 
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
@@ -41,133 +43,100 @@ const useStyles = makeStyles((theme) => ({
 
 const Navbar = (props) => {
   const { value, setValue } = useContext(UserContext);
-
   const classes = useStyles();
-  const [anchor, setAnchor] = React.useState(null);
-  const open = Boolean(anchor);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const handleMenu = (event) => {
-    setAnchor(event.currentTarget);
-  };
 
-  // set product     onClick={() => setValue(value + 1)}
+
+
+
+
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="top">
       <AppBar
         elevation={0}
         style={{
-          backgroundColor: "transparent",
+          backgroundColor: "#242424",
         }}
       >
         <Toolbar style={{ boxShadow: "none" }}>
           <Typography
             variant="h5"
-            component="p"
             color="textSecondary"
             className={classes.title}
             style={{
-              color: "white",
+              color: "#FFFFFF",
             }}
           >
-            Pizza
+            <Link to="/">
+              <img src={"https://i.imgur.com/lxPZjiO.png"} alt={"Logo"} style={{ height: "1em", width: "auto", marginTop: "0.2em", marginLeft: "1.8em" }} />
+            </Link>
           </Typography>
           {isMobile ? (
             <>
-              <Button style={{ color: "white" }}>
+              <Button style={{ color: "#000000" }}>
                 <div />
                 <Cart />
               </Button>
               <IconButton
-                className={classes.menuButton}
                 edge="start"
                 aria-label="menu"
-                onClick={handleMenu}
-                style={{ color: "white" }}
+                style={{ color: "#FFFFFF" }}
               >
-                <MenuIcon />
+                <div />
+
+                <TemporaryDrawer />
               </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchor}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={open}
-              >
-                <MenuItem component={Link} to="/">
-                  <ListItemIcon></ListItemIcon>
-                  <Typography variant="h6"> Hjem</Typography>
-                </MenuItem>
-                <MenuItem component={Link} to="/bestill-bord">
-                  <ListItemIcon></ListItemIcon>
-                  <Typography variant="h6"> Bestill bord </Typography>
-                </MenuItem>
-                <MenuItem component={Link} to="/meny">
-                  <ListItemIcon></ListItemIcon>
-                  <Typography variant="h6"> Meny</Typography>
-                </MenuItem>
-              </Menu>
             </>
           ) : (
             <div style={{ marginRight: "2rem" }}>
               <Button
-                variant="text"
                 component={Link}
                 to="/"
-                style={{ color: "white" }}
+                style={{ color: "#FFFFFF" }}
               >
                 <div />
                 Hjem
               </Button>
               <Button
-                variant="text"
                 component={Link}
                 to="/bestill-bord"
-                style={{ color: "white" }}
+                style={{ color: "#FFFFFF" }}
               >
                 <div />
                 Bestill bord
               </Button>
               <Button
-                variant="text"
                 component={Link}
                 to="/meny"
-                style={{ color: "white" }}
+                style={{ color: "#FFFFFF" }}
               >
                 <div />
                 Meny
               </Button>
               <Button>
                 <NavHashLink
-                  to="#about-us"
-                  variant="text"
+                  to="/#om-oss"
                   component={Link}
                   style={{ color: "white", textDecoration: "none" }}
                 >
-                  <div />
                   Om oss
+                  <div />
                 </NavHashLink>
               </Button>
               <Button>
                 <NavHashLink
-                  to="#contact-us"
-                  variant="text"
+                  to="/#kontakt-oss"
                   component={Link}
-                  style={{ color: "white", textDecoration: "none" }}
+                  style={{ textDecoration: "none", color: "#FFFFFF" }}
                 >
                   Kontakt oss
                   <div />
                 </NavHashLink>
               </Button>
 
-              <Button style={{ color: "white" }}>
+              <Button>
                 <div />
                 <Cart />
               </Button>
