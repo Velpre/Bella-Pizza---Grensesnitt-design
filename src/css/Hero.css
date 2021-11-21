@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 .btn-div{
     position: absolute;
     bottom: 10%;
@@ -8,6 +12,7 @@
     justify-content: space-around;
     width: 60%;
 }
+
 
 #btn-hero{
     background-color: green;

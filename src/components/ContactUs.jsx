@@ -9,7 +9,7 @@ export default function ContactUs(props) {
     <Grid container className="contact-section">
       <Grid container item xs={12} justifyContent="center">
         <Grid item>
-          <h1>KONTAKT</h1>
+          <h1 id="contact-us">KONTAKT</h1>
         </Grid>
       </Grid>
 

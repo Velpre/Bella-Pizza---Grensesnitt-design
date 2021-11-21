@@ -144,18 +144,20 @@ const Navbar = (props) => {
                 <div />
                 Meny
               </Button>
-              <Button
-                variant="text"
-                component={Link}
-                to="/om-oss"
-                style={{ color: "white" }}
-              >
-                <div />
-                Om oss
+              <Button>
+                <NavHashLink
+                  to="#about-us"
+                  variant="text"
+                  component={Link}
+                  style={{ color: "white", textDecoration: "none" }}
+                >
+                  <div />
+                  Om oss
+                </NavHashLink>
               </Button>
               <Button>
                 <NavHashLink
-                  to="/#kontakt-oss"
+                  to="#contact-us"
                   variant="text"
                   component={Link}
                   style={{ color: "white", textDecoration: "none" }}

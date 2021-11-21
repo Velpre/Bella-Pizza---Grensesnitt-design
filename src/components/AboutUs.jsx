@@ -8,11 +8,11 @@ import {
   Typography,
 } from "@mui/material";
 import RestaurantPhoto from "../images/restaurant.jpg";
-import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
+import BookTable from "./BookTable";
 
 export default function AboutUs() {
   return (
-    <Grid className="about-us-container" container spacing={5}>
+    <Grid id="about-us" className="about-us-container" container spacing={5}>
       <Grid item xs={10} md={5}>
         <h1>ITALIENSK I ÅNDEN</h1>
         <Typography className="about-us-txt">
@@ -22,14 +22,8 @@ export default function AboutUs() {
           valgmuligheter, inkludert klassisk italiensk mat sammen med våre egne
           signaturretter.
         </Typography>
-        <Button
-          id="btn-reservation"
-          variant="contained"
-          endIcon={<ArrowIcon />}
-          size="large"
-        >
-          Bestill bord
-        </Button>
+
+        <BookTable id="btn-reservation"></BookTable>
       </Grid>
 
       <Grid item xs={10} md={5} className="about-us-image">

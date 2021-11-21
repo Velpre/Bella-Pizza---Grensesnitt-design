@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import headerImage from "../images/hero-image.jpeg";
 import "../css/Hero.css";
 import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
+import BookTable from "./BookTable";
 
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
@@ -33,14 +34,7 @@ export default function Hero() {
           </Button>
         </div>
         <div>
-          <Button
-            id="btn-hero"
-            variant="contained"
-            endIcon={<ArrowIcon />}
-            size="large"
-          >
-            BESTILL BORD
-          </Button>
+          <BookTable id="btn-hero"></BookTable>
         </div>
       </div>
     </div>
