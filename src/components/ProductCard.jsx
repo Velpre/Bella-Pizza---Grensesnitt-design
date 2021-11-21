@@ -17,19 +17,30 @@ export default function ProductCard(props) {
         console.log("adding product", product);
 
         if (products !== 0) {
-            setProducts([
-                ...products,
-                {
-                    id: product.id,
-                    name: product.name,
-                    productDescription: product.productDescription,
-                    allergies: product.allergies,
-                    image: product.image,
-                    productType: product.productType,
-                    price: product.price
 
-                }
-            ]);
+            let foundIndex = products.findIndex((obj => obj.id == product.id));
+            if (foundIndex === -1) {
+                setProducts([
+                    ...products,
+                    {
+                        id: product.id,
+                        name: product.name,
+                        productDescription: product.productDescription,
+                        allergies: product.allergies,
+                        image: product.image,
+                        productType: product.productType,
+                        price: product.price,
+                        quantity: 1
+                    }
+                ]);
+            }
+            else {
+                products[foundIndex].quantity += 1
+
+                setProducts([
+                    ...products
+                ]);
+            }
         } else {
             setProducts([
                 {
@@ -39,8 +50,8 @@ export default function ProductCard(props) {
                     allergies: product.allergies,
                     image: product.image,
                     productType: product.productType,
-                    price: product.price
-
+                    price: product.price,
+                    quantity: 1
                 }
             ]);
         }
