@@ -2,7 +2,6 @@ import React, { useState, useMemo } from "react";
 import Home from "./pages/Home";
 import Meny from "./pages/Meny";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
 import {
   Routes, // instead of "Switch"
