@@ -5,6 +5,7 @@
 #cancel-icon-bookTable{
     position: absolute;
     right: 3%;
+    color: #2B6250;
 }
 
 #reserver-btn{
@@ -17,11 +18,3 @@
 }
 
 
-
-
-
-/*  BRUKES IKKE? 
-.btn-style {
-    color: red;
-}
-*/

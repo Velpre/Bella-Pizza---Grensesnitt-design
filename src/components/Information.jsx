@@ -35,7 +35,7 @@ export default function Information() {
         opacity: 0,
       });
     }
-  });
+  }, [inView]);
   return (
     <div className="information-section">
       <motion.div animate={animation} ref={ref}>

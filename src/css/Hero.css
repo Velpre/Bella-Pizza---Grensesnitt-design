@@ -13,14 +13,10 @@ html {
     width: 70%;
 }
 
-.first-btn-hero{
-  width:164px;
-}
-
 #btn-hero{
   background-color: #2B6250;
   color: #ffff;
-    
+  width: 200px; 
 }
 
 
