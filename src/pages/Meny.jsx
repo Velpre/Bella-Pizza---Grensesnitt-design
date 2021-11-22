@@ -7,15 +7,14 @@ import DisplayMenu from "../components/DisplayMenu"
 
 
 function Meny() {
-  return (
-    <>
-      <div style={{ backgroundColor: "#c0c0c01a" }}>
-        <Navbar />
-        <DisplayMenu />
-        <Footer />
-      </div>
-    </>
-  );
+    return (
+        <>
+            <div style={{ backgroundColor: "#c0c0c01a" }}>
+                <Navbar />
+                <DisplayMenu />
+            </div>
+        </>
+    );
 }
 
 export default Meny;
