@@ -1,5 +1,5 @@
-// IMPORTING APIS
-import React, { useEffect, useState } from "react";
+import React from "react";
+/* MUI */
 import {
   AppBar,
   Toolbar,
@@ -7,23 +7,17 @@ import {
   Typography,
   useMediaQuery,
   Button,
-  Menu,
-  MenuItem,
-  ListItemIcon,
 } from "@material-ui/core";
-
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
+/* Hooks */
 import { useContext } from "react";
 import { UserContext } from "../App";
+/* Components */
 import TemporaryDrawer from "./DrawerMobile";
-
 import Cart from "./Cart";
-
-
-
-// IMPORTING ICONS
+import BookTable from "./BookTable";
 
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
@@ -46,11 +40,6 @@ const Navbar = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
-
-
-
-
 
   return (
     <div className={classes.root} id="top">
@@ -105,7 +94,7 @@ const Navbar = (props) => {
                 style={{ color: "#FFFFFF" }}
               >
                 <div />
-                Bestill bord
+                <BookTable></BookTable>
               </Button>
               <Button
                 component={NavHashLink}

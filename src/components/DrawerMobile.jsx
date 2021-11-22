@@ -5,12 +5,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import {
     Typography,
     MenuItem,
-    ListItemIcon,
     Box,
     Drawer,
-    Button
+
 } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 
 

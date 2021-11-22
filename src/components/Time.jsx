@@ -1,4 +1,5 @@
 import React from "react";
+/* MUI */
 import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
@@ -17,7 +18,9 @@ export default function Time() {
           label="Velg tidspunkt"
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField margin="dense" {...params} />}
+          renderInput={(params) => (
+            <TextField required fullWidth margin="dense" {...params} />
+          )}
         />
       </LocalizationProvider>
     </div>

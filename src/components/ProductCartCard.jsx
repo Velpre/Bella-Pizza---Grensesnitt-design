@@ -6,10 +6,18 @@ import { Divider } from '@mui/material';
 import React, { useContext } from 'react';
 import UserContext from "../App"
 
-
 export default function ProductCartCard(props) {
+
   function triggerDelete(id) {
     props.deleteProduct(id)
+  }
+
+  function triggerQuantityRemove(id){
+    props.removeQuantity(id)
+  }
+
+  function triggerAddQuantity(id){
+    props.addQuantity(id)
   }
 
 
@@ -28,12 +36,15 @@ export default function ProductCartCard(props) {
           </Grid>
           <Grid item xs={5}>
             <Typography id="product-name">
-              {props.product.name} -
-              {props.product.productDescription}
+              {props.product.name}
             </Typography>
           </Grid>
           <Grid item xs={1}>
-            <IconButton aria-label="remove">
+            <IconButton aria-label="remove" onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              triggerQuantityRemove(props.product);
+            }}>
               <RemoveIcon />
             </IconButton>
           </Grid>
@@ -43,7 +54,11 @@ export default function ProductCartCard(props) {
             </Typography>
           </Grid>
           <Grid item xs={1}>
-            <IconButton aria-label="add">
+            <IconButton aria-label="add" onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              triggerAddQuantity(props.product);
+            }}>
               <AddIcon />
             </IconButton>
           </Grid>
@@ -54,8 +69,6 @@ export default function ProductCartCard(props) {
           </Grid>
         </Grid>
       </div>
-      <Divider component="li" />
-
     </>
   );
 }

@@ -13,8 +13,7 @@ import { createContext } from "react";
 export const UserContext = createContext(null);
 
 function App() {
-
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState(0);
 
   const providerValue = useMemo(() => ({ products, setProducts }), [products, setProducts])
 
@@ -22,12 +21,11 @@ function App() {
   return (
     <>
       <UserContext.Provider value={providerValue}>
-        <Navbar/>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/meny" element={<Meny />} />
         </Routes>
-        <Footer />
       </UserContext.Provider>
     </>
   );

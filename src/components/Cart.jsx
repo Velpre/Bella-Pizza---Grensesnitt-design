@@ -146,10 +146,26 @@ export default function Cart() {
     }
 
 
+    function subtractQuantityOfProduct(product) {
+        if (product.quantity == 1){
+            deleteFromCart(product)
+        } else {
+        let foundIndex = products.findIndex((obj => obj.id == product.id));
+        products[foundIndex].quantity -= 1
+        setProducts([...products]);
+        }
+    }
+
+    function addQuantityOfProduct(product){
+        let foundIndex = products.findIndex((obj => obj.id == product.id));
+        products[foundIndex].quantity += 1
+        setProducts([...products]);
+    }
+
     let product;
     if (products !== 0) {
         product = products.map((product, index) => {
-            return <ProductCartCard product={product} deleteProduct={deleteFromCart} />
+            return <ProductCartCard product={product} deleteProduct={deleteFromCart} removeQuantity={subtractQuantityOfProduct} addQuantity={addQuantityOfProduct}/>
         })
     } else {
         product = "empty";

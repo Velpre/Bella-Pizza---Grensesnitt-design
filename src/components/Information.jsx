@@ -1,6 +1,10 @@
 import React from "react";
+/* Css */
 import "../css/Information.css";
+/* MUI */
+import { Link } from "react-router-dom";
 import { Grid, Typography, Button } from "@mui/material";
+/* Images */
 import PizzaImage from "../images/pizzaoptions.jpg";
 import PastaImage from "../images/pastaoptions.jpg";
 import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
@@ -8,6 +12,25 @@ import { Link } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 
 export default function Information() {
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    unobserveOnEnter: true,
+  });
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        opacity: 1,
+        transition: { duration: 1.5 },
+      });
+    }
+    if (!inView) {
+      animation.start({
+        opacity: 0,
+      });
+    }
+  });
   return (
     <Grid className="information-container" container>
       <Grid item container className="food-container">
@@ -53,7 +76,7 @@ export default function Information() {
             Pasta
           </Button>
         </Grid>
-      </Grid>
-    </Grid>
+      </motion.div>
+    </div>
   );
 }

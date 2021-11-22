@@ -1,12 +1,17 @@
 import React from "react";
+/* MUI */
 import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import headerImage from "../images/hero-image.jpeg";
-import "../css/Hero.css";
+import { Link } from "react-router-dom";
 import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
+/* Image */
+import headerImage from "../images/hero-image.jpeg";
+/* Css */
+import "../css/Hero.css";
+/* Components */
 import BookTable from "./BookTable";
 
-// LOCAL-STYLING
+// Local style
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundImage: `url(${headerImage})`,
@@ -26,15 +31,25 @@ export default function Hero() {
         <div>
           <Button
             id="btn-hero"
+            className="first-btn-hero"
             variant="contained"
             endIcon={<ArrowIcon />}
             size="large"
+            component={Link}
+            to="/meny"
           >
             TAKEAWAY
           </Button>
         </div>
         <div>
-          <BookTable id="btn-hero"></BookTable>
+          <Button
+            id="btn-hero"
+            endIcon={<ArrowIcon />}
+            variant="contained"
+            size="small"
+          >
+            <BookTable></BookTable>
+          </Button>
         </div>
       </div>
     </div>

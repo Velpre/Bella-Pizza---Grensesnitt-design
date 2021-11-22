@@ -9,9 +9,10 @@ body{
 
 .contact-section{
   height: 100vh;
-  background-color:#000000  ;
-  color:white;
+  background-color:#242424  ;
+  color: white;
   text-align: center;
+ 
 }
 
 .contact-section h1{
@@ -22,13 +23,17 @@ body{
   color:white
 }
 
-.contact-section a:hover{
-  color:green;
+.icone-contact-us{
+  vertical-align:top;
 }
-
 .map{
   border:none;
   border-radius: 10px;
+}
+
+#contact-bookTable-btn{
+ background-color: green;
+ margin: 5% 0 5%;
 }
 
 
@@ -46,6 +51,11 @@ body{
 
   .footer-container{
     padding-top: 5%;
+    
+  }
+
+  .icone-contact-us{
+    vertical-align:bottom;
   }
 
   .map{
@@ -53,3 +63,15 @@ body{
   border-radius: 0px;
   }
 } 
+
+@media screen and (min-width: 1000px){
+  .contact-section a:hover{
+    color:green;
+    transition: 0.5s;
+  }
+
+  .map:hover{
+    filter: brightness(50%);
+    transition: 0.5s;
+  }
+}
