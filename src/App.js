@@ -2,7 +2,6 @@ import React, { useState, useMemo } from "react";
 import Home from "./pages/Home";
 import Meny from "./pages/Meny";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
 import {
   Routes, // instead of "Switch"
@@ -27,7 +26,6 @@ function App() {
           <Route path="/meny" element={<Meny />} />
         </Routes>
       </UserContext.Provider>
-      <Footer />
     </>
   );
 }

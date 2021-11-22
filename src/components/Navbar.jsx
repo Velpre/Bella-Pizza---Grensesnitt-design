@@ -89,12 +89,12 @@ const Navbar = (props) => {
                 Hjem
               </Button>
               <Button
-                component={NavHashLink}
-                to="/bestill-bord"
-                style={{ color: "#FFFFFF" }}
+                style={{ color: "#FFFFFF", textDecoration: "none" }}
               >
                 <div />
-                <BookTable></BookTable>
+                <BookTable
+                  style={{ color: "#FFFFFF", textDecoration: "none" }}
+                ></BookTable>
               </Button>
               <Button
                 component={NavHashLink}

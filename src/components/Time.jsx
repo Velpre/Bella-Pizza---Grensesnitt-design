@@ -1,23 +1,25 @@
 import React from "react";
+/* Hooks */
+import { useState } from "react";
 /* MUI */
 import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import TimePicker from "@mui/lab/TimePicker";
 
-export default function Time() {
-  const [value, setValue] = React.useState(new Date());
+export default function Time(props) {
+  const [value, setValue] = useState(null);
 
-  const handleChange = (newValue) => {
-    setValue(newValue);
-  };
   return (
     <div>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <TimePicker
           label="Velg tidspunkt"
           value={value}
-          onChange={handleChange}
+          onChange={(newValue) => {
+            setValue(newValue);
+            props.pickTime(value);
+          }}
           renderInput={(params) => (
             <TextField required fullWidth margin="dense" {...params} />
           )}

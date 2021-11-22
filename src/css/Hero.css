@@ -9,8 +9,8 @@ html {
     transform: translateX(-50%);
     display: flex;
     align-items: flex-end;
-    justify-content: space-around;
-    width: 60%;
+    justify-content: space-evenly;
+    width: 70%;
 }
 
 .first-btn-hero{
@@ -20,7 +20,9 @@ html {
 #btn-hero{
     background-color: green;
     color:white;
-    
+    font-size: 14px;
+    height: 44.5px;
+    width: 200px;
 }
 
 

@@ -42,7 +42,6 @@ import PropTypes from "prop-types";
 import Date from "./Date";
 import Time from "./Time";
 import ProductCartCard from "./ProductCartCard";
-import Payment from "./Payment";
 
 /* GLOBAL STATE*/
 import { UserContext } from "../App";
