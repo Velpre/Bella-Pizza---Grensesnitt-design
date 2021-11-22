@@ -18,11 +18,9 @@ html {
 }
 
 #btn-hero{
-    background-color: green;
-    color:white;
-    font-size: 14px;
-    height: 44.5px;
-    width: 200px;
+  background-color: #2B6250;
+  color: #ffff;
+    
 }
 
 
@@ -36,6 +34,6 @@ html {
     #btn-hero{
        width: 183px;
        margin-top: 30px;
+
     }
- 
   } 
