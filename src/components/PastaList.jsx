@@ -100,7 +100,7 @@ function PastaList() {
 
     return (
         <>
-            <div style={{ marginBottom: "7em" }}>
+            <div style={{ marginBottom: "7em" }} id="pasta">
                 <Typography variant="h2" align='center' marginBottom="2em">Pasta</Typography>
                 <Grid container spacing={3} align='center' direction='row' justifyContent='center'>
 

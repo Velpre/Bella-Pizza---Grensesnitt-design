@@ -5,6 +5,7 @@ import PizzaImage from "../images/pizzaoptions.jpg";
 import PastaImage from "../images/pastaoptions.jpg";
 import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 import { Link } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 
 export default function Information() {
   return (
@@ -23,8 +24,8 @@ export default function Information() {
             variant="contained"
             endIcon={<ArrowIcon />}
             size="large"
-            component={Link}
-            to="/meny"
+            component={NavHashLink}
+            to="/meny#pizza"
           >
             Pizza
           </Button>
@@ -46,8 +47,8 @@ export default function Information() {
             variant="contained"
             endIcon={<ArrowIcon />}
             size="large"
-            component={Link}
-            to="/meny"
+            component={NavHashLink}
+            to="/meny#pasta"
           >
             Pasta
           </Button>
