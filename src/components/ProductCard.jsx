@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { UserContext } from "../App";
+import '../css/ProductCard.css'
 
 
 
@@ -77,7 +78,7 @@ export default function ProductCard(props) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button onClick={() => addProductToCart(props.product)} style={{ position: 'absolute', left: 90, bottom: 10, transform: 'TranslateX(-50)' }} variant='contained' size='large'>Legg til</Button>
+                <Button id="ad-to-cart" onClick={() => addProductToCart(props.product)} style={{ position: 'absolute', left: 90, bottom: 10, transform: 'TranslateX(-50)' }} variant='contained' size='large'>Legg til</Button>
             </CardActions>
         </Card>
     );

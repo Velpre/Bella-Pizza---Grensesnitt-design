@@ -32,8 +32,8 @@ function DisplayMenu() {
                         </div>
                     </Grid>
                 </Grid>
-
-                <ButtonGroup sx={{ display: 'flex', justifyContent: 'center', marginTop: "6em", marginBottom: "7vh" }} variant="outlined">
+                                             {/**KAN ENDRE BORDER FARGE */}
+                <ButtonGroup id="button-group" color="primary" sx={{ display: 'flex', justifyContent: 'center', marginTop: "6em", marginBottom: "7vh" }} variant="outlined">
                     <Button onClick={() => setActive("alt")}>Vis alt</Button>
                     <Button onClick={() => setActive("pizza")}>Pizza</Button>
                     <Button onClick={() => setActive("pasta")}>Pasta</Button>

@@ -32,7 +32,7 @@ body{
 }
 
 #contact-bookTable-btn{
- background-color: green;
+ background-color: #2B6250;
  margin: 5% 0 5%;
 }
 
@@ -66,7 +66,7 @@ body{
 
 @media screen and (min-width: 1000px){
   .contact-section a:hover{
-    color:green;
+    color:#2B6250;
     transition: 0.5s;
   }
 

@@ -27,7 +27,6 @@ function App() {
           <Route path="/meny" element={<Meny />} />
         </Routes>
       </UserContext.Provider>
-      <Footer />
     </>
   );
 }
