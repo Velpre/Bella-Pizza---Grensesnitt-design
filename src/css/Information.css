@@ -3,20 +3,20 @@
 }
 
 .information-container{
-    height: 80vh;
     text-align: center;
 }
 
 .food-container{
- 
     align-items: center;
     justify-content: center;
+    padding:5%;
 }
 
 
 #food-image{
     max-width: 100%;
     border-radius: 20px;
+    background-size: cover;
 }
 
 #information-btn {
@@ -40,6 +40,10 @@
 
     .information-text{
         padding-top: 3%;
+    }
+
+    .food-container{
+        padding:0;
     }
 
   } 

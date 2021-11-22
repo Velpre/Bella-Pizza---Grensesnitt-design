@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 /* Image */
-import headerImage from "../images/hero-image.jpeg";
+import headerImage from "../images/hero1.jpg";
 /* Css */
 import "../css/Hero.css";
 /* Components */
