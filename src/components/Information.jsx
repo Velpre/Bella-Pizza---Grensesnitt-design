@@ -41,7 +41,7 @@ export default function Information() {
         <Grid className="information-container" container>
           <Grid item container className="food-container">
             <Grid item xs={10} md={5}>
-              <img id="food-image" src={PizzaImage} />
+              <img id="food-image" src={PizzaImage} alt={"pizza"} />
             </Grid>
             <Grid item xs={10} md={5}>
               <Typography variant="subtitle1" className="information-text">
