@@ -25,6 +25,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Box } from "@mui/material"
+import { Grid } from "@mui/material"
+
 
 
 
@@ -115,6 +118,7 @@ export default function Cart() {
     const handleClose = () => {
         setOpen(false);
     };
+
     const classes = useStyles();
 
     const theme = useTheme();
@@ -129,6 +133,7 @@ export default function Cart() {
 
     }
     let price = 0;
+
     if (products !== 0) {
         let prices = [];
         prices = products.map((product) => {
@@ -139,6 +144,7 @@ export default function Cart() {
             price += e;
         });
     }
+
 
     let product;
     if (products !== 0) {
@@ -171,13 +177,20 @@ export default function Cart() {
     }));
 
 
+    const [state, setState] = React.useState(false);
+
+    function handleChange() {
+        if (state === false) setState(true);
+        else setState(false);
+    }
+
+
 
 
 
     return (
         <div>
             {isMobile ? (
-
                 <>
                     <Badge badgeContent={products.length} color="primary" onClick={handleClickOpen}>
                         <ShoppingCartIcon color="action" style={{ color: "white" }}
@@ -221,46 +234,87 @@ export default function Cart() {
                     </BootstrapDialog>
                 </>
             ) : (
+
                 <>
-                    <Badge badgeContent={products.length} color="primary" onClick={handleClickOpen}>
+                    <Badge badgeContent={products.length} color="primary" onClick={() => { handleClickOpen(); setState(true) }}>
                         <ShoppingCartIcon color="action" style={{ color: "white" }}
                         />
                     </Badge>
                     <BootstrapDialog style={{ overflow: 'auto' }} className={classes.desktopScroll}
-                        onClose={handleClose}
+                        onClose={() => {
+                            handleClose();
+                            handleChange();
+                        }}
                         aria-labelledby="customized-dialog-title"
                         open={open}
                     >
-                        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-                            Modal title
+                        {state ? (
+                            <Box>
+                                <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
+                                    Modal title
+                                </BootstrapDialogTitle>
+                                <DialogContent dividers>
+
+                                    {product}
+
+                                </DialogContent>
+                                <TableContainer component={Paper}>
+                                    <Table sx={{ minWidth: 500 }} aria-label="customized table">
+                                        <TableHead>
+                                        </TableHead>
+                                        <TableBody>
+                                            <StyledTableRow>
+                                                <StyledTableCell component="th" scope="row">
+                                                    Totalt å betale
+                                                </StyledTableCell>
+                                                <StyledTableCell align="right" sx={{ pr: 4 }}>
+                                                    {price}{"kr"}
+                                                </StyledTableCell>
+                                            </StyledTableRow>
+                                        </TableBody>
+                                    </Table>
+                                </TableContainer>
+                                <DialogActions>
+                                    <Button autoFocus onClick={() => {
+                                        handleChange();
+                                    }}>
+                                        Save changes
+                                    </Button>
+                                </DialogActions>
+                            </Box>
+                        ) : (<Box > <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
+                            Din bestilling
                         </BootstrapDialogTitle>
-                        <DialogContent dividers>
+                            <DialogContent dividers>
+                                {products.map((product) => {
+                                    return (<Grid style={{ minWidth: 500, m: 1 }} >
+                                        <CardContent align='left'>
+                                            <Typography gutterBottom variant="h5" component="div" >
+                                                {product.name}
+                                                ------{product.quantity}
+                                            </Typography>
+                                            <Typography variant="subtitle1" color="text.secondary">
 
-                            {product}
+                                            </Typography>
+                                        </CardContent>
+                                    </Grid>)
+                                })}
+                                {price}
 
-                        </DialogContent>
-                        <TableContainer component={Paper}>
-                            <Table sx={{ minWidth: 500 }} aria-label="customized table">
-                                <TableHead>
-                                </TableHead>
-                                <TableBody>
-                                    <StyledTableRow>
-                                        <StyledTableCell component="th" scope="row">
-                                            Totalt å betale
-                                        </StyledTableCell>
-                                        <StyledTableCell align="right" sx={{ pr: 4 }}>
-                                            {price}{"kr"}
-                                        </StyledTableCell>
-                                    </StyledTableRow>
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
-                        <DialogActions>
-                            <Button autoFocus onClick={handleClose}>
-                                Save changes
-                            </Button>
-                        </DialogActions>
-                    </BootstrapDialog>
+
+                            </DialogContent>
+
+                            <DialogActions>
+                                <Button autoFocus onClick={() => {
+                                    handleChange();
+                                }}>
+                                    Save changes
+                                </Button>
+                            </DialogActions>
+                        </Box>)
+                        }
+                    </BootstrapDialog >
+
                 </>
 
             )
