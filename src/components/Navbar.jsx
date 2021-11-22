@@ -93,9 +93,11 @@ const Navbar = (props) => {
                 <div />
                 Hjem
               </Button>
-              <Button style={{ color: "#FFFFFF" }}>
+              <Button>
                 <div />
-                <BookTable></BookTable>
+                <BookTable
+                  style={{ color: "#FFFFFF", textDecoration: "none" }}
+                ></BookTable>
               </Button>
               <Button component={Link} to="/meny" style={{ color: "#FFFFFF" }}>
                 <div />

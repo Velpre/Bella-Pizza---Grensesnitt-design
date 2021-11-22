@@ -33,7 +33,6 @@ export default function Hero() {
             id="btn-hero"
             className="first-btn-hero"
             variant="contained"
-            endIcon={<ArrowIcon />}
             size="large"
             component={Link}
             to="/meny"
@@ -42,12 +41,7 @@ export default function Hero() {
           </Button>
         </div>
         <div>
-          <Button
-            id="btn-hero"
-            endIcon={<ArrowIcon />}
-            variant="contained"
-            size="small"
-          >
+          <Button id="btn-hero" variant="contained" size="small">
             <BookTable></BookTable>
           </Button>
         </div>
