@@ -21,6 +21,7 @@ import Date from "./Date";
 import Time from "./Time";
 /* Css */
 import "../css/BookTable.css";
+import setDate from "date-fns/esm/fp/setDate/index.js";
 
 /* Style behind modal */
 const Backdrop = styled("div")`
@@ -77,6 +78,12 @@ export default function BookTable() {
   const [mail, setMail] = useState("");
   const [mailError, setMailError] = useState(false);
 
+  /* Date */
+  const [date, setDate] = useState("");
+
+  /* Time */
+  const [time, setTime] = useState("");
+
   /* Handle click  */
   const [state, setState] = useState(false);
 
@@ -86,6 +93,17 @@ export default function BookTable() {
     } else {
       setState(false);
     }
+  }
+
+  /* Picking up date from child element */
+
+  function pickDate(prop) {
+    setDate(prop);
+  }
+
+  function pickTime(prop) {
+    setTime(prop);
+    console.log(prop);
   }
 
   return (
@@ -113,7 +131,7 @@ export default function BookTable() {
             <IconButton id="cancel-icon-bookTable" onClick={handleClose}>
               <Cancel></Cancel>
             </IconButton>
-            <h2>Bestill bord</h2>
+            <h3>Informasjon</h3>
             <FormControl>
               <InputLabel>Antall personer</InputLabel>
               <Select
@@ -155,10 +173,10 @@ export default function BookTable() {
 
               <Grid container justifyContent="space-between">
                 <Grid xs={12} sm={5} item>
-                  <Date></Date>
+                  <Date pickDate={pickDate}></Date>
                 </Grid>
                 <Grid xs={12} sm={5} item>
-                  <Time></Time>
+                  <Time pickTime={pickTime}></Time>
                 </Grid>
               </Grid>
 
@@ -185,7 +203,12 @@ export default function BookTable() {
           </Box>
         ) : (
           <Box sx={styleModalInside}>
-            <div>test</div>
+            <h1>Bekreft</h1>
+            <p>Antall personer {number}</p>
+            <p>Navn {name}</p>
+            <p>E-mail {mail}</p>
+            <p>Dato: {JSON.stringify(date)}</p>
+            <p>Tid: {JSON.stringify(time)}</p>
           </Box>
         )}
       </StyledModal>
