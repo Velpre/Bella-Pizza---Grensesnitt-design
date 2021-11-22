@@ -164,8 +164,8 @@ export default function Cart() {
                     </BootstrapDialog>
                 </>
             ) : (
-                <>
-                    <Badge badgeContent={products.length} color="primary" onClick={handleClickOpen}>
+                <>                                 {/**ENDRE FARGE VARSEL ANTALL VARER LAGT TIL */}
+                    <Badge badgeContent={products.length} color="secondary" onClick={handleClickOpen}>
                         <ShoppingCartIcon color="action" style={{ color: "white" }}
                         />
                     </Badge>

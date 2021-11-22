@@ -1,5 +1,5 @@
 #bookTable-btn{
-    color:white;
+    color:#fff;
 }
 
 #cancel-icon-bookTable{
@@ -8,6 +8,20 @@
 }
 
 #reserver-btn{
-    background-color: green;
+    background-color: #2B6250;
     margin-top: 15%;
 }
+
+#number-people {
+    background-color: #fff;
+}
+
+
+
+
+
+/*  BRUKES IKKE? 
+.btn-style {
+    color: red;
+}
+*/

@@ -16,7 +16,7 @@
 }
 
 #btn-reservation {
-    background-color: green;
+    background-color: #2B6250;
     margin-top: 10%;
 }
 
@@ -33,5 +33,4 @@
     #restaurant-img {
         margin-bottom: 10%;
     }
-
   } 

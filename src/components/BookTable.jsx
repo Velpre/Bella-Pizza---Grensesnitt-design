@@ -85,8 +85,8 @@ export default function BookTable() {
   /* console.log(number); */
 
   return (
-    <div>
-      <Button id="bookTable-btn" type="button" onClick={handleOpen}>
+    <div>                         {/**BRUKES IKKE ?? */}
+      <Button id="bookTable-btn" /*className="btn-style"*/ type="button" onClick={handleOpen}>
         Bestill bord
       </Button>
 
@@ -103,7 +103,7 @@ export default function BookTable() {
           <h2>Bestill bord</h2>
           <FormControl onSubmit={handleSubmit}>
             <InputLabel>Antall personer</InputLabel>
-            <Select
+            <Select 
               margin="dense"
               value={number}
               label="Antall personer"
@@ -150,7 +150,7 @@ export default function BookTable() {
             </Grid>
 
             <TextField
-              label="Komentar"
+              label="Kommentar"
               multiline
               rows={3}
               defaultValue=""
