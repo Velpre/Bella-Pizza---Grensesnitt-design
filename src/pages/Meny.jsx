@@ -4,13 +4,13 @@ import Navbar from "../components/Navbar";
 import DisplayMenu from "../components/DisplayMenu";
 import Footer from "../components/Footer";
 
+
 function Meny() {
   return (
     <>
-      <div style={{ backgroundColor: "#c0c0c01a" }}>
-        <Navbar />
+      <div style={{align:'center', justifyContent:'center'}}>
         <DisplayMenu />
-        <Footer />
+        <Footer/>
       </div>
     </>
   );

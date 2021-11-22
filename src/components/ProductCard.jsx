@@ -59,7 +59,7 @@ export default function ProductCard(props) {
     }
 
     return (
-        <Card style={{ position: 'relative', width: 300, height: 390 }} >
+        <Card style={{ position: 'relative', width: 300, height: 420 }} >
             <CardMedia
                 component="img"
                 alt="product-image"
@@ -76,9 +76,12 @@ export default function ProductCard(props) {
                 <Typography variant="subtitle2" color="text.secondary">
                     Allergener: {props.product.allergies}
                 </Typography>
+                <Typography variant="body1" color="text.secondary">
+                    Pris: {props.product.price},-
+                </Typography>
             </CardContent>
             <CardActions>
-                <Button id="ad-to-cart" onClick={() => addProductToCart(props.product)} style={{ position: 'absolute', left: 90, bottom: 10, transform: 'TranslateX(-50)' }} variant='contained' size='large'>Legg til</Button>
+                <Button id="ad-to-cart" onClick={() => addProductToCart(props.product)} style={{ position: 'absolute', left: 92.5, bottom: 10, transform: 'TranslateX(-50)' }} variant='contained' size='large'>Legg til</Button>
             </CardActions>
         </Card>
     );

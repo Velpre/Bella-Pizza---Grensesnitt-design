@@ -50,7 +50,46 @@ const Navbar = (props) => {
         }}
       >
         <Toolbar style={{ boxShadow: "none" }}>
-          <Typography
+          
+          {isMobile ? (
+            <>
+            <Typography
+            variant="h5"
+            color="textSecondary"
+            className={classes.title}
+            style={{
+              color: "#FFFFFF",
+            }}
+          >
+            <Link to="/">
+              <img
+                src={"https://i.imgur.com/lxPZjiO.png"}
+                alt={"Logo"}
+                style={{
+                  height: "1em",
+                  width: "auto",
+                  marginTop: "0.2em",
+                }}
+              />
+            </Link>
+          </Typography>
+              <Button style={{ color: "#000000" }}>
+                <div />
+                <Cart />
+              </Button>
+              <IconButton
+                edge="start"
+                aria-label="menu"
+                style={{ color: "#FFFFFF" }}
+              >
+                <div />
+
+                <TemporaryDrawer />
+              </IconButton>
+            </>
+          ) : (
+            <>
+            <Typography
             variant="h5"
             color="textSecondary"
             className={classes.title}
@@ -71,23 +110,6 @@ const Navbar = (props) => {
               />
             </Link>
           </Typography>
-          {isMobile ? (
-            <>
-              <Button style={{ color: "#000000" }}>
-                <div />
-                <Cart />
-              </Button>
-              <IconButton
-                edge="start"
-                aria-label="menu"
-                style={{ color: "#FFFFFF" }}
-              >
-                <div />
-
-                <TemporaryDrawer />
-              </IconButton>
-            </>
-          ) : (
             <div style={{ marginRight: "2rem" }}>
               <Button component={Link} to="/" style={{ color: "#FFFFFF" }}>
                 <div />
@@ -127,7 +149,7 @@ const Navbar = (props) => {
                 <Cart />
               </Button>
             </div>
-          )}
+          </>)}
         </Toolbar>
       </AppBar>
     </div>

@@ -44,7 +44,7 @@ export default function Information() {
               <img id="food-image" src={PizzaImage} />
             </Grid>
             <Grid item xs={10} md={5}>
-              <Typography className="information-text">
+              <Typography variant="subtitle1" className="information-text">
                 Lorem Ipsum isindustry. Lorem Ipsum has been the industry's
                 standard dummy. Lorem Ipsum has been the industry's standard
                 dummy.
@@ -67,7 +67,7 @@ export default function Information() {
               <img id="food-image" src={PastaImage} />
             </Grid>
             <Grid item xs={10} md={5} order={{ xs: 2, md: 1 }}>
-              <Typography className="information-text">
+              <Typography variant="subtitle1" className="information-text">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy.
                 Lorem Ipsum has been the industry's standard dummy.

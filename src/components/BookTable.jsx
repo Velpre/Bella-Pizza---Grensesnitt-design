@@ -13,6 +13,7 @@ import {
   Button,
   Grid,
 } from "@mui/material";
+import { Typography } from "@material-ui/core";
 import { ArrowForwardIos, Cancel } from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
 import ModalUnstyled from "@mui/base/ModalUnstyled";
@@ -100,7 +101,7 @@ export default function BookTable() {
             <Cancel></Cancel>
           </IconButton>
 
-          <h2>Bestill bord</h2>
+          <Typography variant="h4">Bestill bord</Typography>
           <FormControl onSubmit={handleSubmit}>
             <InputLabel>Antall personer</InputLabel>
             <Select 

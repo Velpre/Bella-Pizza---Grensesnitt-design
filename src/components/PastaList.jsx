@@ -100,12 +100,12 @@ function PastaList() {
 
     return (
         <>
-            <div style={{ marginBottom: "7em" }}>
-                <Typography variant="h2" align='center' marginBottom="2em">Pasta</Typography>
+            <div style={{ paddingBottom: "7em", align:'center', justifyContent:'center' }}>
+                <Typography variant="h2" align='center' marginBottom="1em">Pasta</Typography>
                 <Grid container spacing={3} align='center' direction='row' justifyContent='center'>
 
                     {pastaList.map((p) => {
-                        return <Grid item sm={12} md={5} lg={3}>
+                        return <Grid item xs={12} sm={12} md={5} lg={3} align='center' direction='row' justifyContent='center'>
                             <ProductCard product={p} />
                         </Grid>
                     })}
