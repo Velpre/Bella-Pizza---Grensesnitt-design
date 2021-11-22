@@ -15,10 +15,8 @@ export const UserContext = createContext(null);
 function App() {
   const [products, setProducts] = useState(0);
 
-  const providerValue = useMemo(
-    () => ({ products, setProducts }),
-    [products, setProducts]
-  );
+  const providerValue = useMemo(() => ({ products, setProducts }), [products, setProducts])
+
 
   return (
     <>

@@ -58,18 +58,9 @@ const Navbar = (props) => {
               color: "#FFFFFF",
             }}
           >
-            <Link to="/">
-              <img
-                src={"https://i.imgur.com/lxPZjiO.png"}
-                alt={"Logo"}
-                style={{
-                  height: "1em",
-                  width: "auto",
-                  marginTop: "0.2em",
-                  marginLeft: "1.8em",
-                }}
-              />
-            </Link>
+            <NavHashLink to="/#top">
+              <img src={"https://i.imgur.com/lxPZjiO.png"} alt={"Logo"} style={{ height: "1em", width: "auto", marginTop: "0.2em", marginLeft: "1.8em" }} />
+            </NavHashLink>
           </Typography>
           {isMobile ? (
             <>
@@ -89,39 +80,46 @@ const Navbar = (props) => {
             </>
           ) : (
             <div style={{ marginRight: "2rem" }}>
-              <Button component={Link} to="/" style={{ color: "#FFFFFF" }}>
+              <Button
+                component={NavHashLink}
+                to="/#top"
+                style={{ color: "#FFFFFF" }}
+              >
                 <div />
                 Hjem
               </Button>
-              <Button style={{ color: "#FFFFFF" }}>
+              <Button
+                component={NavHashLink}
+                to="/bestill-bord"
+                style={{ color: "#FFFFFF" }}
+              >
                 <div />
                 <BookTable></BookTable>
               </Button>
-              <Button component={Link} to="/meny" style={{ color: "#FFFFFF" }}>
+              <Button
+                component={NavHashLink}
+                to="/meny#top"
+                style={{ color: "#FFFFFF" }}
+              >
                 <div />
                 Meny
               </Button>
-              <Button>
-                <NavHashLink
-                  to="/#om-oss"
-                  component={Link}
-                  style={{ color: "white", textDecoration: "none" }}
-                >
-                  Om oss
-                  <div />
-                </NavHashLink>
+              <Button
+                component={NavHashLink}
+                to="/#om-oss"
+                style={{ color: "#FFFFFF" }}
+              >
+                <div />
+                Om oss
               </Button>
-              <Button>
-                <NavHashLink
-                  to="/#kontakt-oss"
-                  component={Link}
-                  style={{ textDecoration: "none", color: "#FFFFFF" }}
-                >
-                  Kontakt oss
-                  <div />
-                </NavHashLink>
+              <Button
+                component={NavHashLink}
+                to="/#kontakt-oss"
+                style={{ color: "#FFFFFF" }}
+              >
+                <div />
+                Kontakt oss
               </Button>
-
               <Button>
                 <div />
                 <Cart />
