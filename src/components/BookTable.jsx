@@ -50,7 +50,6 @@ const StyledModal = styled(ModalUnstyled)`
 `;
 /* Style inside modal */
 const styleModalInside = {
-  width: "35%",
   p: 2,
   px: 4,
   pb: 3,
@@ -127,13 +126,13 @@ export default function BookTable() {
         BackdropComponent={Backdrop}
       >
         {state ? (
-          <Box sx={styleModalInside}>
+          <Box id="style-modal" sx={styleModalInside}>
             <IconButton id="cancel-icon-bookTable" onClick={handleClose}>
               <Close />
             </IconButton>
             <h2>Informasjon</h2>
             <FormControl>
-              <InputLabel>Antall personer</InputLabel>
+              <InputLabel color="secondary">Antall personer</InputLabel>
               <Select
                 color="secondary"
                 margin="dense"
@@ -206,7 +205,7 @@ export default function BookTable() {
             </FormControl>
           </Box>
         ) : (
-          <Box sx={styleModalInside}>
+          <Box id="style-modal" sx={styleModalInside}>
             <h2>Bekreft</h2>
             <p>Antall personer {number}</p>
             <p>Navn {name}</p>

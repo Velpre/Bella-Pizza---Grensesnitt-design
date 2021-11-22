@@ -1,3 +1,7 @@
+#style-modal{
+    width: 35%;
+}
+
 #bookTable-btn{
     color:#fff;
 }
@@ -16,5 +20,19 @@
 #number-people {
     background-color: #fff;
 }
+
+
+@media screen and (max-width: 1000px) {
+
+ #style-modal{
+    width: 50%;
+}
+  } 
+  @media screen and (max-width: 660px) {
+
+    #style-modal{
+       width: 80%;
+   }
+     } 
 
 

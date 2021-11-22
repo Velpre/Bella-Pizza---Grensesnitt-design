@@ -5,7 +5,7 @@ import "../css/Information.css";
 import { Link } from "react-router-dom";
 import { Grid, Typography, Button } from "@mui/material";
 /* Images */
-import PizzaImage from "../images/pizza1.jpg";
+import PizzaImage from "../images/pizza11.jpg";
 import PastaImage from "../images/spageti1.jpg";
 import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 /* Hooks */

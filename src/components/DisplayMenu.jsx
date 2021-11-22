@@ -1,4 +1,4 @@
-import { Button, ButtonGroup } from "@mui/material";
+import { Button, ButtonGroup, Box } from "@mui/material";
 import React from "react";
 import PastaList from "./PastaList";
 import PizzaList from "./PizzaList";
@@ -32,7 +32,10 @@ function DisplayMenu() {
             md={12}
           >
             <Typography>
-              Vi serverer italienske retter og pizzaen vår er laget i steinovn.
+              <Box sx={{ fontStyle: "italic" }}>
+                Vi serverer italienske retter og pizzaen vår er laget i
+                steinovn.
+              </Box>
             </Typography>
             <div
               style={{
@@ -91,9 +94,8 @@ function DisplayMenu() {
             display: "flex",
             justifyContent: "center",
             marginTop: "6em",
-            marginBottom: "7vh",
+            marginBottom: "5vh",
           }}
-          variant="outlined"
         >
           <Button onClick={() => setActive("alt")}>Vis alt</Button>
           <Button onClick={() => setActive("pizza")}>Pizza</Button>
