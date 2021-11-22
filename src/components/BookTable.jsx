@@ -107,8 +107,15 @@ export default function BookTable() {
   }
 
   return (
-    <div>                         {/**BRUKES IKKE ?? */}
-      <Button id="bookTable-btn" /*className="btn-style"*/ type="button" onClick={handleOpen}>
+    <div>
+      <Button
+        id="bookTable-btn"
+        type="button"
+        onClick={() => {
+          handleOpen();
+          setState(true);
+        }}
+      >
         Bestill bord
       </Button>
       <StyledModal
@@ -119,79 +126,91 @@ export default function BookTable() {
         }}
         BackdropComponent={Backdrop}
       >
-        <Box sx={styleModalInside}>
-          <IconButton id="cancel-icon-bookTable" onClick={handleClose}>
-            <Cancel></Cancel>
-          </IconButton>
+        {state ? (
+          <Box sx={styleModalInside}>
+            <IconButton id="cancel-icon-bookTable" onClick={handleClose}>
+              <Cancel></Cancel>
+            </IconButton>
+            <h3>Informasjon</h3>
+            <FormControl>
+              <InputLabel>Antall personer</InputLabel>
+              <Select
+                margin="dense"
+                value={number}
+                label="Antall personer"
+                onChange={(e) => setNumber(e.target.value)}
+                fullWidth
+                required
+              >
+                <MenuItem value={1}>1</MenuItem>
+                <MenuItem value={2}>2</MenuItem>
+                <MenuItem value={3}>3</MenuItem>
+                <MenuItem value={4}>4</MenuItem>
+                <MenuItem value={5}>5</MenuItem>
+                <MenuItem value={6}>6</MenuItem>
+                <MenuItem value={7}>7</MenuItem>
+                <MenuItem value={8}>8</MenuItem>
+              </Select>
 
-          <h2>Bestill bord</h2>
-          <FormControl onSubmit={handleSubmit}>
-            <InputLabel>Antall personer</InputLabel>
-            <Select 
-              margin="dense"
-              value={number}
-              label="Antall personer"
-              onChange={(e) => setNumber(e.target.value)}
-              fullWidth
-              required
-            >
-              <MenuItem value={1}>1</MenuItem>
-              <MenuItem value={2}>2</MenuItem>
-              <MenuItem value={3}>3</MenuItem>
-              <MenuItem value={4}>4</MenuItem>
-              <MenuItem value={5}>5</MenuItem>
-              <MenuItem value={6}>6</MenuItem>
-              <MenuItem value={7}>7</MenuItem>
-              <MenuItem value={8}>8</MenuItem>
-            </Select>
+              <TextField
+                margin="dense"
+                required
+                label="Navn"
+                variant="outlined"
+                error={nameError}
+                onChange={(e) => setName(e.target.value)}
+                fullWidth
+              />
+              <TextField
+                margin="dense"
+                required
+                label="E-post"
+                variant="outlined"
+                error={mailError}
+                onChange={(e) => setMail(e.target.value)}
+                fullWidth
+              />
 
-            <TextField
-              margin="dense"
-              required
-              label="Navn"
-              variant="outlined"
-              error={nameError}
-              onChange={(e) => setName(e.target.value)}
-              fullWidth
-            />
-            <TextField
-              margin="dense"
-              required
-              label="E-post"
-              variant="outlined"
-              error={mailError}
-              onChange={(e) => setMail(e.target.value)}
-              fullWidth
-            />
-
-            <Grid container justifyContent="space-between">
-              <Grid xs={12} sm={5} item>
-                <Date></Date>
+              <Grid container justifyContent="space-between">
+                <Grid xs={12} sm={5} item>
+                  <Date pickDate={pickDate}></Date>
+                </Grid>
+                <Grid xs={12} sm={5} item>
+                  <Time pickTime={pickTime}></Time>
+                </Grid>
               </Grid>
-              <Grid xs={12} sm={5} item>
-                <Time></Time>
-              </Grid>
-            </Grid>
 
-            <TextField
-              label="Kommentar"
-              multiline
-              rows={3}
-              defaultValue=""
-              margin="dense"
-              fullWidth
-            />
-            <Button
-              id="reserver-btn"
-              endIcon={<ArrowForwardIos />}
-              variant="contained"
-              size="large"
-              type="button"
-            >
-              Reserver
-            </Button>
-          </FormControl>
-        </Box>
+              <TextField
+                label="Komentar"
+                multiline
+                rows={3}
+                defaultValue=""
+                margin="dense"
+                fullWidth
+              />
+
+              <Button
+                id="reserver-btn"
+                endIcon={<ArrowForwardIos />}
+                variant="contained"
+                size="large"
+                type="button"
+                onClick={handleClick}
+              >
+                Reserver
+              </Button>
+            </FormControl>
+          </Box>
+        ) : (
+          <Box sx={styleModalInside}>
+            <h1>Bekreft</h1>
+            <p>Antall personer {number}</p>
+            <p>Navn {name}</p>
+            <p>E-mail {mail}</p>
+            <p>Dato: {JSON.stringify(date)}</p>
+            <p>Tid: {JSON.stringify(time)}</p>
+          </Box>
+        )}
       </StyledModal>
     </div>
   );
