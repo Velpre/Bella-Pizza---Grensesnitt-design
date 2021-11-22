@@ -2,6 +2,11 @@
     color:white;
 }
 
+#cancel-icon-bookTable{
+    position: absolute;
+    right: 3%;
+}
+
 #reserver-btn{
     background-color: green;
     margin-top: 15%;

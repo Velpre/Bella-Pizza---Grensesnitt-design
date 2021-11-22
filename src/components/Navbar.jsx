@@ -1,5 +1,5 @@
-// IMPORTING APIS
 import React from "react";
+/* MUI */
 import {
   AppBar,
   Toolbar,
@@ -8,17 +8,16 @@ import {
   useMediaQuery,
   Button,
 } from "@material-ui/core";
-
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
+/* Hooks */
 import { useContext } from "react";
 import { UserContext } from "../App";
+/* Components */
 import TemporaryDrawer from "./DrawerMobile";
-
 import Cart from "./Cart";
 import BookTable from "./BookTable";
-// IMPORTING ICONS
 
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({

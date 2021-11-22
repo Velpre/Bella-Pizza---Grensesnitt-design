@@ -1,9 +1,12 @@
 import React from "react";
+/* Components */
 import Footer from "./Footer";
 import BookTable from "./BookTable";
-import { Grid, Button } from "@mui/material";
+
+/* CSS */
 import "../css/ContactUs.css";
-/* Import icones */
+/* MUI */
+import { Grid, Button } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";

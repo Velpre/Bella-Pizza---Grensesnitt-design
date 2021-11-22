@@ -1,5 +1,7 @@
 import React from "react";
+/* Hooks */
 import { useState } from "react";
+/* MUI */
 import {
   TextField,
   Box,
@@ -11,11 +13,13 @@ import {
   Button,
   Grid,
 } from "@mui/material";
-import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
-
+import { ArrowForwardIos, Cancel } from "@mui/icons-material";
+import IconButton from "@mui/material/IconButton";
 import ModalUnstyled from "@mui/base/ModalUnstyled";
+/* Components */
 import Date from "./Date";
 import Time from "./Time";
+/* Css */
 import "../css/BookTable.css";
 
 /* Style behind modal */
@@ -26,7 +30,7 @@ const Backdrop = styled("div")`
   bottom: 0;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   -webkit-tap-highlight-color: transparent;
 `;
 
@@ -51,6 +55,7 @@ const styleModalInside = {
   textAlign: "center",
   bgcolor: "white",
   borderRadius: "20px",
+  position: "relative",
 };
 
 export default function BookTable() {
@@ -71,13 +76,13 @@ export default function BookTable() {
   const [mail, setMail] = useState("");
   const [mailError, setMailError] = useState(false);
 
-  //Submit
+  //Submit - Jobbe videre
 
   const handleSubmit = (e) => {
     console.log(e);
   };
 
-  console.log(number);
+  /* console.log(number); */
 
   return (
     <div>
@@ -91,6 +96,10 @@ export default function BookTable() {
         BackdropComponent={Backdrop}
       >
         <Box sx={styleModalInside}>
+          <IconButton id="cancel-icon-bookTable" onClick={handleClose}>
+            <Cancel></Cancel>
+          </IconButton>
+
           <h2>Bestill bord</h2>
           <FormControl onSubmit={handleSubmit}>
             <InputLabel>Antall personer</InputLabel>
@@ -99,8 +108,8 @@ export default function BookTable() {
               value={number}
               label="Antall personer"
               onChange={(e) => setNumber(e.target.value)}
-              required
               fullWidth
+              required
             >
               <MenuItem value={1}>1</MenuItem>
               <MenuItem value={2}>2</MenuItem>
@@ -150,7 +159,7 @@ export default function BookTable() {
             />
             <Button
               id="reserver-btn"
-              endIcon={<ArrowIcon />}
+              endIcon={<ArrowForwardIos />}
               variant="contained"
               size="large"
               type="button"
