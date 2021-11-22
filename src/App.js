@@ -12,12 +12,10 @@ import { createContext } from "react";
 export const UserContext = createContext(null);
 
 function App() {
-  const [products, setProducts] = useState(0);
+  const [products, setProducts] = useState([]);
 
-  const providerValue = useMemo(
-    () => ({ products, setProducts }),
-    [products, setProducts]
-  );
+  const providerValue = useMemo(() => ({ products, setProducts }), [products, setProducts])
+
 
   return (
     <>
