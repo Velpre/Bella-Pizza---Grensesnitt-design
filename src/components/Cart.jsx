@@ -18,6 +18,13 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import ProductCartCard from "./ProductCartCard"
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { UserContext } from "../App";
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 
 
@@ -119,8 +126,18 @@ export default function Cart() {
         const filteredProducts = products.filter((product) => product.id !== prop.id)
         setProducts(filteredProducts);
 
-        //Deletes both if same ID ----- need bug fix
 
+    }
+    let price = 0;
+    if (products !== 0) {
+        let prices = [];
+        prices = products.map((product) => {
+            return parseInt(product.quantity) * parseInt(product.price)
+        })
+
+        prices.forEach(e => {
+            price += e;
+        });
     }
 
     let product;
@@ -129,8 +146,32 @@ export default function Cart() {
             return <ProductCartCard product={product} deleteProduct={deleteFromCart} />
         })
     } else {
-        product = "empty"
+        product = "empty";
     }
+
+
+    const StyledTableCell = styled(TableCell)(({ theme }) => ({
+        [`&.${tableCellClasses.head}`]: {
+            backgroundColor: theme.palette.common.black,
+            color: theme.palette.common.white,
+        },
+        [`&.${tableCellClasses.body}`]: {
+            fontSize: 14,
+        },
+    }));
+
+    const StyledTableRow = styled(TableRow)(({ theme }) => ({
+        '&:nth-of-type(odd)': {
+            backgroundColor: theme.palette.action.hover,
+        },
+        // hide last border
+        '&:last-child td, &:last-child th': {
+            border: 0,
+        },
+    }));
+
+
+
 
 
     return (
@@ -156,6 +197,22 @@ export default function Cart() {
 
 
                         </DialogContent>
+                        <TableContainer component={Paper}>
+                            <Table sx={{ minWidth: 420 }} aria-label="customized table">
+                                <TableHead>
+                                </TableHead>
+                                <TableBody>
+                                    <StyledTableRow>
+                                        <StyledTableCell component="th" scope="row">
+                                            Totalt å betale
+                                        </StyledTableCell>
+                                        <StyledTableCell align="right" sx={{ pr: 4 }}>
+                                            {price}{"kr"}
+                                        </StyledTableCell>
+                                    </StyledTableRow>
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
                         <DialogActions>
                             <Button autoFocus onClick={handleClose}>
                                 Save changes
@@ -181,8 +238,23 @@ export default function Cart() {
 
                             {product}
 
-
                         </DialogContent>
+                        <TableContainer component={Paper}>
+                            <Table sx={{ minWidth: 500 }} aria-label="customized table">
+                                <TableHead>
+                                </TableHead>
+                                <TableBody>
+                                    <StyledTableRow>
+                                        <StyledTableCell component="th" scope="row">
+                                            Totalt å betale
+                                        </StyledTableCell>
+                                        <StyledTableCell align="right" sx={{ pr: 4 }}>
+                                            {price}{"kr"}
+                                        </StyledTableCell>
+                                    </StyledTableRow>
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
                         <DialogActions>
                             <Button autoFocus onClick={handleClose}>
                                 Save changes
