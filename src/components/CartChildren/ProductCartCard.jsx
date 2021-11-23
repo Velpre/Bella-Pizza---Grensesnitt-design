@@ -1,10 +1,13 @@
-import { IconButton, Grid, Typography } from '@mui/material';
+import React from 'react';
+/* MUI */
+import {
+  IconButton, 
+  Grid,
+  Typography
+ } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Divider } from '@mui/material';
-import React, { useContext } from 'react';
-import UserContext from "../App"
 
 export default function ProductCartCard(props) {
 
@@ -19,7 +22,6 @@ export default function ProductCartCard(props) {
   function triggerAddQuantity(id){
     props.addQuantity(id)
   }
-
 
   return (
     <>

@@ -28,7 +28,7 @@ function PastaList() {
 
   const pastaList = [
     {
-      id: 1,
+      id: 11,
       name: "Carbonara",
       productDescription: "Pasta, carbonarasaus, bacon, og parmesan",
       allergies: "Ingen",
@@ -37,7 +37,7 @@ function PastaList() {
       price: 189,
     },
     {
-      id: 2,
+      id: 12,
       name: "Scampi",
       productDescription: "Pasta, scampi, ostesaus med hvitvin",
       allergies: "S",
@@ -46,7 +46,7 @@ function PastaList() {
       price: 189,
     },
     {
-      id: 3,
+      id: 13,
       name: "Bolognese",
       productDescription: "Pasta, tomatsaus, kjøtt",
       allergies: "Ingen",
@@ -55,7 +55,7 @@ function PastaList() {
       price: 179,
     },
     {
-      id: 4,
+      id: 14,
       name: "Pomodoro",
       productDescription: "Pasta, basilikum og soltørket tomat",
       allergies: "V",
@@ -64,7 +64,7 @@ function PastaList() {
       price: 179,
     },
     {
-      id: 5,
+      id: 15,
       name: "Salsiccia",
       productDescription: "Pasta, pølse, hvit saus",
       allergies: "Ingen",
@@ -73,7 +73,7 @@ function PastaList() {
       price: 179,
     },
     {
-      id: 6,
+      id: 16,
       name: "Verdura",
       productDescription: "Pasta, dagens grønnsaker",
       allergies: "V",
@@ -82,7 +82,7 @@ function PastaList() {
       price: 179,
     },
     {
-      id: 7,
+      id: 17,
       name: "Al Forno",
       productDescription: "Tomat, fløte og hvitvin",
       allergies: "Ingen",
@@ -91,7 +91,7 @@ function PastaList() {
       price: 179,
     },
     {
-      id: 8,
+      id: 18,
       name: "Piselli",
       productDescription: "Pasta, tomater, erter og basilikum",
       allergies: "Ingen",
@@ -100,7 +100,7 @@ function PastaList() {
       price: 179,
     },
     {
-      id: 9,
+      id: 19,
       name: "Pollo",
       productDescription: "Pasta, tomat, kylling, og basilikum",
       allergies: "Ingen",
@@ -109,7 +109,7 @@ function PastaList() {
       price: 189,
     },
     {
-      id: 10,
+      id: 20,
       name: "Ceci",
       productDescription: "Pasta, tomat, og kikerter",
       allergies: "Ingen",
