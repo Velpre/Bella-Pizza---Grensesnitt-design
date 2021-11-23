@@ -19,7 +19,7 @@ function DisplayMenu() {
       <div
         style={{
           height: "100%",
-          marginTop: "1.5em",
+          marginTop: "1.3em",
           align: "center",
           justifyContent: "center",
           width: "100%",
@@ -28,7 +28,6 @@ function DisplayMenu() {
         <Grid
           style={{ height: "100%" }}
           container
-          spacing={2}
           align="center"
           direction="row"
           justifyContent="center"
@@ -60,7 +59,6 @@ function DisplayMenu() {
               style={{
                 align: "center",
                 marginTop: "3em",
-                align: "center",
                 justifyContent: "center",
               }}
             >
@@ -89,7 +87,7 @@ function DisplayMenu() {
                   style={{
                     display: "inline-block",
                     marginRight: "2em",
-                    marginLeft: "2em",
+                    marginLeft: "em",
                   }}
                 >
                   S - Sjømat

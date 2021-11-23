@@ -13,7 +13,7 @@ import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 import { Typography } from "@material-ui/core";
 
-export default function ContactUs(props) {
+export default function ContactUs() {
   return (
     <Grid container className="contact-section" id="kontakt-oss">
       <Grid container item xs={12} justifyContent="center">
@@ -80,6 +80,7 @@ export default function ContactUs(props) {
         </Grid>
         <Grid item>
           <iframe
+            title="google maps"
             className="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16003.204024194303!2d10.739215484427733!3d59.90890028754498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416e8a1dd5d001%3A0xcdf1706e3a58f28c!2sBella%20Bambina%20Ristorante!5e0!3m2!1sno!2sno!4v1637335043493!5m2!1sno!2sno"
             width="300"

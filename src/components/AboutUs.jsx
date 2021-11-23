@@ -62,7 +62,7 @@ export default function AboutUs() {
           </Grid>
 
           <Grid item xs={10} md={5} className="about-us-image">
-            <img id="restaurant-img" src={RestaurantPhoto} />
+            <img id="restaurant-img" src={RestaurantPhoto} alt={"restaurant"} />
           </Grid>
         </Grid>
       </motion.div>

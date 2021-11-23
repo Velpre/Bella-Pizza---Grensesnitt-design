@@ -5,7 +5,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, MenuItem, Box, Drawer } from "@material-ui/core";
 
-import BookTable from "./BookTable";
 
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({

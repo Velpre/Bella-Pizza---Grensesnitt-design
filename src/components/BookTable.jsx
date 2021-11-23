@@ -165,7 +165,7 @@ export default function BookTable() {
 
               <TextField
                 color="secondary"
-                label="Komentar"
+                label="Kommentar"
                 multiline
                 rows={3}
                 defaultValue=""
