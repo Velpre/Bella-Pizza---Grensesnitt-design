@@ -50,20 +50,21 @@ const Navbar = (props) => {
         }}
       >
         <Toolbar style={{ boxShadow: "none" }}>
-          <Typography
-            variant="h5"
-            color="textSecondary"
-            className={classes.title}
-            style={{
-              color: "#FFFFFF",
-            }}
-          >
-            <NavHashLink to="/#top">
-              <img src={"https://i.imgur.com/lxPZjiO.png"} alt={"Logo"} style={{ height: "1em", width: "auto", marginTop: "0.2em", marginLeft: "1.8em" }} />
-            </NavHashLink>
-          </Typography>
+
           {isMobile ? (
             <>
+              <Typography
+                variant="h5"
+                color="textSecondary"
+                className={classes.title}
+                style={{
+                  color: "#FFFFFF",
+                }}
+              >
+                <NavHashLink to="/#top">
+                  <img src={"https://i.imgur.com/lxPZjiO.png"} alt={"Logo"} style={{ height: "1em", width: "auto", marginTop: "0.2em", marginLeft: "1.8em" }} />
+                </NavHashLink>
+              </Typography>
               <Button style={{ color: "#000000" }}>
                 <div />
                 <Cart />
@@ -79,53 +80,66 @@ const Navbar = (props) => {
               </IconButton>
             </>
           ) : (
-            <div style={{ marginRight: "2rem" }}>
-              <Button
-                component={NavHashLink}
-                to="/#top"
-                style={{ color: "#FFFFFF" }}
+            <>
+              <Typography
+                variant="h5"
+                color="textSecondary"
+                className={classes.title}
+                style={{
+                  color: "#FFFFFF",
+                }}
               >
-                <div />
-                Hjem
-              </Button>
-              <Button
-                style={{ color: "#FFFFFF", textDecoration: "none" }}
-              >
-                <div />
-                <BookTable
+                <NavHashLink to="/#top">
+                  <img src={"https://i.imgur.com/lxPZjiO.png"} alt={"Logo"} style={{ height: "1em", width: "auto", marginTop: "0.2em", marginLeft: "1.8em" }} />
+                </NavHashLink>
+              </Typography>
+              <div style={{ marginRight: "2rem" }}>
+                <Button
+                  component={NavHashLink}
+                  to="/#top"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  <div />
+                  Hjem
+                </Button>
+                <Button
                   style={{ color: "#FFFFFF", textDecoration: "none" }}
-                ></BookTable>
-              </Button>
-              <Button
-                component={NavHashLink}
-                to="/meny#top"
-                style={{ color: "#FFFFFF" }}
-              >
-                <div />
-                Meny
-              </Button>
-              <Button
-                component={NavHashLink}
-                to="/#om-oss"
-                style={{ color: "#FFFFFF" }}
-              >
-                <div />
-                Om oss
-              </Button>
-              <Button
-                component={NavHashLink}
-                to="/#kontakt-oss"
-                style={{ color: "#FFFFFF" }}
-              >
-                <div />
-                Kontakt oss
-              </Button>
-              <Button>
-                <div />
-                <Cart />
-              </Button>
-            </div>
-          )}
+                >
+                  <div />
+                  <BookTable
+                    style={{ color: "#FFFFFF", textDecoration: "none" }}
+                  ></BookTable>
+                </Button>
+                <Button
+                  component={NavHashLink}
+                  to="/meny#top"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  <div />
+                  Meny
+                </Button>
+                <Button
+                  component={NavHashLink}
+                  to="/#om-oss"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  <div />
+                  Om oss
+                </Button>
+                <Button
+                  component={NavHashLink}
+                  to="/#kontakt-oss"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  <div />
+                  Kontakt oss
+                </Button>
+                <Button>
+                  <div />
+                  <Cart />
+                </Button>
+              </div>
+            </>)}
         </Toolbar>
       </AppBar>
     </div>

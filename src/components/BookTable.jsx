@@ -13,6 +13,7 @@ import {
   Button,
   Grid,
 } from "@mui/material";
+import { Typography } from "@material-ui/core";
 import { ArrowForwardIos, Cancel } from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
 import ModalUnstyled from "@mui/base/ModalUnstyled";

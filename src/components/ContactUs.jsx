@@ -12,13 +12,14 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
+import { Typography } from "@material-ui/core";
 
 export default function ContactUs(props) {
   return (
     <Grid container className="contact-section" id="kontakt-oss">
       <Grid container item xs={12} justifyContent="center">
         <Grid item>
-          <h1 id="contact-us">KONTAKT</h1>
+          <Typography variant="h1">Kontakt</Typography>
         </Grid>
       </Grid>
 
@@ -32,21 +33,21 @@ export default function ContactUs(props) {
       >
         <Grid item>
           <h2>
-            <HomeIcon className="icone-contact-us" /> ADRESSE
+            <HomeIcon className="icone-contact-us" /> Adresse
           </h2>
           <p>Romaveien 12</p>
           <p>0368 Oslo</p>
         </Grid>
         <Grid item>
           <h2>
-            <PhoneIcon className="icone-contact-us" /> TELEFON
+            <PhoneIcon className="icone-contact-us" /> Telefon
           </h2>
           <p>21 21 21 00</p>
         </Grid>
         <Grid item>
-          <h3>
-            <EmailIcon className="icone-contact-us" /> E-MAIL
-          </h3>
+          <h2>
+            <EmailIcon className="icone-contact-us" /> E-Mail
+          </h2>
           <a href="mailto:post@bellapizza.com">post@bellapizza.no</a>
         </Grid>
         <Grid item order={{ xs: 1 }}>

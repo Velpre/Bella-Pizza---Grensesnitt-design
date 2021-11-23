@@ -7,16 +7,16 @@ import Footer from "../components/Footer"
 
 
 
+
 function Meny() {
-    return (
-        <>
-            <div style={{ backgroundColor: "#c0c0c01a" }}>
-                <Navbar />
-                <DisplayMenu />
-                <Footer />
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div style={{align:'center', justifyContent:'center'}}>
+        <DisplayMenu />
+        <Footer/>
+      </div>
+    </>
+  );
 }
 
 export default Meny;
