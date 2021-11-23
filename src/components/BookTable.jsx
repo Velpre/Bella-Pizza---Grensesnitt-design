@@ -187,7 +187,10 @@ export default function BookTable() {
           </Box>
         ) : (
           <Box id="style-modal" sx={styleModalInside}>
-            <Typography style={{ marginBottom: "30px" }} variant="h4">
+            <IconButton id="cancel-icon-bookTable" onClick={handleClose}>
+              <Close />
+            </IconButton>
+            <Typography style={{ margin: "30px 0 30px" }} variant="h4">
               Takk for din bestilling {name}
             </Typography>
             <Typography variant="body1">

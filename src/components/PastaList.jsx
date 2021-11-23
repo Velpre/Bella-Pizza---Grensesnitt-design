@@ -11,7 +11,6 @@ import { useAnimation, motion } from "framer-motion";
 function PastaList() {
   const [ref, inView] = useInView({});
   const animation = useAnimation();
-  console.log(inView);
 
   useEffect(() => {
     if (inView) {

@@ -10,7 +10,6 @@ import { useAnimation, motion } from "framer-motion";
 function PizzaList() {
   const [ref, inView] = useInView();
   const animation = useAnimation();
-  console.log(inView);
   /* Animation */
   useEffect(() => {
     if (inView) {
