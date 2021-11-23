@@ -1,4 +1,6 @@
 import React from "react";
+/* CSS */
+import "../css/Footer.css";
 /* MUI */
 import { Email, Facebook, Instagram } from "@mui/icons-material";
 import { Grid, Link } from "@mui/material";
@@ -10,7 +12,7 @@ export default function Footer() {
     <Grid
       container
       item
-      className="footer-container"
+      id="footer-container"
       justifyContent="center"
       alignItems="flex-end"
       spacing={10}

@@ -1,0 +1,22 @@
+
+#footer-container{
+    padding-bottom: 20px; 
+  }
+  
+  #footer-container a{
+    color: #FFFFFF;
+  }
+
+  @media screen and (max-width: 600px) {
+  
+    #footer-container{
+      padding-top: 5%; 
+    }
+  } 
+
+  @media screen and (min-width: 1000px){
+    #footer-container a:hover{
+      color:#2B6250;
+      transition: 0.5s;
+    } 
+  }

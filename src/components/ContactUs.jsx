@@ -2,7 +2,6 @@ import React from "react";
 /* Components */
 import Footer from "./Footer";
 import BookTable from "./BookTable";
-
 /* CSS */
 import "../css/ContactUs.css";
 /* MUI */

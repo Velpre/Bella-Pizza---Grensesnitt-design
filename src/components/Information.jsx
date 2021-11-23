@@ -17,12 +17,14 @@ import { motion } from "framer-motion";
 import { NavHashLink } from "react-router-hash-link";
 
 export default function Information() {
+  /* Checking where on page user is */
   const [ref, inView] = useInView({
     threshold: 0.2,
     unobserveOnEnter: true,
   });
+  /* Animationg inside here */
   const animation = useAnimation();
-
+  /* Starting animation */
   useEffect(() => {
     if (inView) {
       animation.start({
@@ -36,10 +38,32 @@ export default function Information() {
       });
     }
   }, [inView]);
+
+  /* Doing the same animation like over for box 2 */
+  const [ref1, inView1] = useInView({
+    threshold: 0.2,
+    unobserveOnEnter: true,
+  });
+
+  const animation1 = useAnimation();
+
+  useEffect(() => {
+    if (inView1) {
+      animation1.start({
+        opacity: 1,
+        transition: { duration: 1.5 },
+      });
+    }
+    if (!inView1) {
+      animation1.start({
+        opacity: 0,
+      });
+    }
+  }, [inView1]);
   return (
     <div className="information-section">
-      <motion.div animate={animation} ref={ref}>
-        <Grid className="information-container" container>
+      <Grid className="information-container" container>
+        <motion.div animate={animation} ref={ref}>
           <Grid spacing={3} item container className="food-container">
             <Grid item xs={10} md={5}>
               <img id="food-image" src={PizzaImage} alt={"pizza"} />
@@ -64,7 +88,8 @@ export default function Information() {
               </Button>
             </Grid>
           </Grid>
-
+        </motion.div>
+        <motion.div animate={animation1} ref={ref1}>
           <Grid spacing={3} item container className="food-container">
             <Grid item item xs={10} md={5} order={{ xs: 1, md: 2 }}>
               <img id="food-image" src={PastaImage} alt={"Pasta"} />
@@ -89,8 +114,8 @@ export default function Information() {
               </Button>
             </Grid>
           </Grid>
-        </Grid>
-      </motion.div>
+        </motion.div>
+      </Grid>
     </div>
   );
 }
