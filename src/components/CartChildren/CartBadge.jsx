@@ -9,16 +9,10 @@ export default function CartBadge(props) {
         props.openModal()
     }
 
-    let value; 
-
-    for(let i = 0; i < props.products.length; i++){
-        value += props.products[i].quantity
-    }
-
     return (
         <>
             <Badge
-                badgeContent={value}
+                badgeContent={props.count}
                 color="primary"
                 onClick={handleOpen}
             >

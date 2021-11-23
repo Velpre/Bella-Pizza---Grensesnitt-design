@@ -157,21 +157,21 @@ export default function Cart() {
         setFinishOpen(false);
     };
 
-    function setAllFalse(target){
-        switch(target){
-            case "visa": 
+    function setAllFalse(target) {
+        switch (target) {
+            case "visa":
                 handleCloseVipps();
                 handleCloseCash();
-            break;
+                break;
             case "vipps":
                 handleCloseVisa();
                 handleCloseCash();
-            break;
+                break;
             case "cash":
                 handleCloseVisa();
                 handleCloseVipps();
-            break;
-            default: 
+                break;
+            default:
                 handleCloseVisa();
                 handleCloseVipps();
                 handleCloseCash();
@@ -192,17 +192,22 @@ export default function Cart() {
         setProducts(filteredProducts);
     }
     let price = 0;
+    let count = 0;
 
     if (products !== 0) {
         let prices = [];
         prices = products.map((product) => {
+            count += product.quantity
             return parseInt(product.quantity) * parseInt(product.price);
         });
 
+
         prices.forEach((e) => {
             price += e;
+
         });
     }
+
 
     function subtractQuantityOfProduct(product) {
         if (product.quantity == 1) {
@@ -264,7 +269,7 @@ export default function Cart() {
                 </>
             ) : (
                 <>
-                    <CartBadge products={products} openModal={() => {
+                    <CartBadge count={count} products={products} openModal={() => {
                         handleClickOpen()
                         handleOrderOpen()
                     }} />
@@ -296,7 +301,7 @@ export default function Cart() {
                                 <DialogContent dividers>{product}</DialogContent>
                                 <Price price={price} />
                                 <DialogActions>
-                                    <Button 
+                                    <Button
                                         color="secondary"
                                         variant="contained"
                                         autoFocus
@@ -322,7 +327,7 @@ export default function Cart() {
                                         <ProductConfirmation products={products} />
                                         <FormGroup>
                                             <FormControlLabel
-                                                control={<Checkbox style={{color: "#000000"}} onClick={delivery ? (handleDeliveryClose) : (handleDeliveryOpen)} />}
+                                                control={<Checkbox style={{ color: "#000000" }} onClick={delivery ? (handleDeliveryClose) : (handleDeliveryOpen)} />}
                                                 label="Hjemlevering"
                                             />
                                         </FormGroup>
@@ -365,7 +370,7 @@ export default function Cart() {
                                         <Payment setFalse={setAllFalse} setVisaBox={handleOpenVisa} setVippsBox={handleOpenVipps} setCashBox={handleOpenCash} stateVisa={visa} stateVipps={vipps} stateCash={cash} />
                                     </DialogContent>
                                     <DialogActions>
-                                        <Button 
+                                        <Button
                                             color="secondary"
                                             variant="contained"
                                             autoFocus
@@ -383,19 +388,19 @@ export default function Cart() {
                                         </Button>
                                     </DialogActions>
                                     {finish ? (
-                                        <Grid container container spacing={1} sx={{maxWidth: 420}} style={{marginBottom:"8%"}}>
-                                            <Grid item xs={12} style={{textAlign: "center"}}>
-                                            <Typography variant="h6">
-                                                Takk for din bestilling!
-                                            </Typography>
+                                        <Grid container container spacing={1} sx={{ maxWidth: 420 }} style={{ marginBottom: "8%" }}>
+                                            <Grid item xs={12} style={{ textAlign: "center" }}>
+                                                <Typography variant="h6">
+                                                    Takk for din bestilling!
+                                                </Typography>
                                             </Grid>
-                                            <Grid item xs={12} style={{textAlign: "center"}}>
-                                            <Typography>
-                                               Ditt ordrenummer er # {Math.floor(Math.random() * 10000)}
-                                            </Typography>
-                                            <Typography>
-                                                Du har mottatt en sms med informasjon.
-                                            </Typography>
+                                            <Grid item xs={12} style={{ textAlign: "center" }}>
+                                                <Typography>
+                                                    Ditt ordrenummer er # {Math.floor(Math.random() * 10000)}
+                                                </Typography>
+                                                <Typography>
+                                                    Du har mottatt en sms med informasjon.
+                                                </Typography>
                                             </Grid>
                                         </Grid>
                                     ) : (null)}
