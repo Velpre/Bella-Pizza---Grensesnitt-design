@@ -15,7 +15,7 @@ export default function Footer() {
       id="footer-container"
       justifyContent="center"
       alignItems="flex-end"
-      spacing={10}
+      spacing={5}
       backgroundColor="#242424"
     >
       <Grid item>

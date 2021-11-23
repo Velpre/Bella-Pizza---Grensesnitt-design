@@ -276,7 +276,178 @@ export default function Cart() {
         <div>
             {isMobile ? (
                 <>
+                    <CartBadge count={count} products={products} openModal={() => {
+                        handleClickOpen()
+                        handleOrderOpen()
+                    }} />
+                    <BootstrapDialog
+                        style={{ overflow: "auto" }}
+                        className={classes.mobileScroll}
+                        onClose={() => {
+                            handleClose();
+                            handleOrderClose();
+                            handleDeliveryClose();
+                            handleFinishClose();
+                            setAllFalse("default");
+                            handleShowPaymentOpen();
+                        }}
+                        aria-labelledby="customized-dialog-title"
+                        open={open}
+                    >
+                        {order ? (
+                            <Box>
+                                <BootstrapDialogTitle
+                                    id="customized-dialog-title"
+                                    onClose={() => {
+                                        handleClose();
+                                        handleOrderClose();
+                                        handleDeliveryClose();
+                                        handlePaymentOpen();
+                                    }}
+                                >
+                                    Handlekurv
+                                </BootstrapDialogTitle>
+                                <DialogContent dividers>{product}</DialogContent>
+                                <Price price={price} />
+                                <DialogActions>
+                                    <Button
+                                        color="secondary"
+                                        variant="contained"
+                                        autoFocus
+                                        onClick={() => {
+                                            handleOrderClose()
+                                            handlePaymentOpen();
+                                        }}
+                                    >
+                                        Gå videre
+                                    </Button>
+                                </DialogActions>
+                            </Box>
+                        ) : (
+                            <>
+                                {payment ? (<Box>
+                                    <BootstrapDialogTitle
+                                        id="customized-dialog-title"
+                                        onClose={() => {
+                                            handleClose()
+                                            handleOrderClose()
+                                            handlePaymentOpen();
+                                            handleDeliveryClose();
+                                        }}
+                                    >
+                                        Din bestilling
+                                    </BootstrapDialogTitle>
+                                    <DialogContent dividers>
+                                        <ProductConfirmation products={products} />
+                                        <FormGroup>
+                                            <FormControlLabel
+                                                control={<Checkbox style={{ color: "#000000" }} onClick={delivery ? (handleDeliveryClose) : (handleDeliveryOpen)} />}
+                                                label="Hjemlevering"
+                                            />
+                                        </FormGroup>
+                                        {delivery ? (<Delivery />) : (null)}
+                                        <TableContainer>
+                                            <TextField
+                                                color="secondary"
+                                                margin="dense"
+                                                required
+                                                label="Navn"
+                                                variant="outlined"
+                                                fullWidth
+                                            />
+                                            <TextField
+                                                color="secondary"
+                                                label="Kommentar"
+                                                multiline
+                                                defaultValue=""
+                                                margin="dense"
+                                                fullWidth
+                                            />
+                                            <Grid container justifyContent="space-between">
+                                                <Grid xs={12} sm={5} item>
+                                                    <Date />
+                                                </Grid>
+                                                <Grid xs={12} sm={5} item>
+                                                    <Time />
+                                                </Grid>
+                                            </Grid>
 
+                                        </TableContainer>
+                                        <Price price={price}></Price>
+                                    </DialogContent>
+                                    <DialogActions>
+                                        <Button
+                                            color="secondary"
+                                            variant="contained"
+                                            autoFocus
+                                            onClick={() => {
+                                                handleOrderClose();
+                                                handlePaymentClose()
+                                            }}
+                                        >
+                                            Gå videre
+                                        </Button>
+                                    </DialogActions>
+                                </Box>) : (<Box>
+                                    <BootstrapDialogTitle
+                                        id="customized-dialog-title"
+                                        onClose={() => {
+                                            handleClose();
+                                            handleOrderClose();
+                                            handleDeliveryClose();
+                                            handleFinishClose();
+                                            setAllFalse("default");
+                                            handleShowPaymentOpen();
+                                        }}
+                                    >
+                                        Din bestilling
+                                    </BootstrapDialogTitle>
+                                    <DialogContent dividers>
+                                        {showPayment ? (<Payment setFalse={setAllFalse} setVisaBox={handleOpenVisa} setVippsBox={handleOpenVipps} setCashBox={handleOpenCash} stateVisa={visa} stateVipps={vipps} stateCash={cash} />
+                                        ) : (null)}
+                                    </DialogContent>
+                                    <DialogActions>
+                                        <Button
+                                            id="disable-button"
+                                            color="secondary"
+                                            variant="contained"
+                                            autoFocus
+                                            onClick={() => {
+                                                setProducts([]);
+                                                handleOrderClose();
+                                                handleDeliveryClose();
+                                                handleCloseCash();
+                                                handleCloseVipps();
+                                                handleCloseVisa();
+                                                handleFinishOpen();
+                                                handleShowPaymentClose();
+                                                removeButton();
+                                            }}
+                                        >
+                                            Utfør
+                                        </Button>
+                                    </DialogActions>
+                                    {finish ? (
+                                        <Grid container spacing={1} sx={{ maxWidth: 420 }} style={{ marginBottom: "8%" }}>
+                                            <Grid item xs={12} style={{ textAlign: "center" }}>
+                                                <Typography variant="h6">
+                                                    Takk for din bestilling!
+                                                </Typography>
+                                            </Grid>
+                                            <Grid item xs={12} style={{ textAlign: "center" }}>
+                                                <Typography>
+                                                    Ditt ordrenummer er # {Math.floor(Math.random() * 10000)}
+                                                </Typography>
+                                                <Typography>
+                                                    Du har mottatt en sms med informasjon.
+                                                </Typography>
+                                            </Grid>
+                                        </Grid>
+                                    ) : (null)}
+                                </Box>)}
+                            </>
+                        )}
+                    </BootstrapDialog>
                 </>
             ) : (
                 <>
