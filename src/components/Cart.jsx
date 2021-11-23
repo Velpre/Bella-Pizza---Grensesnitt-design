@@ -38,6 +38,8 @@ import ProductConfirmation from "./CartChildren/ProductConfirmation";
 import Delivery from "./CartChildren/Delivery";
 import CartBadge from "./CartChildren/CartBadge";
 import Payment from "./CartChildren/Payment";
+import Date from "./Date";
+import Time from "./Time";
 
 /* Global state */
 import { UserContext } from "../App";
@@ -330,13 +332,28 @@ export default function Cart() {
                                         <TableContainer>
                                             <TextField
                                                 color="secondary"
+                                                margin="dense"
+                                                required
+                                                label="Navn"
+                                                variant="outlined"
+                                                fullWidth
+                                            />
+                                            <TextField
+                                                color="secondary"
                                                 label="Kommentar"
                                                 multiline
-                                                rows={3}
                                                 defaultValue=""
                                                 margin="dense"
                                                 fullWidth
                                             />
+                                            <Grid container justifyContent="space-between">
+                                                <Grid xs={12} sm={5} item>
+                                                    <Date />
+                                                </Grid>
+                                                <Grid xs={12} sm={5} item>
+                                                    <Time />
+                                                </Grid>
+                                            </Grid>
 
                                         </TableContainer>
                                         <Price price={price}></Price>
