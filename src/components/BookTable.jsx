@@ -22,7 +22,6 @@ import Date from "./Date";
 import Time from "./Time";
 /* Css */
 import "../css/BookTable.css";
-import setDate from "date-fns/esm/fp/setDate/index.js";
 
 /* Style behind modal */
 const Backdrop = styled("div")`

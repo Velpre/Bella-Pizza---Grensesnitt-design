@@ -3,9 +3,10 @@ import React from "react";
 import "../css/AboutUs.css";
 /* MUI */
 import { Button, Grid, Typography } from "@mui/material";
-import RestaurantPhoto from "../images/restaurant.jpg";
 import BookTable from "./BookTable";
 import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
+/* Image */
+import RestaurantPhoto from "../images/restaurant.jpg";
 /* Hooks */
 import { useInView } from "react-hook-inview";
 import { useEffect } from "react";
@@ -39,7 +40,9 @@ export default function AboutUs() {
       <motion.div animate={animation} ref={ref}>
         <Grid className="about-us-container" container spacing={5} id="om-oss">
           <Grid item xs={9} md={4}>
-            <Typography variant="h1" fontSize="3em" marginBottom="0.5em">Italiensk i ånden</Typography>
+            <Typography variant="h1" fontSize="3em" marginBottom="0.5em">
+              Italiensk i ånden
+            </Typography>
             <Typography className="about-us-txt">
               Vår kjærlighetsaffære med italiensk mat er langsiktig. I 1965
               visste en klok mann kalt Marco Rossi at pizza i Oslo kunne være
