@@ -21,7 +21,13 @@ export default function Date(props) {
             props.pickDate(value);
           }}
           renderInput={(params) => (
-            <TextField fullWidth required margin="dense" {...params} />
+            <TextField
+              color="secondary"
+              fullWidth
+              required
+              margin="dense"
+              {...params}
+            />
           )}
         />
       </LocalizationProvider>

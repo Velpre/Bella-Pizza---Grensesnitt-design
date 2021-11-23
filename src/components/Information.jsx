@@ -5,8 +5,8 @@ import "../css/Information.css";
 import { Link } from "react-router-dom";
 import { Grid, Typography, Button } from "@mui/material";
 /* Images */
-import PizzaImage from "../images/pizzaoptions.jpg";
-import PastaImage from "../images/pastaoptions.jpg";
+import PizzaImage from "../images/pizza11.jpg";
+import PastaImage from "../images/spageti1.jpg";
 import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 /* Hooks */
 import { useInView } from "react-hook-inview";
@@ -35,20 +35,22 @@ export default function Information() {
         opacity: 0,
       });
     }
-  });
+  }, [inView]);
   return (
     <div className="information-section">
       <motion.div animate={animation} ref={ref}>
         <Grid className="information-container" container>
-          <Grid item container className="food-container">
+          <Grid spacing={3} item container className="food-container">
             <Grid item xs={10} md={5}>
               <img id="food-image" src={PizzaImage} alt={"pizza"} />
             </Grid>
             <Grid item xs={10} md={5}>
-              <Typography variant="subtitle1" className="information-text">
-                Lorem Ipsum isindustry. Lorem Ipsum has been the industry's
-                standard dummy. Lorem Ipsum has been the industry's standard
-                dummy.
+              <Typography className="information-text">
+                Den moderne pizzaen stammer fra Napoli, der flatt brød først ble
+                dekket med tomatsaus og andre ingredienser, som ost, og bakt i
+                vedfyrt ovn. Med utvandringen fra Italia på slutten av
+                1800-tallet, til steder som New York i USA, São Paulo i Brasil,
+                og ikke minst Norge.
               </Typography>
               <Button
                 id="information-btn"
@@ -63,15 +65,17 @@ export default function Information() {
             </Grid>
           </Grid>
 
-          <Grid item container className="food-container">
+          <Grid spacing={3} item container className="food-container">
             <Grid item item xs={10} md={5} order={{ xs: 1, md: 2 }}>
               <img id="food-image" src={PastaImage} alt={"Pasta"} />
             </Grid>
             <Grid item xs={10} md={5} order={{ xs: 2, md: 1 }}>
-              <Typography variant="subtitle1" className="information-text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy.
-                Lorem Ipsum has been the industry's standard dummy.
+              <Typography className="information-text">
+                Ifølge myten var det Marco Polo som førte pastaen fra Kina til
+                Italia, men på den tiden hadde italienerne spist både makaroni
+                og lasagne i lang tid. Andre eventyrlystne reiste ut og tok
+                oppskriftene sine med seg – og gjorde pasta til en av verdens
+                mest populære retter.
               </Typography>
               <Button
                 id="information-btn"

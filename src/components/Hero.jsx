@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import ArrowIcon from "@mui/icons-material/ArrowForwardIos";
 /* Image */
-import headerImage from "../images/hero-image.jpeg";
+import headerImage from "../images/hero2.jpg";
 /* Css */
 import "../css/Hero.css";
 /* Components */
@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     height: "100vh",
+    backgroundAttachment: "fixed",
   },
 }));
 

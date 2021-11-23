@@ -36,11 +36,6 @@ export default function TemporaryDrawer() {
       <MenuItem component={NavHashLink} to="/#top">
         <Typography variant="h6"> HJEM</Typography>
       </MenuItem>
-      <MenuItem>
-        <Typography variant="h6">
-          <BookTable></BookTable>
-        </Typography>
-      </MenuItem>
       <MenuItem component={NavHashLink} to="/meny#top">
         <Typography variant="h6">MENY</Typography>
       </MenuItem>

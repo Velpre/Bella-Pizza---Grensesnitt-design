@@ -1,3 +1,7 @@
+#style-modal{
+    width: 35%;
+}
+
 #bookTable-btn{
     color:#fff;
 }
@@ -5,6 +9,7 @@
 #cancel-icon-bookTable{
     position: absolute;
     right: 3%;
+    color: #2B6250;
 }
 
 #reserver-btn{
@@ -21,6 +26,17 @@ p{
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
+@media screen and (max-width: 1000px) {
 
+ #style-modal{
+    width: 50%;
+}
+  } 
+  @media screen and (max-width: 660px) {
+
+    #style-modal{
+       width: 80%;
+   }
+     } 
 
 

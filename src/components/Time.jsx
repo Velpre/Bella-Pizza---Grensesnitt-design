@@ -21,7 +21,13 @@ export default function Time(props) {
             props.pickTime(value);
           }}
           renderInput={(params) => (
-            <TextField required fullWidth margin="dense" {...params} />
+            <TextField
+              color="secondary"
+              required
+              fullWidth
+              margin="dense"
+              {...params}
+            />
           )}
         />
       </LocalizationProvider>

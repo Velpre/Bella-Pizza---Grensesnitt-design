@@ -1,12 +1,9 @@
-import { Button, ButtonGroup } from "@mui/material";
+import { Button, ButtonGroup, Box } from "@mui/material";
 import React from "react";
 import PastaList from "./PastaList";
 import PizzaList from "./PizzaList";
 import { useState } from "react";
 import { Grid, Typography } from "@material-ui/core";
-
-
-
 
 function DisplayMenu() {
   const [active, setActive] = useState("alt");
@@ -43,13 +40,12 @@ function DisplayMenu() {
           </ButtonGroup>
         </Grid>
       </div>
-      {
-        active === "alt" &&
+      {active === "alt" && (
         <>
           <PizzaList />
           <PastaList />
         </>
-      }
+      )}
 
       {active === "pizza" && <PizzaList />}
       {active === "pasta" && <PastaList />}

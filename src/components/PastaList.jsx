@@ -1,8 +1,31 @@
 import ProductCard from "./ProductCard";
 import Grid from "@mui/material/Grid";
 import { Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import { useInView } from "react-hook-inview";
+import { useEffect } from "react";
+import { useAnimation } from "framer-motion";
 
 function PastaList() {
+  const [ref, inView] = useInView({});
+  const animation = useAnimation();
+  console.log(inView);
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        opacity: 1,
+        transition: { duration: 1 },
+      });
+    }
+
+    if (!inView) {
+      animation.start({
+        opacity: 0,
+      });
+    }
+  }, [inView]);
+
   const pastaList = [
     {
       id: 11,
@@ -98,17 +121,34 @@ function PastaList() {
 
   return (
     <>
-      <div style={{ paddingBottom: "7em", align: 'center', justifyContent: 'center' }}>
-        <Typography variant="h2" align='center' marginBottom="1em">Pasta</Typography>
-        <Grid container spacing={3} align='center' direction='row' justifyContent='center'>
-
-          {pastaList.map((p) => {
-            return <Grid item xs={12} sm={12} md={5} lg={3} align='center' direction='row' justifyContent='center'>
-              <ProductCard product={p} />
-            </Grid>
-          })}
-
-        </Grid>
+      <div style={{ backgroundColor: "#c0c0c01a" }}>
+        <motion.div
+          animate={animation}
+          ref={ref}
+          style={{
+            paddingBottom: "7em",
+            opacity: 0,
+          }}
+        >
+          <Typography variant="h2" align="center" marginBottom="2em">
+            Pasta
+          </Typography>
+          <Grid
+            container
+            spacing={3}
+            align="center"
+            direction="row"
+            justifyContent="center"
+          >
+            {pastaList.map((p) => {
+              return (
+                <Grid item sm={12} md={5} lg={3}>
+                  <ProductCard product={p} />
+                </Grid>
+              );
+            })}
+          </Grid>
+        </motion.div>
       </div>
     </>
   );

@@ -13,8 +13,7 @@ import {
   Button,
   Grid,
 } from "@mui/material";
-import { Typography } from "@material-ui/core";
-import { ArrowForwardIos, Cancel } from "@mui/icons-material";
+import { ArrowForwardIos, Close } from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
 import ModalUnstyled from "@mui/base/ModalUnstyled";
 /* Components */
@@ -51,7 +50,6 @@ const StyledModal = styled(ModalUnstyled)`
 `;
 /* Style inside modal */
 const styleModalInside = {
-  width: "35%",
   p: 2,
   px: 4,
   pb: 3,
@@ -128,14 +126,15 @@ export default function BookTable() {
         BackdropComponent={Backdrop}
       >
         {state ? (
-          <Box sx={styleModalInside}>
+          <Box id="style-modal" sx={styleModalInside}>
             <IconButton id="cancel-icon-bookTable" onClick={handleClose}>
-              <Cancel></Cancel>
+              <Close />
             </IconButton>
-            <h3>Informasjon</h3>
+            <h2>Informasjon</h2>
             <FormControl>
-              <InputLabel>Antall personer</InputLabel>
+              <InputLabel color="secondary">Antall personer</InputLabel>
               <Select
+                color="secondary"
                 margin="dense"
                 value={number}
                 label="Antall personer"
@@ -154,6 +153,7 @@ export default function BookTable() {
               </Select>
 
               <TextField
+                color="secondary"
                 margin="dense"
                 required
                 label="Navn"
@@ -163,6 +163,7 @@ export default function BookTable() {
                 fullWidth
               />
               <TextField
+                color="secondary"
                 margin="dense"
                 required
                 label="E-post"
@@ -182,6 +183,7 @@ export default function BookTable() {
               </Grid>
 
               <TextField
+                color="secondary"
                 label="Komentar"
                 multiline
                 rows={3}
@@ -203,8 +205,8 @@ export default function BookTable() {
             </FormControl>
           </Box>
         ) : (
-          <Box sx={styleModalInside}>
-            <h1>Bekreft</h1>
+          <Box id="style-modal" sx={styleModalInside}>
+            <h2>Bekreft</h2>
             <p>Antall personer {number}</p>
             <p>Navn {name}</p>
             <p>E-mail {mail}</p>
