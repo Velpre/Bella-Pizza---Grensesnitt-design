@@ -7,7 +7,7 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
 
-export default function Date(props) {
+export default function Date() {
   const [value, setValue] = useState(null);
 
   return (

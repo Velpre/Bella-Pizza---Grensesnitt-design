@@ -7,7 +7,7 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import TimePicker from "@mui/lab/TimePicker";
 
-export default function Time(props) {
+export default function Time() {
   const [value, setValue] = useState(null);
 
   return (
