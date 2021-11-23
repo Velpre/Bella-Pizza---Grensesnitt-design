@@ -1,31 +1,30 @@
-import React, {useState} from "react";
+import React from "react";
 
-/* MUI */ 
+/* MUI */
 import {
-    TextField,
-    FormControl,
-    Grid,
-    RadioGroup,
-    FormLabel,
-    FormControlLabel,
-    Radio,
-    TableContainer
-
+  TextField,
+  FormControl,
+  Grid,
+  RadioGroup,
+  FormLabel,
+  FormControlLabel,
+  Radio,
+  TableContainer,
 } from "@mui/material";
 
 export default function Payment(props) {
-    function handleTarget(target){
-        if (target === "visa"){
-            props.setVisaBox()
-            props.setFalse(target)
-        } else if (target === "vipps"){
-            props.setVippsBox()
-            props.setFalse(target)
-        } else if (target === "cash"){
-            props.setCashBox()
-            props.setFalse(target)
-        }
+  function handleTarget(target) {
+    if (target === "visa") {
+      props.setVisaBox();
+      props.setFalse(target);
+    } else if (target === "vipps") {
+      props.setVippsBox();
+      props.setFalse(target);
+    } else if (target === "cash") {
+      props.setCashBox();
+      props.setFalse(target);
     }
+  }
 
     return (
         <FormControl sx={{ maxWidth: 500 }} style={{ alignItems: "center" }}>

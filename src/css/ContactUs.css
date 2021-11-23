@@ -51,26 +51,11 @@ body{
 }
 
 
-/* Footer */
-.footer-container{
-  padding-bottom: 2%;
-  
-}
-
-.footer-container a{
-  color: #FFFFFF;
-}
-
 /* Media query */
 
  @media screen and (max-width: 600px) {
   .contact-section{
     height: 100%;
-  }
-
-  .footer-container{
-    padding-top: 5%;
-    
   }
 
   .icone-contact-us{
@@ -84,13 +69,14 @@ body{
 } 
 
 @media screen and (min-width: 1000px){
-  .contact-section a:hover{
-    color:#2B6250;
-    transition: 0.5s;
-  }
 
   .map:hover{
     filter: brightness(50%);
+    transition: 0.5s;
+  }
+
+  .contact-section a:hover{
+    color:#2B6250;
     transition: 0.5s;
   }
 }

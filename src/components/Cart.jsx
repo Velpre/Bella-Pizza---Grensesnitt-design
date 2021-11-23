@@ -22,7 +22,6 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
 /* MUI icon */
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CloseIcon from "@mui/icons-material/Close";
 
 /* MUI styles*/
@@ -70,8 +69,6 @@ const useStyles = makeStyles((theme) => ({
 
 const BootstrapDialogTitle = (props) => {
     const { children, onClose, ...other } = props;
-
-    console.log(onClose)
 
     return (
         <DialogTitle sx={{ mt: 0 }} {...other}>

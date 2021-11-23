@@ -12,6 +12,7 @@ import {
   Select,
   Button,
   Grid,
+  Typography,
 } from "@mui/material";
 import { ArrowForwardIos, Close } from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
@@ -21,7 +22,6 @@ import Date from "./Date";
 import Time from "./Time";
 /* Css */
 import "../css/BookTable.css";
-import setDate from "date-fns/esm/fp/setDate/index.js";
 
 /* Style behind modal */
 const Backdrop = styled("div")`
@@ -66,22 +66,13 @@ export default function BookTable() {
   const handleClose = () => setOpen(false);
 
   /* Number of persons */
-  const [numberError, setNumberError] = useState(false);
   const [number, setNumber] = useState("");
 
   /* Name */
   const [name, setName] = useState("");
-  const [nameError, setNameError] = useState(false);
 
   /* E-mail */
   const [mail, setMail] = useState("");
-  const [mailError, setMailError] = useState(false);
-
-  /* Date */
-  const [date, setDate] = useState("");
-
-  /* Time */
-  const [time, setTime] = useState("");
 
   /* Handle click  */
   const [state, setState] = useState(false);
@@ -92,17 +83,6 @@ export default function BookTable() {
     } else {
       setState(false);
     }
-  }
-
-  /* Picking up date from child element */
-
-  function pickDate(prop) {
-    setDate(prop);
-  }
-
-  function pickTime(prop) {
-    setTime(prop);
-    console.log(prop);
   }
 
   return (
@@ -130,7 +110,10 @@ export default function BookTable() {
             <IconButton id="cancel-icon-bookTable" onClick={handleClose}>
               <Close />
             </IconButton>
-            <h2>Informasjon</h2>
+            <Typography style={{ marginBottom: "10px" }} variant="h4">
+              Reservasjon
+            </Typography>
+
             <FormControl>
               <InputLabel color="secondary">Antall personer</InputLabel>
               <Select
@@ -158,7 +141,6 @@ export default function BookTable() {
                 required
                 label="Navn"
                 variant="outlined"
-                error={nameError}
                 onChange={(e) => setName(e.target.value)}
                 fullWidth
               />
@@ -168,17 +150,16 @@ export default function BookTable() {
                 required
                 label="E-post"
                 variant="outlined"
-                error={mailError}
                 onChange={(e) => setMail(e.target.value)}
                 fullWidth
               />
 
               <Grid container justifyContent="space-between">
                 <Grid xs={12} sm={5} item>
-                  <Date pickDate={pickDate}></Date>
+                  <Date></Date>
                 </Grid>
                 <Grid xs={12} sm={5} item>
-                  <Time pickTime={pickTime}></Time>
+                  <Time></Time>
                 </Grid>
               </Grid>
 
@@ -206,12 +187,15 @@ export default function BookTable() {
           </Box>
         ) : (
           <Box id="style-modal" sx={styleModalInside}>
-            <h2>Bekreft</h2>
-            <p>Antall personer {number}</p>
-            <p>Navn {name}</p>
-            <p>E-mail {mail}</p>
-            <p>Dato: {JSON.stringify(date)}</p>
-            <p>Tid: {JSON.stringify(time)}</p>
+            <IconButton id="cancel-icon-bookTable" onClick={handleClose}>
+              <Close />
+            </IconButton>
+            <Typography style={{ margin: "30px 0 30px" }} variant="h4">
+              Takk for din bestilling {name}
+            </Typography>
+            <Typography variant="body1">
+              Du vil motta bekreftelse på {mail}
+            </Typography>
           </Box>
         )}
       </StyledModal>

@@ -1,16 +1,16 @@
-import ProductCard from "./ProductCard";
-import Grid from "@mui/material/Grid";
-import { Typography } from "@mui/material";
-import { motion } from "framer-motion";
-import { useInView } from "react-hook-inview";
+/* Hooks */
 import { useEffect } from "react";
-import { useAnimation } from "framer-motion";
+import { useInView } from "react-hook-inview";
+/* Components */
+import ProductCard from "./ProductCard";
+import { Typography, Grid } from "@mui/material";
+/* Framer animation */
+import { useAnimation, motion } from "framer-motion";
 
 function PizzaList() {
   const [ref, inView] = useInView();
   const animation = useAnimation();
-  console.log(inView);
-
+  /* Animation */
   useEffect(() => {
     if (inView) {
       animation.start({
