@@ -15,16 +15,16 @@ export default function ProductConfirmation(props) {
                         <Grid
                             container
                             spacing={2}
-                            style={{ minWidth: 400, paddingBottom: "3%" }}
+                            style={{ paddingBottom: "3%" }}
                             >
-                            <Grid item xs={0.5} />
-                            <Grid item xs={2}>
+                            <Grid item xs={1} />
+                            <Grid item xs={3}>
                                 <Typography>{product.quantity + " x"}</Typography>
                             </Grid>
-                            <Grid item xs={7}>
+                            <Grid item xs={4}>
                                 <Typography>{product.name}</Typography>
                             </Grid>
-                            <Grid item xs={2}>
+                            <Grid item xs={0}>
                                 <Typography>{product.price + " kr"}</Typography>
                             </Grid>
                         </Grid>

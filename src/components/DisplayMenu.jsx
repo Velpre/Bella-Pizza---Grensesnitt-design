@@ -23,6 +23,7 @@ function DisplayMenu() {
           align: "center",
           justifyContent: "center",
           width: "100%",
+
         }}
       >
         <Grid
@@ -87,7 +88,7 @@ function DisplayMenu() {
                   style={{
                     display: "inline-block",
                     marginRight: "2em",
-                    marginLeft: "em",
+                    marginLeft: "2em",
                   }}
                 >
                   S - Sjømat
@@ -106,18 +107,24 @@ function DisplayMenu() {
           </Grid>
           <ButtonGroup
             id="button-group"
-            color="primary"
             sx={{
               display: "flex",
               flexWrap: "wrap",
               justifyContent: "center",
+              marginTop: "3em",
               marginBottom: "7em",
             }}
             variant="outlined"
           >
-            <Button onClick={() => setActive("alt")}>Alt</Button>
-            <Button onClick={() => setActive("pizza")}>Pizza</Button>
-            <Button onClick={() => setActive("pasta")}>Pasta</Button>
+            <Button color="secondary" style={{ border: '1.8px solid' }}
+
+              onClick={() => setActive("alt")}>Alt</Button>
+            <Button color="secondary" style={{ border: '1.8px solid' }}
+
+              onClick={() => setActive("pizza")}>Pizza</Button>
+            <Button color="secondary" style={{ border: '1.8px solid' }}
+
+              onClick={() => setActive("pasta")}>Pasta</Button>
           </ButtonGroup>
         </Grid>
       </div>

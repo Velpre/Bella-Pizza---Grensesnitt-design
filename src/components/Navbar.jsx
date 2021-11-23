@@ -62,7 +62,7 @@ const Navbar = (props) => {
                 }}
               >
                 <NavHashLink to="/#top">
-                  <img src={"https://i.imgur.com/lxPZjiO.png"} alt={"Logo"} style={{ width: "80%", marginTop: "0.2em", marginLeft: "0.5em" }} />
+                  <img src={"https://i.imgur.com/lxPZjiO.png"} alt={"Logo"} style={{ width: "auto", height:"0.8em", marginTop: "0.2em", marginLeft: "0.5em" }} />
                 </NavHashLink>
               </Typography>
               <Button style={{ color: "#000000" }}>

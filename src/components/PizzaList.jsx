@@ -121,7 +121,7 @@ function PizzaList() {
   ];
 
   return (
-    <div style={{ backgroundColor: "#c0c0c01a" }}>
+    <div >
       <motion.div
         animate={animation}
         ref={ref}

@@ -13,7 +13,7 @@ export default function CartBadge(props) {
         <>
             <Badge
                 badgeContent={props.count}
-                color="primary"
+                color="secondary"
                 onClick={handleOpen}
             >
                 <ShoppingCartIcon color="action" style={{ color: "white" }} onClick={handleOpen} />

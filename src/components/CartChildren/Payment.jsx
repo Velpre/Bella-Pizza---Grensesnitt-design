@@ -66,6 +66,7 @@ export default function Payment(props) {
                         required
                         label="Utløpsdato"
                         variant="outlined"
+                        fullWidth
                         />
                     </Grid>
                     <Grid xs={12} sm={5} item>
@@ -75,6 +76,7 @@ export default function Payment(props) {
                         required
                         label="CVC"
                         variant="outlined"
+                        fullWidth
                         />
                     </Grid>
                 </Grid>
