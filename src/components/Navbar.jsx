@@ -50,32 +50,21 @@ const Navbar = (props) => {
         }}
       >
         <Toolbar style={{ boxShadow: "none" }}>
-          
+
           {isMobile ? (
             <>
-            <Typography
-            variant="h5"
-            color="textSecondary"
-            className={classes.title}
-            style={{
-              color: "#FFFFFF",
-            }}
-          >
-            <Link to="/">
-              <img
-                src={"https://i.imgur.com/lxPZjiO.png"}
-                alt={"Logo"}
+              <Typography
+                variant="h5"
+                color="textSecondary"
+                className={classes.title}
                 style={{
-                  height: "1em",
-                  width: "auto",
-                  marginTop: "0.2em",
+                  color: "#FFFFFF",
                 }}
-              />
-            </Link>
-            <NavHashLink to="/#top">
-              <img src={"https://i.imgur.com/lxPZjiO.png"} alt={"Logo"} style={{ height: "1em", width: "auto", marginTop: "0.2em", marginLeft: "1.8em" }} />
-            </NavHashLink>
-          </Typography>
+              >
+                <NavHashLink to="/#top">
+                  <img src={"https://i.imgur.com/lxPZjiO.png"} alt={"Logo"} style={{ height: "1em", width: "auto", marginTop: "0.2em", marginLeft: "1.8em" }} />
+                </NavHashLink>
+              </Typography>
               <Button style={{ color: "#000000" }}>
                 <div />
                 <Cart />
@@ -92,74 +81,65 @@ const Navbar = (props) => {
             </>
           ) : (
             <>
-            <Typography
-            variant="h5"
-            color="textSecondary"
-            className={classes.title}
-            style={{
-              color: "#FFFFFF",
-            }}
-          >
-            <Link to="/">
-              <img
-                src={"https://i.imgur.com/lxPZjiO.png"}
-                alt={"Logo"}
+              <Typography
+                variant="h5"
+                color="textSecondary"
+                className={classes.title}
                 style={{
-                  height: "1em",
-                  width: "auto",
-                  marginTop: "0.2em",
-                  marginLeft: "1.8em",
+                  color: "#FFFFFF",
                 }}
-              />
-            </Link>
-          </Typography>
-            <div style={{ marginRight: "2rem" }}>
-              <Button
-                component={NavHashLink}
-                to="/#top"
-                style={{ color: "#FFFFFF" }}
               >
-                <div />
-                Hjem
-              </Button>
-              <Button
-                component={NavHashLink}
-                to="/bestill-bord"
-                style={{ color: "#FFFFFF" }}
-              >
-                <div />
-                <BookTable></BookTable>
-              </Button>
-              <Button
-                component={NavHashLink}
-                to="/meny#top"
-                style={{ color: "#FFFFFF" }}
-              >
-                <div />
-                Meny
-              </Button>
-              <Button
-                component={NavHashLink}
-                to="/#om-oss"
-                style={{ color: "#FFFFFF" }}
-              >
-                <div />
-                Om oss
-              </Button>
-              <Button
-                component={NavHashLink}
-                to="/#kontakt-oss"
-                style={{ color: "#FFFFFF" }}
-              >
-                <div />
-                Kontakt oss
-              </Button>
-              <Button>
-                <div />
-                <Cart />
-              </Button>
-            </div>
-          </>)}
+                <NavHashLink to="/#top">
+                  <img src={"https://i.imgur.com/lxPZjiO.png"} alt={"Logo"} style={{ height: "1em", width: "auto", marginTop: "0.2em", marginLeft: "1.8em" }} />
+                </NavHashLink>
+              </Typography>
+              <div style={{ marginRight: "2rem" }}>
+                <Button
+                  component={NavHashLink}
+                  to="/#top"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  <div />
+                  Hjem
+                </Button>
+                <Button
+                  style={{ color: "#FFFFFF", textDecoration: "none" }}
+                >
+                  <div />
+                  <BookTable
+                    style={{ color: "#FFFFFF", textDecoration: "none" }}
+                  ></BookTable>
+                </Button>
+                <Button
+                  component={NavHashLink}
+                  to="/meny#top"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  <div />
+                  Meny
+                </Button>
+                <Button
+                  component={NavHashLink}
+                  to="/#om-oss"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  <div />
+                  Om oss
+                </Button>
+                <Button
+                  component={NavHashLink}
+                  to="/#kontakt-oss"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  <div />
+                  Kontakt oss
+                </Button>
+                <Button>
+                  <div />
+                  <Cart />
+                </Button>
+              </div>
+            </>)}
         </Toolbar>
       </AppBar>
     </div>

@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import { useAnimation } from "framer-motion";
 /* Animation framer */
 import { motion } from "framer-motion";
+import { NavHashLink } from "react-router-hash-link";
 
 export default function Information() {
   const [ref, inView] = useInView({
@@ -54,8 +55,8 @@ export default function Information() {
                 variant="contained"
                 endIcon={<ArrowIcon />}
                 size="large"
-                component={Link}
-                to="/meny"
+                component={NavHashLink}
+                to="/meny#pizza"
               >
                 Pizza
               </Button>
@@ -64,7 +65,7 @@ export default function Information() {
 
           <Grid item container className="food-container">
             <Grid item item xs={10} md={5} order={{ xs: 1, md: 2 }}>
-              <img id="food-image" src={PastaImage} />
+              <img id="food-image" src={PastaImage} alt={"Pasta"} />
             </Grid>
             <Grid item xs={10} md={5} order={{ xs: 2, md: 1 }}>
               <Typography variant="subtitle1" className="information-text">
@@ -77,8 +78,8 @@ export default function Information() {
                 variant="contained"
                 endIcon={<ArrowIcon />}
                 size="large"
-                component={Link}
-                to="/meny"
+                component={NavHashLink}
+                to="/meny#pasta"
               >
                 Pasta
               </Button>

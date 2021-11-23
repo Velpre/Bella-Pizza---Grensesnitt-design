@@ -9,6 +9,7 @@ import DatePicker from "@mui/lab/DatePicker";
 
 export default function Date(props) {
   const [value, setValue] = useState(null);
+
   return (
     <div>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -17,6 +18,7 @@ export default function Date(props) {
           value={value}
           onChange={(newValue) => {
             setValue(newValue);
+            props.pickDate(value);
           }}
           renderInput={(params) => (
             <TextField fullWidth required margin="dense" {...params} />
