@@ -9,10 +9,8 @@ import {
     DialogContent,
     DialogTitle,
     IconButton,
-    Badge,
     TableContainer,
     TableRow,
-    Paper,
     TableCell,
     tableCellClasses,
     Typography,
@@ -23,17 +21,17 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
-/* MUI ICON */
+/* MUI icon */
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CloseIcon from "@mui/icons-material/Close";
 
-/* MUI STYLES*/
+/* MUI styles*/
 import { styled } from "@mui/material/styles";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import PropTypes from "prop-types";
 
-/* COMPONENTS */
+/* Components */
 import ProductCartCard from "./CartChildren/ProductCartCard";
 import Price from "./CartChildren/Price";
 import ProductConfirmation from "./CartChildren/ProductConfirmation";
@@ -41,7 +39,7 @@ import Delivery from "./CartChildren/Delivery";
 import CartBadge from "./CartChildren/CartBadge";
 import Payment from "./CartChildren/Payment";
 
-/* GLOBAL STATE*/
+/* Global state */
 import { UserContext } from "../App";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -298,7 +296,9 @@ export default function Cart() {
                                 <DialogContent dividers>{product}</DialogContent>
                                 <Price price={price} />
                                 <DialogActions>
-                                    <Button style={{backgroundColor: "#2B6250"}} variant="contained"
+                                    <Button 
+                                        color="secondary"
+                                        variant="contained"
                                         autoFocus
                                         onClick={() => {
                                             handleOrderClose()
@@ -322,13 +322,14 @@ export default function Cart() {
                                         <ProductConfirmation products={products} />
                                         <FormGroup>
                                             <FormControlLabel
-                                                control={<Checkbox onClick={delivery ? (handleDeliveryClose) : (handleDeliveryOpen)} />}
+                                                control={<Checkbox style={{color: "#000000"}} onClick={delivery ? (handleDeliveryClose) : (handleDeliveryOpen)} />}
                                                 label="Hjemlevering"
                                             />
                                         </FormGroup>
                                         {delivery ? (<Delivery />) : (null)}
                                         <TableContainer>
                                             <TextField
+                                                color="secondary"
                                                 label="Kommentar"
                                                 multiline
                                                 rows={3}
@@ -341,7 +342,8 @@ export default function Cart() {
                                         <Price price={price}></Price>
                                     </DialogContent>
                                     <DialogActions>
-                                        <Button style={{backgroundColor: "#2B6250"}} 
+                                        <Button
+                                            color="secondary"
                                             variant="contained"
                                             autoFocus
                                             onClick={() => {
@@ -363,7 +365,8 @@ export default function Cart() {
                                         <Payment setFalse={setAllFalse} setVisaBox={handleOpenVisa} setVippsBox={handleOpenVipps} setCashBox={handleOpenCash} stateVisa={visa} stateVipps={vipps} stateCash={cash} />
                                     </DialogContent>
                                     <DialogActions>
-                                        <Button style={{backgroundColor: "#2B6250"}} 
+                                        <Button 
+                                            color="secondary"
                                             variant="contained"
                                             autoFocus
                                             onClick={() => {
