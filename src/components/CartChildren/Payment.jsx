@@ -30,16 +30,17 @@ export default function Payment(props) {
     return (
         <FormControl sx={{ maxWidth: 500 }} style={{ alignItems: "center" }}>
             <FormControl component="fieldset">
-                <FormLabel style={{ paddingTop: "2%" }}>Betalingsmetode</FormLabel>
+                <FormLabel style={{ paddingTop: "2%", color: "#000000"}}>Betalingsmetode</FormLabel>
                 <RadioGroup row aria-label="methods" name="row-radio-buttons-group" onChange={(e) => handleTarget(e.target.value)}>
-                    <FormControlLabel value="visa" control={<Radio />} label="VISA" />
-                    <FormControlLabel value="vipps" control={<Radio />} label="Vipps" />
-                    <FormControlLabel value="cash" control={<Radio />} label="Betal ved overlevering" />
+                    <FormControlLabel value="visa" control={<Radio style={{color: "#000000"}} />} label="VISA" />
+                    <FormControlLabel value="vipps" control={<Radio style={{color: "#000000"}}/>} label="Vipps" />
+                    <FormControlLabel value="cash" control={<Radio style={{color: "#000000"}}/>} label="Betal ved overlevering" />
                 </RadioGroup>
             </FormControl>
         {props.stateVipps ? ( 
             <TableContainer>
                 <TextField 
+                    color="secondary"
                     margin="dense"
                     required
                     label="Telefonnummer"
@@ -51,9 +52,38 @@ export default function Payment(props) {
         {props.stateVisa ? ( 
             <TableContainer>
                 <TextField 
+                    color="secondary"
                     margin="dense"
                     required
-                    label="Tmmer"
+                    label="Kortnummer"
+                    variant="outlined"
+                    fullWidth
+                />
+                <Grid container justifyContent="space-between">
+                    <Grid xs={12} sm={5} item>
+                        <TextField
+                        color="secondary"
+                        margin="dense"
+                        required
+                        label="Utløpsdato"
+                        variant="outlined"
+                        />
+                    </Grid>
+                    <Grid xs={12} sm={5} item>
+                        <TextField
+                        color="secondary"
+                        margin="dense"
+                        required
+                        label="CVC"
+                        variant="outlined"
+                        />
+                    </Grid>
+                </Grid>
+                <TextField 
+                    color="secondary"
+                    margin="dense"
+                    required
+                    label="Vennligst oppgi ditt telefonnummer"
                     variant="outlined"
                     fullWidth
                 />
@@ -62,9 +92,10 @@ export default function Payment(props) {
         {props.stateCash ? ( 
             <TableContainer>
                 <TextField 
+                    color="secondary"
                     margin="dense"
                     required
-                    label="Telefdsmer"
+                    label="Vennligst oppgi ditt telefonnummer"
                     variant="outlined"
                     fullWidth
                 />

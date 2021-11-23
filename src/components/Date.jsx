@@ -18,7 +18,6 @@ export default function Date(props) {
           value={value}
           onChange={(newValue) => {
             setValue(newValue);
-            props.pickDate(value);
           }}
           renderInput={(params) => (
             <TextField

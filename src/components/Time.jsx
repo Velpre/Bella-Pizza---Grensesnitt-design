@@ -18,7 +18,6 @@ export default function Time(props) {
           value={value}
           onChange={(newValue) => {
             setValue(newValue);
-            props.pickTime(value);
           }}
           renderInput={(params) => (
             <TextField

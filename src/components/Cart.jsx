@@ -15,6 +15,8 @@ import {
     Paper,
     TableCell,
     tableCellClasses,
+    Typography,
+    Grid
 } from "@mui/material";
 
 import FormGroup from "@mui/material/FormGroup";
@@ -256,8 +258,6 @@ export default function Cart() {
         },
     }));
 
-
-
     return (
         <div>
             {isMobile ? (
@@ -298,14 +298,14 @@ export default function Cart() {
                                 <DialogContent dividers>{product}</DialogContent>
                                 <Price price={price} />
                                 <DialogActions>
-                                    <Button variant="contained"
+                                    <Button style={{backgroundColor: "#2B6250"}} variant="contained"
                                         autoFocus
                                         onClick={() => {
                                             handleOrderClose()
                                             handlePaymentOpen();
                                         }}
                                     >
-                                        Til betaling
+                                        Gå videre
                                     </Button>
                                 </DialogActions>
                             </Box>
@@ -341,14 +341,15 @@ export default function Cart() {
                                         <Price price={price}></Price>
                                     </DialogContent>
                                     <DialogActions>
-                                        <Button variant="contained"
+                                        <Button style={{backgroundColor: "#2B6250"}} 
+                                            variant="contained"
                                             autoFocus
                                             onClick={() => {
                                                 handleOrderClose();
                                                 handlePaymentClose()
                                             }}
                                         >
-                                            BETAL NÅ
+                                            Gå videre
                                         </Button>
                                     </DialogActions>
                                 </Box>) : (<Box>
@@ -362,19 +363,38 @@ export default function Cart() {
                                         <Payment setFalse={setAllFalse} setVisaBox={handleOpenVisa} setVippsBox={handleOpenVipps} setCashBox={handleOpenCash} stateVisa={visa} stateVipps={vipps} stateCash={cash} />
                                     </DialogContent>
                                     <DialogActions>
-                                        <Button variant="contained"
+                                        <Button style={{backgroundColor: "#2B6250"}} 
+                                            variant="contained"
                                             autoFocus
                                             onClick={() => {
+                                                setProducts([]);
                                                 handleOrderClose();
                                                 handleDeliveryClose();
+                                                handleCloseCash();
+                                                handleCloseVipps();
+                                                handleCloseVisa();
                                                 handleFinishOpen();
                                             }}
                                         >
-                                            BETAL NÅ
+                                            Utfør
                                         </Button>
                                     </DialogActions>
                                     {finish ? (
-                                        <div>Takk for din bestilling</div>
+                                        <Grid container container spacing={1} sx={{maxWidth: 420}} style={{marginBottom:"8%"}}>
+                                            <Grid item xs={12} style={{textAlign: "center"}}>
+                                            <Typography variant="h6">
+                                                Takk for din bestilling!
+                                            </Typography>
+                                            </Grid>
+                                            <Grid item xs={12} style={{textAlign: "center"}}>
+                                            <Typography>
+                                               Ditt ordrenummer er # {Math.floor(Math.random() * 10000)}
+                                            </Typography>
+                                            <Typography>
+                                                Du har mottatt en sms med informasjon.
+                                            </Typography>
+                                            </Grid>
+                                        </Grid>
                                     ) : (null)}
                                 </Box>)}
                             </>

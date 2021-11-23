@@ -15,7 +15,6 @@ export default function ProductCard(props) {
     const { products, setProducts } = useContext(UserContext);
 
     function addProductToCart(product) {
-        console.log("adding product", product);
 
         if (products !== 0) {
 

@@ -17,6 +17,7 @@ export default function Delivery() {
     return (
         <FormControl sx={{maxWidt:500}}>
             <TextField
+                color="secondary"
                 margin="dense"
                 required
                 label="Navn"
@@ -24,6 +25,7 @@ export default function Delivery() {
                 fullWidth
             />
             <TextField
+                color="secondary"
                 margin="dense"
                 required
                 label="Adresse"
@@ -33,10 +35,10 @@ export default function Delivery() {
 
             <Grid container justifyContent="space-between">
                 <Grid xs={12} sm={5} item>
-                    <Date></Date>
+                    <Date />
                 </Grid>
                 <Grid xs={12} sm={5} item>
-                    <Time></Time>
+                    <Time />
                 </Grid>
             </Grid>
         </FormControl>
