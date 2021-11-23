@@ -70,7 +70,8 @@ const useStyles = makeStyles((theme) => ({
 
 const BootstrapDialogTitle = (props) => {
     const { children, onClose, ...other } = props;
-    const classes = useStyles();
+
+    console.log(onClose)
 
     return (
         <DialogTitle sx={{ mt: 0 }} {...other}>
@@ -107,6 +108,7 @@ export default function Cart() {
     const [vipps, setOpenVipps] = React.useState(false);
     const [cash, setOpenCash] = React.useState(false);
     const [finish, setFinishOpen] = React.useState(false);
+    const [showPayment, setShowPayment] = React.useState(true);
 
 
     const handleClickOpen = () => {
@@ -157,6 +159,12 @@ export default function Cart() {
     };
     const handleFinishClose = () => {
         setFinishOpen(false);
+    };
+    const handleShowPaymentOpen = () => {
+        setShowPayment(true);
+    };
+    const handleShowPaymentClose = () => {
+        setShowPayment(false);
     };
 
     function setAllFalse(target){
@@ -223,7 +231,7 @@ export default function Cart() {
     }
 
     let product;
-    if (products !== 0) {
+    if (products.length !== 0) {
         product = products.map((product, index) => {
             return (
                 <ProductCartCard
@@ -235,7 +243,7 @@ export default function Cart() {
             );
         });
     } else {
-        product = "Din handlevogn er tom";
+        product = <Typography>Din handlevogn er tom</Typography>
     }
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -258,6 +266,10 @@ export default function Cart() {
         },
     }));
 
+    function removeButton(){
+        document.getElementById("disable-button").style.visibility = "hidden"
+    }
+
     return (
         <div>
             {isMobile ? (
@@ -278,7 +290,8 @@ export default function Cart() {
                             handleOrderClose();
                             handleDeliveryClose();
                             handleFinishClose();
-                            setAllFalse("default")
+                            setAllFalse("default");
+                            handleShowPaymentOpen();
                         }}
                         aria-labelledby="customized-dialog-title"
                         open={open}
@@ -291,6 +304,7 @@ export default function Cart() {
                                         handleClose();
                                         handleOrderClose();
                                         handleDeliveryClose();
+                                        handlePaymentOpen();
                                     }}
                                 >
                                     Handlekurv
@@ -316,7 +330,12 @@ export default function Cart() {
                                 {payment ? (<Box>
                                     <BootstrapDialogTitle
                                         id="customized-dialog-title"
-                                        onClose={handleClose}
+                                        onClose={() => {
+                                            handleClose()
+                                            handleOrderClose()
+                                            handlePaymentOpen();
+                                            handleDeliveryClose();
+                                        }}
                                     >
                                         Din bestilling
                                     </BootstrapDialogTitle>
@@ -359,7 +378,7 @@ export default function Cart() {
                                         <Price price={price}></Price>
                                     </DialogContent>
                                     <DialogActions>
-                                        <Button
+                                        <Button 
                                             color="secondary"
                                             variant="contained"
                                             autoFocus
@@ -374,15 +393,24 @@ export default function Cart() {
                                 </Box>) : (<Box>
                                     <BootstrapDialogTitle
                                         id="customized-dialog-title"
-                                        onClose={handleClose}
+                                        onClose={() => {
+                                            handleClose();
+                                            handleOrderClose();
+                                            handleDeliveryClose();
+                                            handleFinishClose();
+                                            setAllFalse("default");
+                                            handleShowPaymentOpen();
+                                        }}
                                     >
                                         Din bestilling
                                     </BootstrapDialogTitle>
                                     <DialogContent dividers>
-                                        <Payment setFalse={setAllFalse} setVisaBox={handleOpenVisa} setVippsBox={handleOpenVipps} setCashBox={handleOpenCash} stateVisa={visa} stateVipps={vipps} stateCash={cash} />
+                                        {showPayment ? (<Payment setFalse={setAllFalse} setVisaBox={handleOpenVisa} setVippsBox={handleOpenVipps} setCashBox={handleOpenCash} stateVisa={visa} stateVipps={vipps} stateCash={cash} />
+                                            ) : (null)}
                                     </DialogContent>
                                     <DialogActions>
-                                        <Button 
+                                        <Button
+                                            id="disable-button"
                                             color="secondary"
                                             variant="contained"
                                             autoFocus
@@ -394,13 +422,15 @@ export default function Cart() {
                                                 handleCloseVipps();
                                                 handleCloseVisa();
                                                 handleFinishOpen();
+                                                handleShowPaymentClose();
+                                                removeButton();
                                             }}
                                         >
                                             Utfør
                                         </Button>
                                     </DialogActions>
                                     {finish ? (
-                                        <Grid container container spacing={1} sx={{maxWidth: 420}} style={{marginBottom:"8%"}}>
+                                        <Grid container spacing={1} sx={{maxWidth: 420}} style={{marginBottom:"8%"}}>
                                             <Grid item xs={12} style={{textAlign: "center"}}>
                                             <Typography variant="h6">
                                                 Takk for din bestilling!

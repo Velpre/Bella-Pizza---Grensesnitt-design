@@ -34,7 +34,7 @@ export default function Payment(props) {
                 <RadioGroup row aria-label="methods" name="row-radio-buttons-group" onChange={(e) => handleTarget(e.target.value)}>
                     <FormControlLabel value="visa" control={<Radio style={{color: "#000000"}} />} label="VISA" />
                     <FormControlLabel value="vipps" control={<Radio style={{color: "#000000"}}/>} label="Vipps" />
-                    <FormControlLabel value="cash" control={<Radio style={{color: "#000000"}}/>} label="Betal ved overlevering" />
+                    <FormControlLabel default value="cash" control={<Radio style={{color: "#000000"}}/>} label="Betal ved overlevering" />
                 </RadioGroup>
             </FormControl>
         {props.stateVipps ? ( 
