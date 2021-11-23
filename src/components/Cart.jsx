@@ -37,7 +37,7 @@ import Price from "./CartChildren/Price";
 import ProductConfirmation from "./CartChildren/ProductConfirmation";
 import Delivery from "./CartChildren/Delivery";
 import CartBadge from "./CartChildren/CartBadge";
-import Payment from "./CartChildren/Payment"
+import Payment from "./CartChildren/Payment";
 
 /* GLOBAL STATE*/
 import { UserContext } from "../App";
@@ -115,7 +115,7 @@ export default function Cart() {
     };
     const handleOrderClose = () => {
         setOrder(false);
-    };    
+    };
     const handleDeliveryOpen = () => {
         setDelivery(true);
     };
@@ -224,13 +224,14 @@ export default function Cart() {
         <div>
             {isMobile ? (
                 <>
-                
+
                 </>
             ) : (
                 <>
                     <CartBadge products={products} openModal={() => {
                         handleClickOpen()
-                        handleOrderOpen()}} />
+                        handleOrderOpen()
+                    }} />
                     <BootstrapDialog
                         style={{ overflow: "auto" }}
                         className={classes.desktopScroll}
@@ -260,7 +261,8 @@ export default function Cart() {
                                     <Button variant="contained"
                                         autoFocus
                                         onClick={() => {
-                                            {handleOrderClose()}
+                                            handleOrderClose()
+                                            handlePaymentOpen();
                                         }}
                                     >
                                         Til betaling
@@ -268,48 +270,72 @@ export default function Cart() {
                                 </DialogActions>
                             </Box>
                         ) : (
-                            <Box>
-                                <BootstrapDialogTitle
-                                    id="customized-dialog-title"
-                                    onClose={handleClose}
-                                >
-                                    Din bestilling
-                                </BootstrapDialogTitle>
-                                <DialogContent dividers>
-                                    <ProductConfirmation products={products}/>
-                                    <FormGroup>
-                                        <FormControlLabel
-                                            control={<Checkbox onClick={delivery ? (handleDeliveryClose):(handleDeliveryOpen)}/>}
-                                            label="Hjemlevering"
-                                        />
-                                    </FormGroup>
-                                    {delivery ? (<Delivery/>) : ( null )}
-                                    <TableContainer component={Paper}>
-                                        <TextField
-                                            label="Kommentar"
-                                            multiline
-                                            rows={3}
-                                            defaultValue=""
-                                            margin="dense"
-                                            fullWidth
-                                        />
-                                        
-                                    </TableContainer>
-                                    <Price price={price}></Price>
-                                </DialogContent>
-                                <DialogActions>
-                                    <Button variant="contained"
-                                        autoFocus
-                                        onClick={() => {
+                            <>
+                                {payment ? (<Box>
+                                    <BootstrapDialogTitle
+                                        id="customized-dialog-title"
+                                        onClose={handleClose}
+                                    >
+                                        Din bestilling
+                                    </BootstrapDialogTitle>
+                                    <DialogContent dividers>
+                                        <ProductConfirmation products={products} />
+                                        <FormGroup>
+                                            <FormControlLabel
+                                                control={<Checkbox onClick={delivery ? (handleDeliveryClose) : (handleDeliveryOpen)} />}
+                                                label="Hjemlevering"
+                                            />
+                                        </FormGroup>
+                                        {delivery ? (<Delivery />) : (null)}
+                                        <TableContainer>
+                                            <TextField
+                                                label="Kommentar"
+                                                multiline
+                                                rows={3}
+                                                defaultValue=""
+                                                margin="dense"
+                                                fullWidth
+                                            />
+
+                                        </TableContainer>
+                                        <Price price={price}></Price>
+                                    </DialogContent>
+                                    <DialogActions>
+                                        <Button variant="contained"
+                                            autoFocus
+                                            onClick={() => {
+                                                handleOrderClose();
+                                                handlePaymentClose()
+
+                                            }}
+                                        >
+                                            BETAL NÅ
+                                        </Button>
+                                    </DialogActions>
+                                </Box>) : (<Box>
+                                    <BootstrapDialogTitle
+                                        id="customized-dialog-title"
+                                        onClose={handleClose}
+                                    >
+                                        Din bestilling
+                                    </BootstrapDialogTitle>
+                                    <DialogContent dividers>
+                                        <Payment />
+                                    </DialogContent>
+                                    <DialogActions>
+                                        <Button variant="contained"
+                                            autoFocus
+                                            onClick={() => {
                                                 handleClose();
                                                 handleOrderClose();
                                                 handleDeliveryClose();
-                                        }}
-                                    >
-                                        BETAL NÅ
-                                    </Button>
-                                </DialogActions>
-                            </Box> 
+                                            }}
+                                        >
+                                            BETAL NÅ
+                                        </Button>
+                                    </DialogActions>
+                                </Box>)}
+                            </>
                         )}
                     </BootstrapDialog>
                 </>
@@ -317,3 +343,5 @@ export default function Cart() {
         </div>
     );
 }
+
+
