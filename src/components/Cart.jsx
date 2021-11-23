@@ -101,7 +101,10 @@ export default function Cart() {
     const [order, setOrder] = React.useState(false);
     const [delivery, setDelivery] = React.useState(false);
     const [payment, setPayment] = React.useState(false);
-
+    const [visa, setOpenVisa] = React.useState(false);
+    const [vipps, setOpenVipps] = React.useState(false);
+    const [cash, setOpenCash] = React.useState(false);
+    const [finish, setFinishOpen] = React.useState(false);
 
 
     const handleClickOpen = () => {
@@ -128,17 +131,52 @@ export default function Cart() {
     const handlePaymentClose = () => {
         setPayment(false)
     };
+    const handleOpenVisa = () => {
+        setOpenVisa(true);
+    };
+    const handleCloseVisa = () => {
+        setOpenVisa(false);
+    };
+    const handleOpenVipps = () => {
+        setOpenVipps(true);
+    };
+    const handleCloseVipps = () => {
+        setOpenVipps(false);
+    };
+    const handleOpenCash = () => {
+        setOpenCash(true);
+    };
+    const handleCloseCash = () => {
+        setOpenCash(false);
+    };
 
+    const handleFinishOpen = () => {
+        setFinishOpen(true);
+    };
+    const handleFinishClose = () => {
+        setFinishOpen(false);
+    };
 
-
-
-
-
-
-
-
-
-
+    function setAllFalse(target){
+        switch(target){
+            case "visa": 
+                handleCloseVipps();
+                handleCloseCash();
+            break;
+            case "vipps":
+                handleCloseVisa();
+                handleCloseCash();
+            break;
+            case "cash":
+                handleCloseVisa();
+                handleCloseVipps();
+            break;
+            default: 
+                handleCloseVisa();
+                handleCloseVipps();
+                handleCloseCash();
+        }
+    }
 
     const classes = useStyles();
 
@@ -195,7 +233,7 @@ export default function Cart() {
             );
         });
     } else {
-        product = "empty";
+        product = "Din handlevogn er tom";
     }
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -239,6 +277,8 @@ export default function Cart() {
                             handleClose();
                             handleOrderClose();
                             handleDeliveryClose();
+                            handleFinishClose();
+                            setAllFalse("default")
                         }}
                         aria-labelledby="customized-dialog-title"
                         open={open}
@@ -306,7 +346,6 @@ export default function Cart() {
                                             onClick={() => {
                                                 handleOrderClose();
                                                 handlePaymentClose()
-
                                             }}
                                         >
                                             BETAL NÅ
@@ -320,20 +359,23 @@ export default function Cart() {
                                         Din bestilling
                                     </BootstrapDialogTitle>
                                     <DialogContent dividers>
-                                        <Payment />
+                                        <Payment setFalse={setAllFalse} setVisaBox={handleOpenVisa} setVippsBox={handleOpenVipps} setCashBox={handleOpenCash} stateVisa={visa} stateVipps={vipps} stateCash={cash} />
                                     </DialogContent>
                                     <DialogActions>
                                         <Button variant="contained"
                                             autoFocus
                                             onClick={() => {
-                                                handleClose();
                                                 handleOrderClose();
                                                 handleDeliveryClose();
+                                                handleFinishOpen();
                                             }}
                                         >
                                             BETAL NÅ
                                         </Button>
                                     </DialogActions>
+                                    {finish ? (
+                                        <div>Takk for din bestilling</div>
+                                    ) : (null)}
                                 </Box>)}
                             </>
                         )}

@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 
+/* MUI */ 
 import {
     TextField,
     FormControl,
@@ -12,45 +13,63 @@ import {
 
 } from "@mui/material";
 
+export default function Payment(props) {
+    function handleTarget(target){
+        if (target === "visa"){
+            props.setVisaBox()
+            props.setFalse(target)
+        } else if (target === "vipps"){
+            props.setVippsBox()
+            props.setFalse(target)
+        } else if (target === "cash"){
+            props.setCashBox()
+            props.setFalse(target)
+        }
+    }
 
-export default function Payment() {
     return (
         <FormControl sx={{ maxWidth: 500 }} style={{ alignItems: "center" }}>
             <FormControl component="fieldset">
                 <FormLabel style={{ paddingTop: "2%" }}>Betalingsmetode</FormLabel>
-                <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
-                    <FormControlLabel value="card" control={<Radio />} label="VISA" />
+                <RadioGroup row aria-label="methods" name="row-radio-buttons-group" onChange={(e) => handleTarget(e.target.value)}>
+                    <FormControlLabel value="visa" control={<Radio />} label="VISA" />
                     <FormControlLabel value="vipps" control={<Radio />} label="Vipps" />
                     <FormControlLabel value="cash" control={<Radio />} label="Betal ved overlevering" />
                 </RadioGroup>
             </FormControl>
+        {props.stateVipps ? ( 
             <TableContainer>
-                <TextField
-                    label="Kommentar"
-                    required
-                    rows={1}
-                    defaultValue=""
-                    margin="dense"
-                    fullWidth
-                />
-                <TextField
+                <TextField 
                     margin="dense"
                     required
-                    label="Telefon"
+                    label="Telefonnummer"
                     variant="outlined"
                     fullWidth
                 />
             </TableContainer>
-
-            <Grid container justifyContent="space-between">
-                <Grid xs={12} sm={5} item>
-                    <p>swag</p>
-                </Grid>
-                <Grid xs={12} sm={5} item>
-                    <p>jy</p>
-                </Grid>
-            </Grid>
-
+        ) : (null)}
+        {props.stateVisa ? ( 
+            <TableContainer>
+                <TextField 
+                    margin="dense"
+                    required
+                    label="Tmmer"
+                    variant="outlined"
+                    fullWidth
+                />
+            </TableContainer>
+        ) : (null)}
+        {props.stateCash ? ( 
+            <TableContainer>
+                <TextField 
+                    margin="dense"
+                    required
+                    label="Telefdsmer"
+                    variant="outlined"
+                    fullWidth
+                />
+            </TableContainer>
+        ) : (null)}
         </FormControl>
     )
 }
